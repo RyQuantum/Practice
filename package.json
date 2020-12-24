@@ -10,6 +10,8 @@
     "lint": "eslint ."
   },
   "dependencies": {
+    "axios": "^0.21.1",
+    "form-data": "^3.0.0",
     "react": "17.0.1",
     "react-native": "0.64.0-rc.2"
   },
