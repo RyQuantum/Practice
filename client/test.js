@@ -6,7 +6,7 @@ const API_KEY = '9a9845167f5644d6a3fcf3386da97331';
 axios.defaults.baseURL = 'https://chunks.memfault.com';
 
 const form = new FormData();
-const data = Buffer.from([11, 22, 33]);
+const data = Buffer.from([11, 22, 0, 33]);
 form.append('chunk', data, { header: { 'Content-Length': data.length } });
 form.append('chunk', data, { header: { 'Content-Length': data.length } });
 
