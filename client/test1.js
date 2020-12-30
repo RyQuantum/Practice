@@ -1,5 +1,5 @@
 const axios = require('axios');
-const serial = 'TESTSERIAL';
+const serial = 'FF:FF:FF:FF:FF:FF';
 const API_KEY = '9a9845167f5644d6a3fcf3386da97331';
 
 axios.defaults.baseURL = 'https://chunks.memfault.com';
