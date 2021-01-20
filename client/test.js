@@ -20,7 +20,7 @@ const func = async () => {
       },
     });
 
-    console.log(JSON.stringify(res.data));
+    console.log(res.data);
   } catch (err) {
     console.log(err.message);
   }
