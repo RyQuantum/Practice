@@ -1,0 +1,17 @@
+C:\Users\Ryan\Projects\PanelLabelPrinter\PanelLabelPrinter\bin\Debug\netcoreapp3.1\PanelLabelPrinter.exe
+C:\Users\Ryan\Projects\PanelLabelPrinter\PanelLabelPrinter\bin\Debug\netcoreapp3.1\PanelLabelPrinter.deps.json
+C:\Users\Ryan\Projects\PanelLabelPrinter\PanelLabelPrinter\bin\Debug\netcoreapp3.1\PanelLabelPrinter.runtimeconfig.json
+C:\Users\Ryan\Projects\PanelLabelPrinter\PanelLabelPrinter\bin\Debug\netcoreapp3.1\PanelLabelPrinter.runtimeconfig.dev.json
+C:\Users\Ryan\Projects\PanelLabelPrinter\PanelLabelPrinter\bin\Debug\netcoreapp3.1\PanelLabelPrinter.dll
+C:\Users\Ryan\Projects\PanelLabelPrinter\PanelLabelPrinter\bin\Debug\netcoreapp3.1\PanelLabelPrinter.pdb
+C:\Users\Ryan\Projects\PanelLabelPrinter\PanelLabelPrinter\obj\Debug\netcoreapp3.1\PanelLabelPrinter.csprojAssemblyReference.cache
+C:\Users\Ryan\Projects\PanelLabelPrinter\PanelLabelPrinter\obj\Debug\netcoreapp3.1\PanelLabelPrinter.ConfigurationForm.resources
+C:\Users\Ryan\Projects\PanelLabelPrinter\PanelLabelPrinter\obj\Debug\netcoreapp3.1\PanelLabelPrinter.Form1.resources
+C:\Users\Ryan\Projects\PanelLabelPrinter\PanelLabelPrinter\obj\Debug\netcoreapp3.1\PanelLabelPrinter.csproj.GenerateResource.cache
+C:\Users\Ryan\Projects\PanelLabelPrinter\PanelLabelPrinter\obj\Debug\netcoreapp3.1\PanelLabelPrinter.AssemblyInfoInputs.cache
+C:\Users\Ryan\Projects\PanelLabelPrinter\PanelLabelPrinter\obj\Debug\netcoreapp3.1\PanelLabelPrinter.AssemblyInfo.cs
+C:\Users\Ryan\Projects\PanelLabelPrinter\PanelLabelPrinter\obj\Debug\netcoreapp3.1\PanelLabelPrinter.csproj.CoreCompileInputs.cache
+C:\Users\Ryan\Projects\PanelLabelPrinter\PanelLabelPrinter\obj\Debug\netcoreapp3.1\PanelLabelPrinter.dll
+C:\Users\Ryan\Projects\PanelLabelPrinter\PanelLabelPrinter\obj\Debug\netcoreapp3.1\PanelLabelPrinter.pdb
+C:\Users\Ryan\Projects\PanelLabelPrinter\PanelLabelPrinter\obj\Debug\netcoreapp3.1\PanelLabelPrinter.genruntimeconfig.cache
+C:\Users\Ryan\Projects\PanelLabelPrinter\PanelLabelPrinter\obj\Debug\netcoreapp3.1\PanelLabelPrinter.MainForm.resources

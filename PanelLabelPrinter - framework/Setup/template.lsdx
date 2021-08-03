@@ -1,0 +1,372 @@
+<?xml version="1.0" encoding="utf-8"?>
+<labelshopdocument version="1.5" tag="Professional" date="2021-07-30 16:19:52" sign="800de4a691266f5ea723471809ab204d" docid="d77524ee-ece1-4635-97bb-0334eec4e887" fnc="0">
+	<labelform version="1.1">
+		<paper name="100mm×150mm 单列  320签/卷 " code="606045" brand="1" cate="3" syslabel="1" otype="0" ltype="0" type="0" maxid="337">
+			<paper size="256" atuoset="0" width="10200" height="15000" orientation="1" color="255,255,255" leftoffect="0" topoffect="0" rfidttpe="0" rfidttop="0"/>
+			<printer ver="2.0" name="Gprinter GP-1924D" dev="Gprinter GP-1924D" dpix="203" dpiy="203" lang="20" set="1073741824" total="1" repeat="1" copy="1" startrecord="1" startlabel="1" npdbr="0" amount="0" dmtype="26" script="RnVuY3Rpb24gT25CZWdpblByaW50KFN0YXRlKQ0KJ1N0YXRlID0gMCA6IFZhcmlhYmxlIFVwZGF0ZURhdGENCidTdGF0ZSA9IDEgOiBMYWJlbCBQcmV2aWV3DQonU3RhdGUgPSAyIDogTGFiZWwgUHJpbnQNCkVuZCBGdW5jdGlvbg0KDQpGdW5jdGlvbiBPbkJlZ2luTGFiZWwoKQ0KRW5kIEZ1bmN0aW9uDQoNCkZ1bmN0aW9uIE9uRW5kTGFiZWwoKQ0KRW5kIEZ1bmN0aW9uDQoNCkZ1bmN0aW9uIE9uRW5kUHJpbnQoKQ0KRW5kIEZ1bmN0aW9u" jscript="">RwBwAHIAaQBuAHQAZQByACAARwBQAC0AMQA5ADIANABEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAEEAgfcABAFH/+ABwEAAAH4AxEEZAABAAABywABAAEAywABAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAwAAAAEAAAAAAQAAAAAAAAAAAAAAAAAAAAAAAKQAAQBNRFROAgAAAAUAAADLAAAAABkAAOQMAAAAAAAAuAsAAHAXAAAAAAAA3AUAAFgCAAAAAAAAAAAAAAAAAAD+/wAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAANwwAANoMAAAQJwAAECcAABAnAAAQJwAAoAoAAMIGAAC4BgAALAQAAEABAADSAAAAGAAAAAAAECcQJxAnAAAQJwAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAGQEAQQAAAAAzhgAAAIAAAAAAAAAAAAAAAIAAgAAABIAMAAAAAIAAAAHAAAA/////wMAAAABAAAAUAAAAAAAAAC4CwAAAAAAALgLAAAAAAAAAAAAAAIAAAAAAAAAUFMCAAMAAABzc3N0c2NsBA==</printer>
+		</paper>
+		<labellayer>
+			<labelformat name="100mm×150mm 单列  320签/卷 " uint="0">
+				<page left="100" top="0" right="400" bottom="550" viewrotate="0"/>
+				<label width="10000" height="15000" rows="1" cols="1" rowgap="300" colgap="300" rotation="0"/>
+				<form corner="1" hole="0" holesize="0" order="LTH"/>
+			</labelformat>
+			<labelobjects>
+				<drawobj type="drawbarcode" id="30" name="" left="1517" top="3942" right="8299" bottom="5471" rotation="none" style="0" halign="2" valign="0" tpalign="0" tvalign="0">
+					<color type="0" mode="1" table="0" change="0" varname="" index="123" colors="#FF0000,#00FF00,#0000FF" col="2" row="2"/>
+					<barcode btype="1" barwidth="985" charextra="0" gapwidth="0" radio="300" wide="300" reduction="0" high="978" width="0" fwidth="0" readable="3" ralign="2" rcolgap="0" readx="0" ready="0" templet="0" templtestr=""/>
+					<font facename="Arial" style="0" charset="0" height="1400" width="10000" italic="0" steikeout="0" underline="0" family="34" color="0,0,0" bkcolor="255,255,255"/>
+					<baroption check="0" stchar="0" fullascii="0" c128codeset="0" c128ean="0" codabarschar="0" codabarechar="0" c25schar="0" c25echar="0" eanaddon="0" eanbbar="0" eanufnt="0" ranuface="Arial" itf14bar="1" itf14barwidth="5" itf14barspace="10" itf14check="1" rsstype="0" rssseph="1" rsssegr="11" rsshold="0"/>
+					<baroption2 p417cols="0" p4172rows="0" p417ecc="0" p417t="0" qrecc="1" qrver="0" dmbw="0" mxsize="0" mxmode="0" hsecc="0" hsencrypt="0" hskey="" hsver="0" codepage="0" hollow="0" stdisx="4" stdisy="4" stdot="1" width2d="2000" height2d="2000"/>
+				</drawobj>
+				<drawobj type="drawbarcode" id="32" name="" left="6348" top="517" right="9426" bottom="3595" rotation="none" style="0" halign="1" valign="0" tpalign="0" tvalign="0">
+					<color type="0" mode="1" table="0" change="0" varname="" index="123" colors="#FF0000,#00FF00,#0000FF" col="2" row="2"/>
+					<barcode btype="11" barwidth="2956" charextra="0" gapwidth="0" radio="300" wide="300" reduction="0" high="3078" width="0" fwidth="0" readable="3" ralign="2" rcolgap="0" readx="0" ready="0" templet="0" templtestr=""/>
+					<font facename="Arial" style="0" charset="0" height="800" width="0" italic="0" steikeout="0" underline="0" family="0" color="0,0,0" bkcolor="255,255,255"/>
+					<baroption check="0" stchar="1" fullascii="0" c128codeset="0" c128ean="0" codabarschar="0" codabarechar="0" c25schar="0" c25echar="0" eanaddon="0" eanbbar="0" eanufnt="0" ranuface="Arial" itf14bar="1" itf14barwidth="5" itf14barspace="10" itf14check="1" rsstype="0" rssseph="1" rsssegr="11" rsshold="0"/>
+					<baroption2 p417cols="0" p4172rows="0" p417ecc="0" p417t="0" qrecc="1" qrver="0" dmbw="0" mxsize="0" mxmode="0" hsecc="0" hsencrypt="0" hskey="" hsver="0" codepage="0" hollow="0" stdisx="4" stdisy="4" stdot="1" width2d="2000" height2d="2000"/>
+				</drawobj>
+				<drawobj type="drawtext" id="34" name="" left="660" top="504" right="2149" bottom="1055" rotation="none" style="0" halign="0" valign="0" tpalign="0" tvalign="0">
+					<color type="0" mode="1" table="0" change="0" varname="" index="123" colors="#FF0000,#00FF00,#0000FF" col="2" row="2"/>
+					<text type="1" width="0" align="0" cut="0" spactype="0" spacing="0" charextra="0" template="0" templtestr="" circr="0" circradian="0" circstart="0" circtw="0" circway="0"/>
+					<font facename="Arial" style="0" charset="1" height="1400" width="0" italic="0" steikeout="0" underline="0" family="0" color="0,0,0" bkcolor="255,255,255"/>
+				</drawobj>
+				<drawobj type="drawtext" id="36" name="" left="2509" top="1897" right="3760" bottom="2448" rotation="none" style="0" halign="0" valign="0" tpalign="0" tvalign="0">
+					<color type="0" mode="1" table="0" change="0" varname="" index="123" colors="#FF0000,#00FF00,#0000FF" col="2" row="2"/>
+					<text type="1" width="0" align="0" cut="0" spactype="0" spacing="0" charextra="0" template="0" templtestr="" circr="0" circradian="0" circstart="0" circtw="0" circway="0"/>
+					<font facename="Arial" style="0" charset="1" height="1400" width="0" italic="0" steikeout="0" underline="0" family="0" color="0,0,0" bkcolor="255,255,255"/>
+				</drawobj>
+				<drawobj type="drawtext" id="38" name="" left="660" top="1897" right="2349" bottom="2448" rotation="none" style="0" halign="0" valign="0" tpalign="0" tvalign="0">
+					<color type="0" mode="1" table="0" change="0" varname="" index="123" colors="#FF0000,#00FF00,#0000FF" col="2" row="2"/>
+					<text type="1" width="0" align="0" cut="0" spactype="0" spacing="0" charextra="0" template="0" templtestr="" circr="0" circradian="0" circstart="0" circtw="0" circway="0"/>
+					<font facename="Arial" style="0" charset="1" height="1400" width="0" italic="0" steikeout="0" underline="0" family="0" color="0,0,0" bkcolor="255,255,255"/>
+				</drawobj>
+				<drawobj type="drawtext" id="42" name="" left="660" top="2593" right="1836" bottom="3144" rotation="none" style="0" halign="0" valign="0" tpalign="0" tvalign="0">
+					<color type="0" mode="1" table="0" change="0" varname="" index="123" colors="#FF0000,#00FF00,#0000FF" col="2" row="2"/>
+					<text type="1" width="0" align="0" cut="0" spactype="0" spacing="0" charextra="0" template="0" templtestr="" circr="0" circradian="0" circstart="0" circtw="0" circway="0"/>
+					<font facename="Arial" style="0" charset="1" height="1400" width="0" italic="0" steikeout="0" underline="0" family="0" color="0,0,0" bkcolor="255,255,255"/>
+				</drawobj>
+				<drawobj type="drawline" id="59" name="" left="579" top="5735" right="9398" bottom="5765" rotation="none" style="0" halign="0" valign="0" tpalign="0" tvalign="0">
+					<color type="0" mode="1" table="0" change="0" varname="" index="123" colors="#FF0000,#00FF00,#0000FF" col="2" row="2"/>
+					<line way="1" linewidth="30" linecolor="0,0,0"/>
+				</drawobj>
+				<drawobj type="drawbarcode" id="114" name="" left="587" top="7993" right="1175" bottom="9252" rotation="none" style="0" halign="0" valign="0" tpalign="0" tvalign="0">
+					<color type="0" mode="1" table="0" change="0" varname="" index="123" colors="#FF0000,#00FF00,#0000FF" col="2" row="2"/>
+					<barcode btype="1" barwidth="493" charextra="0" gapwidth="0" radio="300" wide="300" reduction="0" high="859" width="0" fwidth="0" readable="3" ralign="2" rcolgap="0" readx="0" ready="0" templet="0" templtestr=""/>
+					<font facename="Arial" style="0" charset="0" height="1000" width="10000" italic="0" steikeout="0" underline="0" family="34" color="0,0,0" bkcolor="255,255,255"/>
+					<baroption check="0" stchar="0" fullascii="0" c128codeset="0" c128ean="0" codabarschar="0" codabarechar="0" c25schar="0" c25echar="0" eanaddon="0" eanbbar="0" eanufnt="0" ranuface="Arial" itf14bar="1" itf14barwidth="5" itf14barspace="10" itf14check="1" rsstype="0" rssseph="1" rsssegr="11" rsshold="0"/>
+					<baroption2 p417cols="0" p4172rows="0" p417ecc="0" p417t="0" qrecc="1" qrver="0" dmbw="0" mxsize="0" mxmode="0" hsecc="0" hsencrypt="0" hskey="" hsver="0" codepage="0" hollow="0" stdisx="4" stdisy="4" stdot="1" width2d="2000" height2d="2000"/>
+				</drawobj>
+				<drawobj type="drawbarcode" id="116" name="" left="2864" top="7993" right="3452" bottom="9252" rotation="none" style="0" halign="0" valign="0" tpalign="0" tvalign="0">
+					<color type="0" mode="1" table="0" change="0" varname="" index="123" colors="#FF0000,#00FF00,#0000FF" col="2" row="2"/>
+					<barcode btype="1" barwidth="493" charextra="0" gapwidth="0" radio="300" wide="300" reduction="0" high="859" width="0" fwidth="0" readable="3" ralign="2" rcolgap="0" readx="0" ready="0" templet="0" templtestr=""/>
+					<font facename="Arial" style="0" charset="0" height="1000" width="10000" italic="0" steikeout="0" underline="0" family="34" color="0,0,0" bkcolor="255,255,255"/>
+					<baroption check="0" stchar="0" fullascii="0" c128codeset="0" c128ean="0" codabarschar="0" codabarechar="0" c25schar="0" c25echar="0" eanaddon="0" eanbbar="0" eanufnt="0" ranuface="Arial" itf14bar="1" itf14barwidth="5" itf14barspace="10" itf14check="1" rsstype="0" rssseph="1" rsssegr="11" rsshold="0"/>
+					<baroption2 p417cols="0" p4172rows="0" p417ecc="0" p417t="0" qrecc="1" qrver="0" dmbw="0" mxsize="0" mxmode="0" hsecc="0" hsencrypt="0" hskey="" hsver="0" codepage="0" hollow="0" stdisx="4" stdisy="4" stdot="1" width2d="2000" height2d="2000"/>
+				</drawobj>
+				<drawobj type="drawbarcode" id="117" name="" left="5142" top="7993" right="5730" bottom="9252" rotation="none" style="0" halign="0" valign="0" tpalign="0" tvalign="0">
+					<color type="0" mode="1" table="0" change="0" varname="" index="123" colors="#FF0000,#00FF00,#0000FF" col="2" row="2"/>
+					<barcode btype="1" barwidth="493" charextra="0" gapwidth="0" radio="300" wide="300" reduction="0" high="859" width="0" fwidth="0" readable="3" ralign="2" rcolgap="0" readx="0" ready="0" templet="0" templtestr=""/>
+					<font facename="Arial" style="0" charset="0" height="1000" width="10000" italic="0" steikeout="0" underline="0" family="34" color="0,0,0" bkcolor="255,255,255"/>
+					<baroption check="0" stchar="0" fullascii="0" c128codeset="0" c128ean="0" codabarschar="0" codabarechar="0" c25schar="0" c25echar="0" eanaddon="0" eanbbar="0" eanufnt="0" ranuface="Arial" itf14bar="1" itf14barwidth="5" itf14barspace="10" itf14check="1" rsstype="0" rssseph="1" rsssegr="11" rsshold="0"/>
+					<baroption2 p417cols="0" p4172rows="0" p417ecc="0" p417t="0" qrecc="1" qrver="0" dmbw="0" mxsize="0" mxmode="0" hsecc="0" hsencrypt="0" hskey="" hsver="0" codepage="0" hollow="0" stdisx="4" stdisy="4" stdot="1" width2d="2000" height2d="2000"/>
+				</drawobj>
+				<drawobj type="drawbarcode" id="138" name="" left="7419" top="7993" right="8007" bottom="9252" rotation="none" style="0" halign="0" valign="0" tpalign="0" tvalign="0">
+					<color type="0" mode="1" table="0" change="0" varname="" index="123" colors="#FF0000,#00FF00,#0000FF" col="2" row="2"/>
+					<barcode btype="1" barwidth="493" charextra="0" gapwidth="0" radio="300" wide="300" reduction="0" high="859" width="0" fwidth="0" readable="3" ralign="2" rcolgap="0" readx="0" ready="0" templet="0" templtestr=""/>
+					<font facename="Arial" style="0" charset="0" height="1000" width="10000" italic="0" steikeout="0" underline="0" family="34" color="0,0,0" bkcolor="255,255,255"/>
+					<baroption check="0" stchar="0" fullascii="0" c128codeset="0" c128ean="0" codabarschar="0" codabarechar="0" c25schar="0" c25echar="0" eanaddon="0" eanbbar="0" eanufnt="0" ranuface="Arial" itf14bar="1" itf14barwidth="5" itf14barspace="10" itf14check="1" rsstype="0" rssseph="1" rsssegr="11" rsshold="0"/>
+					<baroption2 p417cols="0" p4172rows="0" p417ecc="0" p417t="0" qrecc="1" qrver="0" dmbw="0" mxsize="0" mxmode="0" hsecc="0" hsencrypt="0" hskey="" hsver="0" codepage="0" hollow="0" stdisx="4" stdisy="4" stdot="1" width2d="2000" height2d="2000"/>
+				</drawobj>
+				<drawobj type="drawtext" id="157" name="" left="4900" top="14135" right="5100" bottom="14948" rotation="none" style="0" halign="0" valign="0" tpalign="0" tvalign="0">
+					<color type="0" mode="1" table="0" change="0" varname="" index="123" colors="#FF0000,#00FF00,#0000FF" col="2" row="2"/>
+					<text type="1" width="0" align="2" cut="0" spactype="0" spacing="0" charextra="0" template="0" templtestr="" circr="0" circradian="0" circstart="0" circtw="0" circway="0"/>
+					<font facename="Arial" style="1" charset="1" height="2000" width="10000" italic="0" steikeout="0" underline="0" family="34" color="0,0,0" bkcolor="255,255,255"/>
+				</drawobj>
+				<drawobj type="drawtext" id="158" name="" left="2509" top="504" right="4411" bottom="1055" rotation="none" style="0" halign="0" valign="0" tpalign="0" tvalign="0">
+					<color type="0" mode="1" table="0" change="0" varname="" index="123" colors="#FF0000,#00FF00,#0000FF" col="2" row="2"/>
+					<text type="1" width="0" align="0" cut="0" spactype="0" spacing="0" charextra="0" template="0" templtestr="" circr="0" circradian="0" circstart="0" circtw="0" circway="0"/>
+					<font facename="Arial" style="0" charset="1" height="1400" width="0" italic="0" steikeout="0" underline="0" family="0" color="0,0,0" bkcolor="255,255,255"/>
+				</drawobj>
+				<drawobj type="drawtext" id="159" name="" left="2509" top="2593" right="4986" bottom="3144" rotation="none" style="0" halign="0" valign="0" tpalign="0" tvalign="0">
+					<color type="0" mode="1" table="0" change="0" varname="" index="123" colors="#FF0000,#00FF00,#0000FF" col="2" row="2"/>
+					<text type="1" width="0" align="0" cut="0" spactype="0" spacing="0" charextra="0" template="0" templtestr="" circr="0" circradian="0" circstart="0" circtw="0" circway="0"/>
+					<font facename="Arial" style="0" charset="1" height="1400" width="0" italic="0" steikeout="0" underline="0" family="0" color="0,0,0" bkcolor="255,255,255"/>
+				</drawobj>
+				<drawobj type="drawtext" id="163" name="" left="1160" top="3381" right="2411" bottom="3856" rotation="none" style="0" halign="0" valign="0" tpalign="0" tvalign="0">
+					<color type="0" mode="1" table="0" change="0" varname="" index="123" colors="#FF0000,#00FF00,#0000FF" col="2" row="2"/>
+					<text type="1" width="0" align="0" cut="0" spactype="0" spacing="0" charextra="0" template="0" templtestr="" circr="0" circradian="0" circstart="0" circtw="0" circway="0"/>
+					<font facename="Arial" style="1" charset="1" height="1200" width="10000" italic="0" steikeout="0" underline="0" family="34" color="0,0,0" bkcolor="255,255,255"/>
+				</drawobj>
+				<drawobj type="drawbarcode" id="179" name="" left="587" top="9785" right="1175" bottom="11044" rotation="none" style="0" halign="0" valign="0" tpalign="0" tvalign="0">
+					<color type="0" mode="1" table="0" change="0" varname="" index="123" colors="#FF0000,#00FF00,#0000FF" col="2" row="2"/>
+					<barcode btype="1" barwidth="493" charextra="0" gapwidth="0" radio="300" wide="300" reduction="0" high="859" width="0" fwidth="0" readable="3" ralign="2" rcolgap="0" readx="0" ready="0" templet="0" templtestr=""/>
+					<font facename="Arial" style="0" charset="0" height="1000" width="10000" italic="0" steikeout="0" underline="0" family="34" color="0,0,0" bkcolor="255,255,255"/>
+					<baroption check="0" stchar="0" fullascii="0" c128codeset="0" c128ean="0" codabarschar="0" codabarechar="0" c25schar="0" c25echar="0" eanaddon="0" eanbbar="0" eanufnt="0" ranuface="Arial" itf14bar="1" itf14barwidth="5" itf14barspace="10" itf14check="1" rsstype="0" rssseph="1" rsssegr="11" rsshold="0"/>
+					<baroption2 p417cols="0" p4172rows="0" p417ecc="0" p417t="0" qrecc="1" qrver="0" dmbw="0" mxsize="0" mxmode="0" hsecc="0" hsencrypt="0" hskey="" hsver="0" codepage="0" hollow="0" stdisx="4" stdisy="4" stdot="1" width2d="2000" height2d="2000"/>
+				</drawobj>
+				<drawobj type="drawbarcode" id="180" name="" left="2864" top="9785" right="3452" bottom="11044" rotation="none" style="0" halign="0" valign="0" tpalign="0" tvalign="0">
+					<color type="0" mode="1" table="0" change="0" varname="" index="123" colors="#FF0000,#00FF00,#0000FF" col="2" row="2"/>
+					<barcode btype="1" barwidth="493" charextra="0" gapwidth="0" radio="300" wide="300" reduction="0" high="859" width="0" fwidth="0" readable="3" ralign="2" rcolgap="0" readx="0" ready="0" templet="0" templtestr=""/>
+					<font facename="Arial" style="0" charset="0" height="1000" width="10000" italic="0" steikeout="0" underline="0" family="34" color="0,0,0" bkcolor="255,255,255"/>
+					<baroption check="0" stchar="0" fullascii="0" c128codeset="0" c128ean="0" codabarschar="0" codabarechar="0" c25schar="0" c25echar="0" eanaddon="0" eanbbar="0" eanufnt="0" ranuface="Arial" itf14bar="1" itf14barwidth="5" itf14barspace="10" itf14check="1" rsstype="0" rssseph="1" rsssegr="11" rsshold="0"/>
+					<baroption2 p417cols="0" p4172rows="0" p417ecc="0" p417t="0" qrecc="1" qrver="0" dmbw="0" mxsize="0" mxmode="0" hsecc="0" hsencrypt="0" hskey="" hsver="0" codepage="0" hollow="0" stdisx="4" stdisy="4" stdot="1" width2d="2000" height2d="2000"/>
+				</drawobj>
+				<drawobj type="drawbarcode" id="181" name="" left="5142" top="9785" right="5730" bottom="11044" rotation="none" style="0" halign="0" valign="0" tpalign="0" tvalign="0">
+					<color type="0" mode="1" table="0" change="0" varname="" index="123" colors="#FF0000,#00FF00,#0000FF" col="2" row="2"/>
+					<barcode btype="1" barwidth="493" charextra="0" gapwidth="0" radio="300" wide="300" reduction="0" high="859" width="0" fwidth="0" readable="3" ralign="2" rcolgap="0" readx="0" ready="0" templet="0" templtestr=""/>
+					<font facename="Arial" style="0" charset="0" height="1000" width="10000" italic="0" steikeout="0" underline="0" family="34" color="0,0,0" bkcolor="255,255,255"/>
+					<baroption check="0" stchar="0" fullascii="0" c128codeset="0" c128ean="0" codabarschar="0" codabarechar="0" c25schar="0" c25echar="0" eanaddon="0" eanbbar="0" eanufnt="0" ranuface="Arial" itf14bar="1" itf14barwidth="5" itf14barspace="10" itf14check="1" rsstype="0" rssseph="1" rsssegr="11" rsshold="0"/>
+					<baroption2 p417cols="0" p4172rows="0" p417ecc="0" p417t="0" qrecc="1" qrver="0" dmbw="0" mxsize="0" mxmode="0" hsecc="0" hsencrypt="0" hskey="" hsver="0" codepage="0" hollow="0" stdisx="4" stdisy="4" stdot="1" width2d="2000" height2d="2000"/>
+				</drawobj>
+				<drawobj type="drawbarcode" id="183" name="" left="7419" top="9785" right="8007" bottom="11044" rotation="none" style="0" halign="0" valign="0" tpalign="0" tvalign="0">
+					<color type="0" mode="1" table="0" change="0" varname="" index="123" colors="#FF0000,#00FF00,#0000FF" col="2" row="2"/>
+					<barcode btype="1" barwidth="493" charextra="0" gapwidth="0" radio="300" wide="300" reduction="0" high="859" width="0" fwidth="0" readable="3" ralign="2" rcolgap="0" readx="0" ready="0" templet="0" templtestr=""/>
+					<font facename="Arial" style="0" charset="0" height="1000" width="10000" italic="0" steikeout="0" underline="0" family="34" color="0,0,0" bkcolor="255,255,255"/>
+					<baroption check="0" stchar="0" fullascii="0" c128codeset="0" c128ean="0" codabarschar="0" codabarechar="0" c25schar="0" c25echar="0" eanaddon="0" eanbbar="0" eanufnt="0" ranuface="Arial" itf14bar="1" itf14barwidth="5" itf14barspace="10" itf14check="1" rsstype="0" rssseph="1" rsssegr="11" rsshold="0"/>
+					<baroption2 p417cols="0" p4172rows="0" p417ecc="0" p417t="0" qrecc="1" qrver="0" dmbw="0" mxsize="0" mxmode="0" hsecc="0" hsencrypt="0" hskey="" hsver="0" codepage="0" hollow="0" stdisx="4" stdisy="4" stdot="1" width2d="2000" height2d="2000"/>
+				</drawobj>
+				<drawobj type="drawbarcode" id="184" name="" left="587" top="11576" right="1175" bottom="12835" rotation="none" style="0" halign="0" valign="0" tpalign="0" tvalign="0">
+					<color type="0" mode="1" table="0" change="0" varname="" index="123" colors="#FF0000,#00FF00,#0000FF" col="2" row="2"/>
+					<barcode btype="1" barwidth="493" charextra="0" gapwidth="0" radio="300" wide="300" reduction="0" high="859" width="0" fwidth="0" readable="3" ralign="2" rcolgap="0" readx="0" ready="0" templet="0" templtestr=""/>
+					<font facename="Arial" style="0" charset="0" height="1000" width="10000" italic="0" steikeout="0" underline="0" family="34" color="0,0,0" bkcolor="255,255,255"/>
+					<baroption check="0" stchar="0" fullascii="0" c128codeset="0" c128ean="0" codabarschar="0" codabarechar="0" c25schar="0" c25echar="0" eanaddon="0" eanbbar="0" eanufnt="0" ranuface="Arial" itf14bar="1" itf14barwidth="5" itf14barspace="10" itf14check="1" rsstype="0" rssseph="1" rsssegr="11" rsshold="0"/>
+					<baroption2 p417cols="0" p4172rows="0" p417ecc="0" p417t="0" qrecc="1" qrver="0" dmbw="0" mxsize="0" mxmode="0" hsecc="0" hsencrypt="0" hskey="" hsver="0" codepage="0" hollow="0" stdisx="4" stdisy="4" stdot="1" width2d="2000" height2d="2000"/>
+				</drawobj>
+				<drawobj type="drawbarcode" id="185" name="" left="2864" top="11576" right="3452" bottom="12835" rotation="none" style="0" halign="0" valign="0" tpalign="0" tvalign="0">
+					<color type="0" mode="1" table="0" change="0" varname="" index="123" colors="#FF0000,#00FF00,#0000FF" col="2" row="2"/>
+					<barcode btype="1" barwidth="493" charextra="0" gapwidth="0" radio="300" wide="300" reduction="0" high="859" width="0" fwidth="0" readable="3" ralign="2" rcolgap="0" readx="0" ready="0" templet="0" templtestr=""/>
+					<font facename="Arial" style="0" charset="0" height="1000" width="10000" italic="0" steikeout="0" underline="0" family="34" color="0,0,0" bkcolor="255,255,255"/>
+					<baroption check="0" stchar="0" fullascii="0" c128codeset="0" c128ean="0" codabarschar="0" codabarechar="0" c25schar="0" c25echar="0" eanaddon="0" eanbbar="0" eanufnt="0" ranuface="Arial" itf14bar="1" itf14barwidth="5" itf14barspace="10" itf14check="1" rsstype="0" rssseph="1" rsssegr="11" rsshold="0"/>
+					<baroption2 p417cols="0" p4172rows="0" p417ecc="0" p417t="0" qrecc="1" qrver="0" dmbw="0" mxsize="0" mxmode="0" hsecc="0" hsencrypt="0" hskey="" hsver="0" codepage="0" hollow="0" stdisx="4" stdisy="4" stdot="1" width2d="2000" height2d="2000"/>
+				</drawobj>
+				<drawobj type="drawbarcode" id="186" name="" left="5142" top="11576" right="5730" bottom="12835" rotation="none" style="0" halign="0" valign="0" tpalign="0" tvalign="0">
+					<color type="0" mode="1" table="0" change="0" varname="" index="123" colors="#FF0000,#00FF00,#0000FF" col="2" row="2"/>
+					<barcode btype="1" barwidth="493" charextra="0" gapwidth="0" radio="300" wide="300" reduction="0" high="859" width="0" fwidth="0" readable="3" ralign="2" rcolgap="0" readx="0" ready="0" templet="0" templtestr=""/>
+					<font facename="Arial" style="0" charset="0" height="1000" width="10000" italic="0" steikeout="0" underline="0" family="34" color="0,0,0" bkcolor="255,255,255"/>
+					<baroption check="0" stchar="0" fullascii="0" c128codeset="0" c128ean="0" codabarschar="0" codabarechar="0" c25schar="0" c25echar="0" eanaddon="0" eanbbar="0" eanufnt="0" ranuface="Arial" itf14bar="1" itf14barwidth="5" itf14barspace="10" itf14check="1" rsstype="0" rssseph="1" rsssegr="11" rsshold="0"/>
+					<baroption2 p417cols="0" p4172rows="0" p417ecc="0" p417t="0" qrecc="1" qrver="0" dmbw="0" mxsize="0" mxmode="0" hsecc="0" hsencrypt="0" hskey="" hsver="0" codepage="0" hollow="0" stdisx="4" stdisy="4" stdot="1" width2d="2000" height2d="2000"/>
+				</drawobj>
+				<drawobj type="drawbarcode" id="188" name="" left="7419" top="11576" right="8007" bottom="12835" rotation="none" style="0" halign="0" valign="0" tpalign="0" tvalign="0">
+					<color type="0" mode="1" table="0" change="0" varname="" index="123" colors="#FF0000,#00FF00,#0000FF" col="2" row="2"/>
+					<barcode btype="1" barwidth="493" charextra="0" gapwidth="0" radio="300" wide="300" reduction="0" high="859" width="0" fwidth="0" readable="3" ralign="2" rcolgap="0" readx="0" ready="0" templet="0" templtestr=""/>
+					<font facename="Arial" style="0" charset="0" height="1000" width="10000" italic="0" steikeout="0" underline="0" family="34" color="0,0,0" bkcolor="255,255,255"/>
+					<baroption check="0" stchar="0" fullascii="0" c128codeset="0" c128ean="0" codabarschar="0" codabarechar="0" c25schar="0" c25echar="0" eanaddon="0" eanbbar="0" eanufnt="0" ranuface="Arial" itf14bar="1" itf14barwidth="5" itf14barspace="10" itf14check="1" rsstype="0" rssseph="1" rsssegr="11" rsshold="0"/>
+					<baroption2 p417cols="0" p4172rows="0" p417ecc="0" p417t="0" qrecc="1" qrver="0" dmbw="0" mxsize="0" mxmode="0" hsecc="0" hsencrypt="0" hskey="" hsver="0" codepage="0" hollow="0" stdisx="4" stdisy="4" stdot="1" width2d="2000" height2d="2000"/>
+				</drawobj>
+				<drawobj type="drawbarcode" id="189" name="" left="587" top="13368" right="1175" bottom="14627" rotation="none" style="0" halign="0" valign="0" tpalign="0" tvalign="0">
+					<color type="0" mode="1" table="0" change="0" varname="" index="123" colors="#FF0000,#00FF00,#0000FF" col="2" row="2"/>
+					<barcode btype="1" barwidth="493" charextra="0" gapwidth="0" radio="300" wide="300" reduction="0" high="859" width="0" fwidth="0" readable="3" ralign="2" rcolgap="0" readx="0" ready="0" templet="0" templtestr=""/>
+					<font facename="Arial" style="0" charset="0" height="1000" width="10000" italic="0" steikeout="0" underline="0" family="34" color="0,0,0" bkcolor="255,255,255"/>
+					<baroption check="0" stchar="0" fullascii="0" c128codeset="0" c128ean="0" codabarschar="0" codabarechar="0" c25schar="0" c25echar="0" eanaddon="0" eanbbar="0" eanufnt="0" ranuface="Arial" itf14bar="1" itf14barwidth="5" itf14barspace="10" itf14check="1" rsstype="0" rssseph="1" rsssegr="11" rsshold="0"/>
+					<baroption2 p417cols="0" p4172rows="0" p417ecc="0" p417t="0" qrecc="1" qrver="0" dmbw="0" mxsize="0" mxmode="0" hsecc="0" hsencrypt="0" hskey="" hsver="0" codepage="0" hollow="0" stdisx="4" stdisy="4" stdot="1" width2d="2000" height2d="2000"/>
+				</drawobj>
+				<drawobj type="drawbarcode" id="190" name="" left="2864" top="13354" right="3452" bottom="14613" rotation="none" style="0" halign="0" valign="0" tpalign="0" tvalign="0">
+					<color type="0" mode="1" table="0" change="0" varname="" index="123" colors="#FF0000,#00FF00,#0000FF" col="2" row="2"/>
+					<barcode btype="1" barwidth="493" charextra="0" gapwidth="0" radio="300" wide="300" reduction="0" high="859" width="0" fwidth="0" readable="3" ralign="2" rcolgap="0" readx="0" ready="0" templet="0" templtestr=""/>
+					<font facename="Arial" style="0" charset="0" height="1000" width="10000" italic="0" steikeout="0" underline="0" family="34" color="0,0,0" bkcolor="255,255,255"/>
+					<baroption check="0" stchar="0" fullascii="0" c128codeset="0" c128ean="0" codabarschar="0" codabarechar="0" c25schar="0" c25echar="0" eanaddon="0" eanbbar="0" eanufnt="0" ranuface="Arial" itf14bar="1" itf14barwidth="5" itf14barspace="10" itf14check="1" rsstype="0" rssseph="1" rsssegr="11" rsshold="0"/>
+					<baroption2 p417cols="0" p4172rows="0" p417ecc="0" p417t="0" qrecc="1" qrver="0" dmbw="0" mxsize="0" mxmode="0" hsecc="0" hsencrypt="0" hskey="" hsver="0" codepage="0" hollow="0" stdisx="4" stdisy="4" stdot="1" width2d="2000" height2d="2000"/>
+				</drawobj>
+				<drawobj type="drawbarcode" id="191" name="" left="5142" top="13368" right="5730" bottom="14627" rotation="none" style="0" halign="0" valign="0" tpalign="0" tvalign="0">
+					<color type="0" mode="1" table="0" change="0" varname="" index="123" colors="#FF0000,#00FF00,#0000FF" col="2" row="2"/>
+					<barcode btype="1" barwidth="493" charextra="0" gapwidth="0" radio="300" wide="300" reduction="0" high="859" width="0" fwidth="0" readable="3" ralign="2" rcolgap="0" readx="0" ready="0" templet="0" templtestr=""/>
+					<font facename="Arial" style="0" charset="0" height="1000" width="10000" italic="0" steikeout="0" underline="0" family="34" color="0,0,0" bkcolor="255,255,255"/>
+					<baroption check="0" stchar="0" fullascii="0" c128codeset="0" c128ean="0" codabarschar="0" codabarechar="0" c25schar="0" c25echar="0" eanaddon="0" eanbbar="0" eanufnt="0" ranuface="Arial" itf14bar="1" itf14barwidth="5" itf14barspace="10" itf14check="1" rsstype="0" rssseph="1" rsssegr="11" rsshold="0"/>
+					<baroption2 p417cols="0" p4172rows="0" p417ecc="0" p417t="0" qrecc="1" qrver="0" dmbw="0" mxsize="0" mxmode="0" hsecc="0" hsencrypt="0" hskey="" hsver="0" codepage="0" hollow="0" stdisx="4" stdisy="4" stdot="1" width2d="2000" height2d="2000"/>
+				</drawobj>
+				<drawobj type="drawbarcode" id="193" name="" left="7419" top="13368" right="8007" bottom="14627" rotation="none" style="0" halign="0" valign="0" tpalign="0" tvalign="0">
+					<color type="0" mode="1" table="0" change="0" varname="" index="123" colors="#FF0000,#00FF00,#0000FF" col="2" row="2"/>
+					<barcode btype="1" barwidth="493" charextra="0" gapwidth="0" radio="300" wide="300" reduction="0" high="859" width="0" fwidth="0" readable="3" ralign="2" rcolgap="0" readx="0" ready="0" templet="0" templtestr=""/>
+					<font facename="Arial" style="0" charset="0" height="1000" width="10000" italic="0" steikeout="0" underline="0" family="34" color="0,0,0" bkcolor="255,255,255"/>
+					<baroption check="0" stchar="0" fullascii="0" c128codeset="0" c128ean="0" codabarschar="0" codabarechar="0" c25schar="0" c25echar="0" eanaddon="0" eanbbar="0" eanufnt="0" ranuface="Arial" itf14bar="1" itf14barwidth="5" itf14barspace="10" itf14check="1" rsstype="0" rssseph="1" rsssegr="11" rsshold="0"/>
+					<baroption2 p417cols="0" p4172rows="0" p417ecc="0" p417t="0" qrecc="1" qrver="0" dmbw="0" mxsize="0" mxmode="0" hsecc="0" hsencrypt="0" hskey="" hsver="0" codepage="0" hollow="0" stdisx="4" stdisy="4" stdot="1" width2d="2000" height2d="2000"/>
+				</drawobj>
+				<drawobj type="drawbarcode" id="209" name="" left="587" top="6201" right="1175" bottom="7460" rotation="none" style="0" halign="0" valign="0" tpalign="0" tvalign="0">
+					<color type="0" mode="1" table="0" change="0" varname="" index="123" colors="#FF0000,#00FF00,#0000FF" col="2" row="2"/>
+					<barcode btype="1" barwidth="493" charextra="0" gapwidth="0" radio="300" wide="300" reduction="0" high="859" width="0" fwidth="0" readable="3" ralign="2" rcolgap="0" readx="0" ready="0" templet="0" templtestr=""/>
+					<font facename="Arial" style="0" charset="0" height="1000" width="10000" italic="0" steikeout="0" underline="0" family="34" color="0,0,0" bkcolor="255,255,255"/>
+					<baroption check="0" stchar="0" fullascii="0" c128codeset="0" c128ean="0" codabarschar="0" codabarechar="0" c25schar="0" c25echar="0" eanaddon="0" eanbbar="0" eanufnt="0" ranuface="Arial" itf14bar="1" itf14barwidth="5" itf14barspace="10" itf14check="1" rsstype="0" rssseph="1" rsssegr="11" rsshold="0"/>
+					<baroption2 p417cols="0" p4172rows="0" p417ecc="0" p417t="0" qrecc="1" qrver="0" dmbw="0" mxsize="0" mxmode="0" hsecc="0" hsencrypt="0" hskey="" hsver="0" codepage="0" hollow="0" stdisx="4" stdisy="4" stdot="1" width2d="2000" height2d="2000"/>
+				</drawobj>
+				<drawobj type="drawbarcode" id="210" name="" left="2864" top="6201" right="3452" bottom="7460" rotation="none" style="0" halign="0" valign="0" tpalign="0" tvalign="0">
+					<color type="0" mode="1" table="0" change="0" varname="" index="123" colors="#FF0000,#00FF00,#0000FF" col="2" row="2"/>
+					<barcode btype="1" barwidth="493" charextra="0" gapwidth="0" radio="300" wide="300" reduction="0" high="859" width="0" fwidth="0" readable="3" ralign="2" rcolgap="0" readx="0" ready="0" templet="0" templtestr=""/>
+					<font facename="Arial" style="0" charset="0" height="1000" width="10000" italic="0" steikeout="0" underline="0" family="34" color="0,0,0" bkcolor="255,255,255"/>
+					<baroption check="0" stchar="0" fullascii="0" c128codeset="0" c128ean="0" codabarschar="0" codabarechar="0" c25schar="0" c25echar="0" eanaddon="0" eanbbar="0" eanufnt="0" ranuface="Arial" itf14bar="1" itf14barwidth="5" itf14barspace="10" itf14check="1" rsstype="0" rssseph="1" rsssegr="11" rsshold="0"/>
+					<baroption2 p417cols="0" p4172rows="0" p417ecc="0" p417t="0" qrecc="1" qrver="0" dmbw="0" mxsize="0" mxmode="0" hsecc="0" hsencrypt="0" hskey="" hsver="0" codepage="0" hollow="0" stdisx="4" stdisy="4" stdot="1" width2d="2000" height2d="2000"/>
+				</drawobj>
+				<drawobj type="drawbarcode" id="211" name="" left="5142" top="6201" right="5730" bottom="7460" rotation="none" style="0" halign="0" valign="0" tpalign="0" tvalign="0">
+					<color type="0" mode="1" table="0" change="0" varname="" index="123" colors="#FF0000,#00FF00,#0000FF" col="2" row="2"/>
+					<barcode btype="1" barwidth="493" charextra="0" gapwidth="0" radio="300" wide="300" reduction="0" high="859" width="0" fwidth="0" readable="3" ralign="2" rcolgap="0" readx="0" ready="0" templet="0" templtestr=""/>
+					<font facename="Arial" style="0" charset="0" height="1000" width="10000" italic="0" steikeout="0" underline="0" family="34" color="0,0,0" bkcolor="255,255,255"/>
+					<baroption check="0" stchar="0" fullascii="0" c128codeset="0" c128ean="0" codabarschar="0" codabarechar="0" c25schar="0" c25echar="0" eanaddon="0" eanbbar="0" eanufnt="0" ranuface="Arial" itf14bar="1" itf14barwidth="5" itf14barspace="10" itf14check="1" rsstype="0" rssseph="1" rsssegr="11" rsshold="0"/>
+					<baroption2 p417cols="0" p4172rows="0" p417ecc="0" p417t="0" qrecc="1" qrver="0" dmbw="0" mxsize="0" mxmode="0" hsecc="0" hsencrypt="0" hskey="" hsver="0" codepage="0" hollow="0" stdisx="4" stdisy="4" stdot="1" width2d="2000" height2d="2000"/>
+				</drawobj>
+				<drawobj type="drawbarcode" id="213" name="" left="7419" top="6201" right="8007" bottom="7460" rotation="none" style="0" halign="0" valign="0" tpalign="0" tvalign="0">
+					<color type="0" mode="1" table="0" change="0" varname="" index="123" colors="#FF0000,#00FF00,#0000FF" col="2" row="2"/>
+					<barcode btype="1" barwidth="493" charextra="0" gapwidth="0" radio="300" wide="300" reduction="0" high="859" width="0" fwidth="0" readable="3" ralign="2" rcolgap="0" readx="0" ready="0" templet="0" templtestr=""/>
+					<font facename="Arial" style="0" charset="0" height="1000" width="10000" italic="0" steikeout="0" underline="0" family="34" color="0,0,0" bkcolor="255,255,255"/>
+					<baroption check="0" stchar="0" fullascii="0" c128codeset="0" c128ean="0" codabarschar="0" codabarechar="0" c25schar="0" c25echar="0" eanaddon="0" eanbbar="0" eanufnt="0" ranuface="Arial" itf14bar="1" itf14barwidth="5" itf14barspace="10" itf14check="1" rsstype="0" rssseph="1" rsssegr="11" rsshold="0"/>
+					<baroption2 p417cols="0" p4172rows="0" p417ecc="0" p417t="0" qrecc="1" qrver="0" dmbw="0" mxsize="0" mxmode="0" hsecc="0" hsencrypt="0" hskey="" hsver="0" codepage="0" hollow="0" stdisx="4" stdisy="4" stdot="1" width2d="2000" height2d="2000"/>
+				</drawobj>
+				<drawobj type="drawtext" id="266" name="" left="2503" top="1200" right="3054" bottom="1751" rotation="none" style="0" halign="0" valign="0" tpalign="0" tvalign="0">
+					<color type="0" mode="1" table="0" change="0" varname="" index="123" colors="#FF0000,#00FF00,#0000FF" col="2" row="2"/>
+					<text type="1" width="0" align="0" cut="0" spactype="0" spacing="0" charextra="0" template="0" templtestr="" circr="0" circradian="0" circstart="0" circtw="0" circway="0"/>
+					<font facename="Arial" style="0" charset="1" height="1400" width="0" italic="0" steikeout="0" underline="0" family="0" color="0,0,0" bkcolor="255,255,255"/>
+				</drawobj>
+				<drawobj type="drawtext" id="267" name="" left="660" top="1200" right="1774" bottom="1751" rotation="none" style="0" halign="0" valign="0" tpalign="0" tvalign="0">
+					<color type="0" mode="1" table="0" change="0" varname="" index="123" colors="#FF0000,#00FF00,#0000FF" col="2" row="2"/>
+					<text type="1" width="0" align="0" cut="0" spactype="0" spacing="0" charextra="0" template="0" templtestr="" circr="0" circradian="0" circstart="0" circtw="0" circway="0"/>
+					<font facename="Arial" style="0" charset="1" height="1400" width="0" italic="0" steikeout="0" underline="0" family="0" color="0,0,0" bkcolor="255,255,255"/>
+				</drawobj>
+				<drawobj type="drawtext" id="282" name="" left="7127" top="5309" right="9379" bottom="5709" rotation="none" style="0" halign="0" valign="0" tpalign="0" tvalign="0">
+					<color type="0" mode="1" table="0" change="0" varname="" index="123" colors="#FF0000,#00FF00,#0000FF" col="2" row="2"/>
+					<text type="1" width="0" align="0" cut="0" spactype="0" spacing="0" charextra="0" template="0" templtestr="" circr="0" circradian="0" circstart="0" circtw="0" circway="0"/>
+					<font facename="Arial" style="0" charset="1" height="1000" width="0" italic="0" steikeout="0" underline="0" family="0" color="0,0,0" bkcolor="255,255,255"/>
+				</drawobj>
+			</labelobjects>
+			<objvarlink link=":30,336:32,31:34,33:36,35:38,37:42,41:59:114,146:116,194:117,195:138,196:157,321:158,160:159,161:163,162:179,215:180,198:181,199:183,200:184,201:185,216:186,203:188,204:189,205:190,206:191,217:193,208:209,286:210,285:211,284:213,283:266,268:267,265:282,281"/>
+		</labellayer>
+		<variables>
+			<variable type="constant" id="31" name="" shareid="qr" data="MTIzNDU2NzgsMTIzNDU2NzgsMTIzNDU2NzgsMTIzNDU2NzgsMTIzNDU2NzgsMTIzNDU2NzgsMTIzNDU2NzgsMTIzNDU2NzgsMTIzNDU2NzgsMTIzNDU2NzgsMTIzNDU2NzgsMTIzNDU2Nzg=" serialtype="0" serialstep="1" serialrepeat="1" serealreptype="0" serealreset="0" serealchars="" serealupper="" sereallower="" serealfield="" serealforder="0" serealsrc="0" databasefield="" databasegrindex="0" keyboardprompt="" keyboardsrc="0" weighttype="1" datatimetype="0" datatimeoffect="0" datatimeformat="" datatimelocate="" usertc="0" rtctype="0" scripttext="" scriptpriv="RnVuY3Rpb24gT25HZXREYXRhKCkNCiAgICBPbkdldERhdGEgPSAiMTIzNDU2NzgiDQpFbmQgRnVuY3Rpb24=" scripttype="0" scriptjs="ZnVuY3Rpb24gT25HZXREYXRhKCl7DQogICAgcmV0dXJuICIxMjM0NTY3OCI7DQp9">
+				<limit filled="left" fillchar="0" cutout="right"/>
+				<cut/>
+			</variable>
+			<variable type="constant" id="33" name="" shareid="" data="TW9kZWw6" serialtype="0" serialstep="1" serialrepeat="1" serealreptype="0" serealreset="0" serealchars="" serealupper="" sereallower="" serealfield="" serealforder="0" serealsrc="0" databasefield="" databasegrindex="0" keyboardprompt="" keyboardsrc="0" weighttype="1" datatimetype="0" datatimeoffect="0" datatimeformat="" datatimelocate="" usertc="0" rtctype="0" scripttext="" scriptpriv="RnVuY3Rpb24gT25HZXREYXRhKCkNCiAgICBPbkdldERhdGEgPSAiMTIzNDU2NzgiDQpFbmQgRnVuY3Rpb24=" scripttype="0" scriptjs="ZnVuY3Rpb24gT25HZXREYXRhKCl7DQogICAgcmV0dXJuICIxMjM0NTY3OCI7DQp9">
+				<limit filled="left" fillchar="0" cutout="right"/>
+				<cut/>
+			</variable>
+			<variable type="constant" id="35" name="" shareid="weight" data="MjBLRw==" serialtype="0" serialstep="1" serialrepeat="1" serealreptype="0" serealreset="0" serealchars="" serealupper="" sereallower="" serealfield="" serealforder="0" serealsrc="0" databasefield="" databasegrindex="0" keyboardprompt="" keyboardsrc="0" weighttype="1" datatimetype="0" datatimeoffect="0" datatimeformat="" datatimelocate="" usertc="0" rtctype="0" scripttext="" scriptpriv="RnVuY3Rpb24gT25HZXREYXRhKCkNCiAgICBPbkdldERhdGEgPSAiMTIzNDU2NzgiDQpFbmQgRnVuY3Rpb24=" scripttype="0" scriptjs="ZnVuY3Rpb24gT25HZXREYXRhKCl7DQogICAgcmV0dXJuICIxMjM0NTY3OCI7DQp9">
+				<limit filled="left" fillchar="0" cutout="right"/>
+				<cut/>
+			</variable>
+			<variable type="constant" id="37" name="" shareid="" data="V2VpZ2h0Og==" serialtype="0" serialstep="1" serialrepeat="1" serealreptype="0" serealreset="0" serealchars="" serealupper="" sereallower="" serealfield="" serealforder="0" serealsrc="0" databasefield="" databasegrindex="0" keyboardprompt="" keyboardsrc="0" weighttype="1" datatimetype="0" datatimeoffect="0" datatimeformat="" datatimelocate="" usertc="0" rtctype="0" scripttext="" scriptpriv="RnVuY3Rpb24gT25HZXREYXRhKCkNCiAgICBPbkdldERhdGEgPSAiMTIzNDU2NzgiDQpFbmQgRnVuY3Rpb24=" scripttype="0" scriptjs="ZnVuY3Rpb24gT25HZXREYXRhKCl7DQogICAgcmV0dXJuICIxMjM0NTY3OCI7DQp9">
+				<limit filled="left" fillchar="0" cutout="right"/>
+				<cut/>
+			</variable>
+			<variable type="constant" id="41" name="" shareid="" data="RGF0ZTo=" serialtype="0" serialstep="1" serialrepeat="1" serealreptype="0" serealreset="0" serealchars="" serealupper="" sereallower="" serealfield="" serealforder="0" serealsrc="0" databasefield="" databasegrindex="0" keyboardprompt="" keyboardsrc="0" weighttype="1" datatimetype="0" datatimeoffect="0" datatimeformat="" datatimelocate="" usertc="0" rtctype="0" scripttext="" scriptpriv="RnVuY3Rpb24gT25HZXREYXRhKCkNCiAgICBPbkdldERhdGEgPSAiMTIzNDU2NzgiDQpFbmQgRnVuY3Rpb24=" scripttype="0" scriptjs="ZnVuY3Rpb24gT25HZXREYXRhKCl7DQogICAgcmV0dXJuICIxMjM0NTY3OCI7DQp9">
+				<limit filled="left" fillchar="0" cutout="right"/>
+				<cut/>
+			</variable>
+			<variable type="constant" id="286" name="" shareid="1" data="" serialtype="0" serialstep="1" serialrepeat="1" serealreptype="0" serealreset="0" serealchars="" serealupper="" sereallower="" serealfield="" serealforder="0" serealsrc="0" databasefield="12|12|Database|62|0|0" databasegrindex="0" keyboardprompt="" keyboardsrc="0" weighttype="1" datatimetype="0" datatimeoffect="0" datatimeformat="" datatimelocate="" usertc="0" rtctype="0" scripttext="" scriptpriv="RnVuY3Rpb24gT25HZXREYXRhKCkNCiAgICBPbkdldERhdGEgPSAiMTIzNDU2NzgiDQpFbmQgRnVuY3Rpb24=" scripttype="0" scriptjs="ZnVuY3Rpb24gT25HZXREYXRhKCl7DQogICAgcmV0dXJuICIxMjM0NTY3OCI7DQp9">
+				<limit filled="left" fillchar="0" cutout="right"/>
+				<cut/>
+			</variable>
+			<variable type="constant" id="285" name="" shareid="2" data="" serialtype="0" serialstep="1" serialrepeat="1" serealreptype="0" serealreset="0" serealchars="" serealupper="" sereallower="" serealfield="" serealforder="0" serealsrc="0" databasefield="12|12|Database|62|0|0" databasegrindex="0" keyboardprompt="" keyboardsrc="0" weighttype="1" datatimetype="0" datatimeoffect="0" datatimeformat="" datatimelocate="" usertc="0" rtctype="0" scripttext="" scriptpriv="RnVuY3Rpb24gT25HZXREYXRhKCkNCiAgICBPbkdldERhdGEgPSAiMTIzNDU2NzgiDQpFbmQgRnVuY3Rpb24=" scripttype="0" scriptjs="ZnVuY3Rpb24gT25HZXREYXRhKCl7DQogICAgcmV0dXJuICIxMjM0NTY3OCI7DQp9">
+				<limit filled="left" fillchar="0" cutout="right"/>
+				<cut/>
+			</variable>
+			<variable type="constant" id="284" name="" shareid="3" data="" serialtype="0" serialstep="1" serialrepeat="1" serealreptype="0" serealreset="0" serealchars="" serealupper="" sereallower="" serealfield="" serealforder="0" serealsrc="0" databasefield="12|12|Database|62|0|0" databasegrindex="0" keyboardprompt="" keyboardsrc="0" weighttype="1" datatimetype="0" datatimeoffect="0" datatimeformat="" datatimelocate="" usertc="0" rtctype="0" scripttext="" scriptpriv="RnVuY3Rpb24gT25HZXREYXRhKCkNCiAgICBPbkdldERhdGEgPSAiMTIzNDU2NzgiDQpFbmQgRnVuY3Rpb24=" scripttype="0" scriptjs="ZnVuY3Rpb24gT25HZXREYXRhKCl7DQogICAgcmV0dXJuICIxMjM0NTY3OCI7DQp9">
+				<limit filled="left" fillchar="0" cutout="right"/>
+				<cut/>
+			</variable>
+			<variable type="constant" id="146" name="" shareid="5" data="" serialtype="0" serialstep="1" serialrepeat="1" serealreptype="0" serealreset="0" serealchars="" serealupper="" sereallower="" serealfield="" serealforder="0" serealsrc="0" databasefield="12|12|Database|62|0|0" databasegrindex="0" keyboardprompt="" keyboardsrc="0" weighttype="1" datatimetype="0" datatimeoffect="0" datatimeformat="" datatimelocate="" usertc="0" rtctype="0" scripttext="" scriptpriv="RnVuY3Rpb24gT25HZXREYXRhKCkNCiAgICBPbkdldERhdGEgPSAiMTIzNDU2NzgiDQpFbmQgRnVuY3Rpb24=" scripttype="0" scriptjs="ZnVuY3Rpb24gT25HZXREYXRhKCl7DQogICAgcmV0dXJuICIxMjM0NTY3OCI7DQp9">
+				<limit filled="left" fillchar="0" cutout="right"/>
+				<cut/>
+			</variable>
+			<variable type="constant" id="321" name="" shareid="isEnd" data="" serialtype="0" serialstep="1" serialrepeat="1" serealreptype="0" serealreset="0" serealchars="" serealupper="" sereallower="" serealfield="" serealforder="0" serealsrc="0" databasefield="" databasegrindex="0" keyboardprompt="" keyboardsrc="0" weighttype="1" datatimetype="0" datatimeoffect="0" datatimeformat="" datatimelocate="" usertc="0" rtctype="0" scripttext="" scriptpriv="RnVuY3Rpb24gT25HZXREYXRhKCkNCiAgICBPbkdldERhdGEgPSAiMTIzNDU2NzgiDQpFbmQgRnVuY3Rpb24=" scripttype="0" scriptjs="ZnVuY3Rpb24gT25HZXREYXRhKCl7DQogICAgcmV0dXJuICIxMjM0NTY3OCI7DQp9">
+				<limit filled="left" fillchar="0" cutout="right"/>
+				<cut/>
+			</variable>
+			<variable type="constant" id="160" name="" shareid="model" data="UkJEQjAy" serialtype="0" serialstep="1" serialrepeat="1" serealreptype="0" serealreset="0" serealchars="" serealupper="" sereallower="" serealfield="" serealforder="0" serealsrc="0" databasefield="" databasegrindex="0" keyboardprompt="" keyboardsrc="0" weighttype="1" datatimetype="0" datatimeoffect="0" datatimeformat="" datatimelocate="" usertc="0" rtctype="0" scripttext="" scriptpriv="RnVuY3Rpb24gT25HZXREYXRhKCkNCiAgICBPbkdldERhdGEgPSAiMTIzNDU2NzgiDQpFbmQgRnVuY3Rpb24=" scripttype="0" scriptjs="ZnVuY3Rpb24gT25HZXREYXRhKCl7DQogICAgcmV0dXJuICIxMjM0NTY3OCI7DQp9">
+				<limit filled="left" fillchar="0" cutout="right"/>
+				<cut/>
+			</variable>
+			<variable type="constant" id="161" name="" shareid="date" data="MjAyMC8xMi8xNw==" serialtype="0" serialstep="1" serialrepeat="1" serealreptype="0" serealreset="0" serealchars="" serealupper="" sereallower="" serealfield="" serealforder="0" serealsrc="0" databasefield="" databasegrindex="0" keyboardprompt="" keyboardsrc="0" weighttype="1" datatimetype="0" datatimeoffect="0" datatimeformat="" datatimelocate="" usertc="0" rtctype="0" scripttext="" scriptpriv="RnVuY3Rpb24gT25HZXREYXRhKCkNCiAgICBPbkdldERhdGEgPSAiMTIzNDU2NzgiDQpFbmQgRnVuY3Rpb24=" scripttype="0" scriptjs="ZnVuY3Rpb24gT25HZXREYXRhKCl7DQogICAgcmV0dXJuICIxMjM0NTY3OCI7DQp9">
+				<limit filled="left" fillchar="0" cutout="right"/>
+				<cut/>
+			</variable>
+			<variable type="constant" id="162" name="" shareid="batchNo" data="UE8zMzc=" serialtype="0" serialstep="1" serialrepeat="1" serealreptype="0" serealreset="0" serealchars="" serealupper="" sereallower="" serealfield="" serealforder="0" serealsrc="0" databasefield="" databasegrindex="0" keyboardprompt="" keyboardsrc="0" weighttype="1" datatimetype="0" datatimeoffect="0" datatimeformat="" datatimelocate="" usertc="0" rtctype="0" scripttext="" scriptpriv="RnVuY3Rpb24gT25HZXREYXRhKCkNCiAgICBPbkdldERhdGEgPSAiMTIzNDU2NzgiDQpFbmQgRnVuY3Rpb24=" scripttype="0" scriptjs="ZnVuY3Rpb24gT25HZXREYXRhKCl7DQogICAgcmV0dXJuICIxMjM0NTY3OCI7DQp9">
+				<limit filled="left" fillchar="0" cutout="right"/>
+				<cut/>
+			</variable>
+			<variable type="constant" id="194" name="" shareid="6" data="" serialtype="0" serialstep="1" serialrepeat="1" serealreptype="0" serealreset="0" serealchars="" serealupper="" sereallower="" serealfield="" serealforder="0" serealsrc="0" databasefield="12|12|Database|62|0|0" databasegrindex="0" keyboardprompt="" keyboardsrc="0" weighttype="1" datatimetype="0" datatimeoffect="0" datatimeformat="" datatimelocate="" usertc="0" rtctype="0" scripttext="" scriptpriv="RnVuY3Rpb24gT25HZXREYXRhKCkNCiAgICBPbkdldERhdGEgPSAiMTIzNDU2NzgiDQpFbmQgRnVuY3Rpb24=" scripttype="0" scriptjs="ZnVuY3Rpb24gT25HZXREYXRhKCl7DQogICAgcmV0dXJuICIxMjM0NTY3OCI7DQp9">
+				<limit filled="left" fillchar="0" cutout="right"/>
+				<cut/>
+			</variable>
+			<variable type="constant" id="195" name="" shareid="7" data="" serialtype="0" serialstep="1" serialrepeat="1" serealreptype="0" serealreset="0" serealchars="" serealupper="" sereallower="" serealfield="" serealforder="0" serealsrc="0" databasefield="12|12|Database|62|0|0" databasegrindex="0" keyboardprompt="" keyboardsrc="0" weighttype="1" datatimetype="0" datatimeoffect="0" datatimeformat="" datatimelocate="" usertc="0" rtctype="0" scripttext="" scriptpriv="RnVuY3Rpb24gT25HZXREYXRhKCkNCiAgICBPbkdldERhdGEgPSAiMTIzNDU2NzgiDQpFbmQgRnVuY3Rpb24=" scripttype="0" scriptjs="ZnVuY3Rpb24gT25HZXREYXRhKCl7DQogICAgcmV0dXJuICIxMjM0NTY3OCI7DQp9">
+				<limit filled="left" fillchar="0" cutout="right"/>
+				<cut/>
+			</variable>
+			<variable type="constant" id="196" name="" shareid="8" data="" serialtype="0" serialstep="1" serialrepeat="1" serealreptype="0" serealreset="0" serealchars="" serealupper="" sereallower="" serealfield="" serealforder="0" serealsrc="0" databasefield="12|12|Database|62|0|0" databasegrindex="0" keyboardprompt="" keyboardsrc="0" weighttype="1" datatimetype="0" datatimeoffect="0" datatimeformat="" datatimelocate="" usertc="0" rtctype="0" scripttext="" scriptpriv="RnVuY3Rpb24gT25HZXREYXRhKCkNCiAgICBPbkdldERhdGEgPSAiMTIzNDU2NzgiDQpFbmQgRnVuY3Rpb24=" scripttype="0" scriptjs="ZnVuY3Rpb24gT25HZXREYXRhKCl7DQogICAgcmV0dXJuICIxMjM0NTY3OCI7DQp9">
+				<limit filled="left" fillchar="0" cutout="right"/>
+				<cut/>
+			</variable>
+			<variable type="constant" id="198" name="" shareid="10" data="" serialtype="0" serialstep="1" serialrepeat="1" serealreptype="0" serealreset="0" serealchars="" serealupper="" sereallower="" serealfield="" serealforder="0" serealsrc="0" databasefield="12|12|Database|62|0|0" databasegrindex="0" keyboardprompt="" keyboardsrc="0" weighttype="1" datatimetype="0" datatimeoffect="0" datatimeformat="" datatimelocate="" usertc="0" rtctype="0" scripttext="" scriptpriv="RnVuY3Rpb24gT25HZXREYXRhKCkNCiAgICBPbkdldERhdGEgPSAiMTIzNDU2NzgiDQpFbmQgRnVuY3Rpb24=" scripttype="0" scriptjs="ZnVuY3Rpb24gT25HZXREYXRhKCl7DQogICAgcmV0dXJuICIxMjM0NTY3OCI7DQp9">
+				<limit filled="left" fillchar="0" cutout="right"/>
+				<cut/>
+			</variable>
+			<variable type="constant" id="199" name="" shareid="11" data="" serialtype="0" serialstep="1" serialrepeat="1" serealreptype="0" serealreset="0" serealchars="" serealupper="" sereallower="" serealfield="" serealforder="0" serealsrc="0" databasefield="12|12|Database|62|0|0" databasegrindex="0" keyboardprompt="" keyboardsrc="0" weighttype="1" datatimetype="0" datatimeoffect="0" datatimeformat="" datatimelocate="" usertc="0" rtctype="0" scripttext="" scriptpriv="RnVuY3Rpb24gT25HZXREYXRhKCkNCiAgICBPbkdldERhdGEgPSAiMTIzNDU2NzgiDQpFbmQgRnVuY3Rpb24=" scripttype="0" scriptjs="ZnVuY3Rpb24gT25HZXREYXRhKCl7DQogICAgcmV0dXJuICIxMjM0NTY3OCI7DQp9">
+				<limit filled="left" fillchar="0" cutout="right"/>
+				<cut/>
+			</variable>
+			<variable type="constant" id="200" name="" shareid="12" data="" serialtype="0" serialstep="1" serialrepeat="1" serealreptype="0" serealreset="0" serealchars="" serealupper="" sereallower="" serealfield="" serealforder="0" serealsrc="0" databasefield="12|12|Database|62|0|0" databasegrindex="0" keyboardprompt="" keyboardsrc="0" weighttype="1" datatimetype="0" datatimeoffect="0" datatimeformat="" datatimelocate="" usertc="0" rtctype="0" scripttext="" scriptpriv="RnVuY3Rpb24gT25HZXREYXRhKCkNCiAgICBPbkdldERhdGEgPSAiMTIzNDU2NzgiDQpFbmQgRnVuY3Rpb24=" scripttype="0" scriptjs="ZnVuY3Rpb24gT25HZXREYXRhKCl7DQogICAgcmV0dXJuICIxMjM0NTY3OCI7DQp9">
+				<limit filled="left" fillchar="0" cutout="right"/>
+				<cut/>
+			</variable>
+			<variable type="constant" id="201" name="" shareid="13" data="" serialtype="0" serialstep="1" serialrepeat="1" serealreptype="0" serealreset="0" serealchars="" serealupper="" sereallower="" serealfield="" serealforder="0" serealsrc="0" databasefield="12|12|Database|62|0|0" databasegrindex="0" keyboardprompt="" keyboardsrc="0" weighttype="1" datatimetype="0" datatimeoffect="0" datatimeformat="" datatimelocate="" usertc="0" rtctype="0" scripttext="" scriptpriv="RnVuY3Rpb24gT25HZXREYXRhKCkNCiAgICBPbkdldERhdGEgPSAiMTIzNDU2NzgiDQpFbmQgRnVuY3Rpb24=" scripttype="0" scriptjs="ZnVuY3Rpb24gT25HZXREYXRhKCl7DQogICAgcmV0dXJuICIxMjM0NTY3OCI7DQp9">
+				<limit filled="left" fillchar="0" cutout="right"/>
+				<cut/>
+			</variable>
+			<variable type="constant" id="203" name="" shareid="15" data="" serialtype="0" serialstep="1" serialrepeat="1" serealreptype="0" serealreset="0" serealchars="" serealupper="" sereallower="" serealfield="" serealforder="0" serealsrc="0" databasefield="12|12|Database|62|0|0" databasegrindex="0" keyboardprompt="" keyboardsrc="0" weighttype="1" datatimetype="0" datatimeoffect="0" datatimeformat="" datatimelocate="" usertc="0" rtctype="0" scripttext="" scriptpriv="RnVuY3Rpb24gT25HZXREYXRhKCkNCiAgICBPbkdldERhdGEgPSAiMTIzNDU2NzgiDQpFbmQgRnVuY3Rpb24=" scripttype="0" scriptjs="ZnVuY3Rpb24gT25HZXREYXRhKCl7DQogICAgcmV0dXJuICIxMjM0NTY3OCI7DQp9">
+				<limit filled="left" fillchar="0" cutout="right"/>
+				<cut/>
+			</variable>
+			<variable type="constant" id="204" name="" shareid="16" data="" serialtype="0" serialstep="1" serialrepeat="1" serealreptype="0" serealreset="0" serealchars="" serealupper="" sereallower="" serealfield="" serealforder="0" serealsrc="0" databasefield="12|12|Database|62|0|0" databasegrindex="0" keyboardprompt="" keyboardsrc="0" weighttype="1" datatimetype="0" datatimeoffect="0" datatimeformat="" datatimelocate="" usertc="0" rtctype="0" scripttext="" scriptpriv="RnVuY3Rpb24gT25HZXREYXRhKCkNCiAgICBPbkdldERhdGEgPSAiMTIzNDU2NzgiDQpFbmQgRnVuY3Rpb24=" scripttype="0" scriptjs="ZnVuY3Rpb24gT25HZXREYXRhKCl7DQogICAgcmV0dXJuICIxMjM0NTY3OCI7DQp9">
+				<limit filled="left" fillchar="0" cutout="right"/>
+				<cut/>
+			</variable>
+			<variable type="constant" id="205" name="" shareid="17" data="" serialtype="0" serialstep="1" serialrepeat="1" serealreptype="0" serealreset="0" serealchars="" serealupper="" sereallower="" serealfield="" serealforder="0" serealsrc="0" databasefield="12|12|Database|62|0|0" databasegrindex="0" keyboardprompt="" keyboardsrc="0" weighttype="1" datatimetype="0" datatimeoffect="0" datatimeformat="" datatimelocate="" usertc="0" rtctype="0" scripttext="" scriptpriv="RnVuY3Rpb24gT25HZXREYXRhKCkNCiAgICBPbkdldERhdGEgPSAiMTIzNDU2NzgiDQpFbmQgRnVuY3Rpb24=" scripttype="0" scriptjs="ZnVuY3Rpb24gT25HZXREYXRhKCl7DQogICAgcmV0dXJuICIxMjM0NTY3OCI7DQp9">
+				<limit filled="left" fillchar="0" cutout="right"/>
+				<cut/>
+			</variable>
+			<variable type="constant" id="206" name="" shareid="18" data="" serialtype="0" serialstep="1" serialrepeat="1" serealreptype="0" serealreset="0" serealchars="" serealupper="" sereallower="" serealfield="" serealforder="0" serealsrc="0" databasefield="12|12|Database|62|0|0" databasegrindex="0" keyboardprompt="" keyboardsrc="0" weighttype="1" datatimetype="0" datatimeoffect="0" datatimeformat="" datatimelocate="" usertc="0" rtctype="0" scripttext="" scriptpriv="RnVuY3Rpb24gT25HZXREYXRhKCkNCiAgICBPbkdldERhdGEgPSAiMTIzNDU2NzgiDQpFbmQgRnVuY3Rpb24=" scripttype="0" scriptjs="ZnVuY3Rpb24gT25HZXREYXRhKCl7DQogICAgcmV0dXJuICIxMjM0NTY3OCI7DQp9">
+				<limit filled="left" fillchar="0" cutout="right"/>
+				<cut/>
+			</variable>
+			<variable type="constant" id="208" name="" shareid="20" data="" serialtype="0" serialstep="1" serialrepeat="1" serealreptype="0" serealreset="0" serealchars="" serealupper="" sereallower="" serealfield="" serealforder="0" serealsrc="0" databasefield="12|12|Database|62|0|0" databasegrindex="0" keyboardprompt="" keyboardsrc="0" weighttype="1" datatimetype="0" datatimeoffect="0" datatimeformat="" datatimelocate="" usertc="0" rtctype="0" scripttext="" scriptpriv="RnVuY3Rpb24gT25HZXREYXRhKCkNCiAgICBPbkdldERhdGEgPSAiMTIzNDU2NzgiDQpFbmQgRnVuY3Rpb24=" scripttype="0" scriptjs="ZnVuY3Rpb24gT25HZXREYXRhKCl7DQogICAgcmV0dXJuICIxMjM0NTY3OCI7DQp9">
+				<limit filled="left" fillchar="0" cutout="right"/>
+				<cut/>
+			</variable>
+			<variable type="constant" id="283" name="" shareid="4" data="" serialtype="0" serialstep="1" serialrepeat="1" serealreptype="0" serealreset="0" serealchars="" serealupper="" sereallower="" serealfield="" serealforder="0" serealsrc="0" databasefield="12|12|Database|62|0|0" databasegrindex="0" keyboardprompt="" keyboardsrc="0" weighttype="1" datatimetype="0" datatimeoffect="0" datatimeformat="" datatimelocate="" usertc="0" rtctype="0" scripttext="" scriptpriv="RnVuY3Rpb24gT25HZXREYXRhKCkNCiAgICBPbkdldERhdGEgPSAiMTIzNDU2NzgiDQpFbmQgRnVuY3Rpb24=" scripttype="0" scriptjs="ZnVuY3Rpb24gT25HZXREYXRhKCl7DQogICAgcmV0dXJuICIxMjM0NTY3OCI7DQp9">
+				<limit filled="left" fillchar="0" cutout="right"/>
+				<cut/>
+			</variable>
+			<variable type="constant" id="215" name="" shareid="9" data="" serialtype="0" serialstep="1" serialrepeat="1" serealreptype="0" serealreset="0" serealchars="" serealupper="" sereallower="" serealfield="" serealforder="0" serealsrc="0" databasefield="12|12|Database|62|0|0" databasegrindex="0" keyboardprompt="" keyboardsrc="0" weighttype="1" datatimetype="0" datatimeoffect="0" datatimeformat="" datatimelocate="" usertc="0" rtctype="0" scripttext="" scriptpriv="RnVuY3Rpb24gT25HZXREYXRhKCkNCiAgICBPbkdldERhdGEgPSAiMTIzNDU2NzgiDQpFbmQgRnVuY3Rpb24=" scripttype="0" scriptjs="ZnVuY3Rpb24gT25HZXREYXRhKCl7DQogICAgcmV0dXJuICIxMjM0NTY3OCI7DQp9">
+				<limit filled="left" fillchar="0" cutout="right"/>
+				<cut/>
+			</variable>
+			<variable type="constant" id="216" name="" shareid="14" data="" serialtype="0" serialstep="1" serialrepeat="1" serealreptype="0" serealreset="0" serealchars="" serealupper="" sereallower="" serealfield="" serealforder="0" serealsrc="0" databasefield="12|12|Database|62|0|0" databasegrindex="0" keyboardprompt="" keyboardsrc="0" weighttype="1" datatimetype="0" datatimeoffect="0" datatimeformat="" datatimelocate="" usertc="0" rtctype="0" scripttext="" scriptpriv="RnVuY3Rpb24gT25HZXREYXRhKCkNCiAgICBPbkdldERhdGEgPSAiMTIzNDU2NzgiDQpFbmQgRnVuY3Rpb24=" scripttype="0" scriptjs="ZnVuY3Rpb24gT25HZXREYXRhKCl7DQogICAgcmV0dXJuICIxMjM0NTY3OCI7DQp9">
+				<limit filled="left" fillchar="0" cutout="right"/>
+				<cut/>
+			</variable>
+			<variable type="constant" id="217" name="" shareid="19" data="" serialtype="0" serialstep="1" serialrepeat="1" serealreptype="0" serealreset="0" serealchars="" serealupper="" sereallower="" serealfield="" serealforder="0" serealsrc="0" databasefield="12|12|Database|62|0|0" databasegrindex="0" keyboardprompt="" keyboardsrc="0" weighttype="1" datatimetype="0" datatimeoffect="0" datatimeformat="" datatimelocate="" usertc="0" rtctype="0" scripttext="" scriptpriv="RnVuY3Rpb24gT25HZXREYXRhKCkNCiAgICBPbkdldERhdGEgPSAiMTIzNDU2NzgiDQpFbmQgRnVuY3Rpb24=" scripttype="0" scriptjs="ZnVuY3Rpb24gT25HZXREYXRhKCl7DQogICAgcmV0dXJuICIxMjM0NTY3OCI7DQp9">
+				<limit filled="left" fillchar="0" cutout="right"/>
+				<cut/>
+			</variable>
+			<variable type="constant" id="265" name="" shareid="" data="UVRZOg==" serialtype="0" serialstep="1" serialrepeat="1" serealreptype="0" serealreset="0" serealchars="" serealupper="" sereallower="" serealfield="" serealforder="0" serealsrc="0" databasefield="" databasegrindex="0" keyboardprompt="" keyboardsrc="0" weighttype="1" datatimetype="0" datatimeoffect="0" datatimeformat="" datatimelocate="" usertc="0" rtctype="0" scripttext="" scriptpriv="RnVuY3Rpb24gT25HZXREYXRhKCkNCiAgICBPbkdldERhdGEgPSAiMTIzNDU2NzgiDQpFbmQgRnVuY3Rpb24=" scripttype="0" scriptjs="ZnVuY3Rpb24gT25HZXREYXRhKCl7DQogICAgcmV0dXJuICIxMjM0NTY3OCI7DQp9">
+				<limit filled="left" fillchar="0" cutout="right"/>
+				<cut/>
+			</variable>
+			<variable type="constant" id="268" name="" shareid="qty" data="MjA=" serialtype="0" serialstep="1" serialrepeat="1" serealreptype="0" serealreset="0" serealchars="" serealupper="" sereallower="" serealfield="" serealforder="0" serealsrc="0" databasefield="" databasegrindex="0" keyboardprompt="" keyboardsrc="0" weighttype="1" datatimetype="0" datatimeoffect="0" datatimeformat="" datatimelocate="" usertc="0" rtctype="0" scripttext="" scriptpriv="RnVuY3Rpb24gT25HZXREYXRhKCkNCiAgICBPbkdldERhdGEgPSAiMTIzNDU2NzgiDQpFbmQgRnVuY3Rpb24=" scripttype="0" scriptjs="ZnVuY3Rpb24gT25HZXREYXRhKCl7DQogICAgcmV0dXJuICIxMjM0NTY3OCI7DQp9">
+				<limit filled="left" fillchar="0" cutout="right"/>
+				<cut/>
+			</variable>
+			<variable type="constant" id="281" name="" shareid="" data="TWFkZSBpbiBDaGluYQ==" serialtype="0" serialstep="1" serialrepeat="1" serealreptype="0" serealreset="0" serealchars="" serealupper="" sereallower="" serealfield="" serealforder="0" serealsrc="0" databasefield="" databasegrindex="0" keyboardprompt="" keyboardsrc="0" weighttype="1" datatimetype="0" datatimeoffect="0" datatimeformat="" datatimelocate="" usertc="0" rtctype="0" scripttext="" scriptpriv="RnVuY3Rpb24gT25HZXREYXRhKCkNCiAgICBPbkdldERhdGEgPSAiMTIzNDU2NzgiDQpFbmQgRnVuY3Rpb24=" scripttype="0" scriptjs="ZnVuY3Rpb24gT25HZXREYXRhKCl7DQogICAgcmV0dXJuICIxMjM0NTY3OCI7DQp9">
+				<limit filled="left" fillchar="0" cutout="right"/>
+				<cut/>
+			</variable>
+			<variable type="constant" id="336" name="" shareid="caseNo" data="MjAyMDA3MTBGMDAwMDAx" serialtype="0" serialstep="1" serialrepeat="1" serealreptype="0" serealreset="0" serealchars="" serealupper="" sereallower="" serealfield="" serealforder="0" serealsrc="0" databasefield="13|Date|Database|62|0|0" databasegrindex="0" keyboardprompt="" keyboardsrc="0" weighttype="1" datatimetype="0" datatimeoffect="0" datatimeformat="" datatimelocate="" usertc="0" rtctype="0" scripttext="" scriptpriv="RnVuY3Rpb24gT25HZXREYXRhKCkNCiAgICBPbkdldERhdGEgPSAiMTIzNDU2NzgiDQpFbmQgRnVuY3Rpb24=" scripttype="0" scriptjs="ZnVuY3Rpb24gT25HZXREYXRhKCl7DQogICAgcmV0dXJuICIxMjM0NTY3OCI7DQp9">
+				<limit filled="left" fillchar="0" cutout="right"/>
+				<cut/>
+			</variable>
+		</variables>
+	</labelform>
+	<database version="2.0" samcol="" search=""/>
+	<pictures/>
+	<printform qty="0" copy="0" enter="0" lbtn="0" mark="0" all="0" srarch="0" goto="0" title="">
+		<items/>
+		<dscale>127|eNoljDsOgCAQRHuPMTUm0u5tVkBDwi+y2hjuLmA1k3kv88LkdPgT9MJwAWkFkx7QpmCzgNY+VNknqFImEL5m3r4LunVgOLhxsV+cLAhQiNm68NfE0f2tFhma787WWls+KXYkWg==</dscale>
+	</printform>
+</labelshopdocument>
