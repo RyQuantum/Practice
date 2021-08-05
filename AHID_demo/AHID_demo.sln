@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31313.79
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AHID_demo", "AHID_demo\AHID_demo.csproj", "{F49E4C84-677A-43D4-BD5A-D634E358092C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{F49E4C84-677A-43D4-BD5A-D634E358092C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F49E4C84-677A-43D4-BD5A-D634E358092C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F49E4C84-677A-43D4-BD5A-D634E358092C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F49E4C84-677A-43D4-BD5A-D634E358092C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {6F9B202A-3D37-471D-AB56-27D69279D5F0}
+	EndGlobalSection
+EndGlobal
