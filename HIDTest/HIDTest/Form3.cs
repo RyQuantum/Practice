@@ -37,7 +37,7 @@ namespace HIDTest
                     int count = s.Read(buf);
                     string str = System.Text.Encoding.Default.GetString(buf.Take(count).ToArray());
                     Debug.WriteLine("res: \n" + str);
-                    listBox1.Invoke((MethodInvoker)(() => listBox1.Items.Insert(listBox1.Items.Count, "res: \n" + str)));
+                    listBox1.Invoke(new MethodInvoker(() => listBox1.Items.Insert(listBox1.Items.Count, "res: \n" + str)));
                 }
             }
         }
