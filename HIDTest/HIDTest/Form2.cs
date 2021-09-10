@@ -6,6 +6,7 @@ using Microsoft.Extensions.Logging;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System;
 
 namespace HIDTest
 {
@@ -31,7 +32,7 @@ namespace HIDTest
 
             //Register the factory for creating Hid devices. 
             var hidFactory =
-                new FilterDeviceDefinition(vendorId: 0x1995, productId: 0x0806)
+                new FilterDeviceDefinition(vendorId: 0x2FE3, productId: 0x0100)
                 .CreateWindowsHidDeviceFactory(loggerFactory);
 
             //----------------------
@@ -52,15 +53,30 @@ namespace HIDTest
             await device.InitializeAsync().ConfigureAwait(false);
 
             //Create the request buffer
-            var buffer = new byte[65];
-            buffer[0] = 0x00;
+            var buffer = new byte[12800];
+            buffer[0] = 0x01;
             buffer[1] = 0x3f;
             buffer[2] = 0x23;
             buffer[3] = 0x23;
 
+            DateTime dd = new DateTime(1970, 1, 1, 0, 0, 0, 0);
+            long timeStamp = (Int64)(DateTime.Now - dd).TotalMilliseconds;
+
             //Write and read the data to the device
             var readBuffer = await device.WriteAndReadAsync(buffer).ConfigureAwait(false);
-            System.Diagnostics.Debug.WriteLine(readBuffer);
+            readBuffer = await device.WriteAndReadAsync(buffer).ConfigureAwait(false);
+            readBuffer = await device.WriteAndReadAsync(buffer).ConfigureAwait(false);
+            readBuffer = await device.WriteAndReadAsync(buffer).ConfigureAwait(false);
+            readBuffer = await device.WriteAndReadAsync(buffer).ConfigureAwait(false);
+            readBuffer = await device.WriteAndReadAsync(buffer).ConfigureAwait(false);
+            readBuffer = await device.WriteAndReadAsync(buffer).ConfigureAwait(false);
+            readBuffer = await device.WriteAndReadAsync(buffer).ConfigureAwait(false);
+            readBuffer = await device.WriteAndReadAsync(buffer).ConfigureAwait(false);
+            readBuffer = await device.WriteAndReadAsync(buffer).ConfigureAwait(false);
+
+            var diff = (Int64)(DateTime.Now - dd).TotalMilliseconds - timeStamp;
+
+            System.Diagnostics.Debug.WriteLine("diff: " + diff);
         }
     }
 }
