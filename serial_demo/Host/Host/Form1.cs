@@ -96,48 +96,26 @@ namespace Host
 
             }
         }
+
+        public void print(string str)
+        {
+            listBox1.Invoke(new MethodInvoker(() => listBox1.Items.Insert(listBox1.Items.Count, str)));
+        }
+
         private string received = "";
         public void ReceiveDataCallback(string str)
         {
-            RDCallback(str);
+            print("Received: " + str);
+
             received += str;
             if (received.Length >= 34 && received.Substring(received.Length - 34) != "-----END CERTIFICATE REQUEST-----\0") return;
             _ = SaveFile(received);
         }
 
-        delegate void Callback(string text);
-        delegate void SaveDataCallback(string text);
-
-        public void RDCallback(string str)
-        {
-            if (listBox1.InvokeRequired)
-            {
-                Callback d = new Callback(RDCallback);
-                this.Invoke(d, new object[] { str });
-            }
-            else
-            {
-                listBox1.Items.Insert(listBox1.Items.Count, "Received: " + str);
-            }
-        }
-
-        public void SDCallback(string str)
-        {
-            if (listBox1.InvokeRequired)
-            {
-                SaveDataCallback d = new SaveDataCallback(SDCallback);
-                this.Invoke(d, new object[] { str });
-            }
-            else
-            {
-                listBox1.Items.Insert(listBox1.Items.Count, str);
-            }
-        }
-
         public async Task SaveFile(string text)
         {
             await File.WriteAllTextAsync("tmp/client.csr", text);
-            SDCallback("Save csr file");
+            print("Save csr file");
             LaunchCommandLineApp();
         }
 
@@ -151,8 +129,8 @@ namespace Host
             process.Start();
             string str = ".\\openssl\\openssl.exe x509 -req -in .\\tmp\\client.csr -out .\\tmp\\client.crt -signkey .\\tmp\\server.key -days 365";
             Console.WriteLine("Generate crt file");
-            SDCallback("Generate crt file");
-            SDCallback("Send back to device");
+            print("Generate crt file");
+            print("Send back to device");
             process.StandardInput.WriteLine(str + "&exit");
             process.WaitForExit();  //等待程序执行完退出进程
             process.Close();

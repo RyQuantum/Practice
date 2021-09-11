@@ -12,6 +12,7 @@ namespace HIDTest
 {
     public partial class Form2 : Form
     {
+        //Device.Net demo
         public Form2()
         {
             InitializeComponent();

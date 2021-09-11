@@ -17,7 +17,7 @@ namespace HIDTest
 {
     public partial class Form1 : Form
     {
-
+        //HidLibrary demo
         public Form1()
         {
             InitializeComponent();

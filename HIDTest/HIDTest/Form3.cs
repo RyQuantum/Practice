@@ -13,6 +13,7 @@ using System.Windows.Forms;
 
 namespace HIDTest
 {
+    //SerialPostStream demo
     public partial class Form3 : Form
     {
         public Thread thread;
