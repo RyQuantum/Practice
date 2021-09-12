@@ -11,7 +11,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace HIDTest
+namespace Host
 {
     //RSA demo
     public partial class Form4 : Form

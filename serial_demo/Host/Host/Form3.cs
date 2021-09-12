@@ -11,9 +11,9 @@ using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace HIDTest
+namespace Host
 {
-    //SerialPostStream demo
+    //SerialPortStream demo
     public partial class Form3 : Form
     {
         public Thread thread;

@@ -1,5 +1,5 @@
 ﻿
-namespace HIDTest
+namespace Host
 {
     partial class Form3
     {

@@ -1,5 +1,4 @@
 ﻿using Device.Net;
-using Usb.Net.Windows;
 using Hid.Net.Windows;
 using Microsoft.Extensions.Logging;
 
@@ -8,7 +7,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System;
 
-namespace HIDTest
+namespace Host
 {
     public partial class Form2 : Form
     {

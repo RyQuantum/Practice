@@ -9,8 +9,8 @@ namespace Host
 {
     public class SerialPortUtils
     {
-        static Form1 form1;
-        public static string[] GetPortNames(Form1 form)
+        static Form0 form1;
+        public static string[] GetPortNames(Form0 form)
         {
             form1 = form;
             return SerialPort.GetPortNames();
