@@ -4,3 +4,4 @@ packages/
 cmake-build-debug/
 bin/
 obj/
+encryption/ecc-encryption/node_modules/
