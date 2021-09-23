@@ -30,6 +30,11 @@ https://jingyan.baidu.com/article/6c67b1d6be538c2787bb1e06.html
 
 
 
+..\openssl\openssl.exe x509 -req -in alan.csr -out alan.crt -signkey server.key -days 365
+..\openssl\openssl.exe req -in alan.csr -noout -pubkey -config ..\openssl\openssl.cnf -out alan_pub.key
+
+
+
 
 
 # CA self sign: CA key + openssl.cnf => CA crt

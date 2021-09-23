@@ -1,18 +1,33 @@
 const ECKey = require('ec-key');
 
-var clientPrivateKeyPem = `-----BEGIN EC PRIVATE KEY-----
-MHcCAQEEIOqjfZrP8Q7tmVqfi1+Ko802MR6yrJGgKTr9JPyYImQyoAoGCCqGSM49
-AwEHoUQDQgAE45uC4bJ8GTLkhYP4wE9kTHFgHFP0It1P88Qy7z3cDiowjNc+Spt8
-ofRXeu5CMogSw1Ib8P5MO3Aij+cLiS+HSg==
+var serverPrivateKeyPem = `-----BEGIN EC PRIVATE KEY-----
+MHcCAQEEIP17ItsJhzB7MeAIAQq3EnldFRdNN+V4zjmyPlK+J3ZYoAoGCCqGSM49
+AwEHoUQDQgAEtvkZATuuDUG41t+2Vj0HaQIComIin+8+xpDH40QV7lcD2JmBPX/S
+nd+mQBJKntSqBfXYkWFmdWWSK7v9RJmIPg==
 -----END EC PRIVATE KEY-----`;
-var serverPublicKeyPem = `-----BEGIN PUBLIC KEY-----
-MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAEtvkZATuuDUG41t+2Vj0HaQIComIi
-n+8+xpDH40QV7lcD2JmBPX/Snd+mQBJKntSqBfXYkWFmdWWSK7v9RJmIPg==
+var clientPublicKeyPem = `-----BEGIN PUBLIC KEY-----
+MFkwEwYHKoZIzj0CAQYIKoZIzj0DAQcDQgAE6ptJWjwZzxbJ1RDIXHU8/vBt4Nhj
+iRXkacxIuTQ4QlKBAhna2Ra+PmZgO6G4K6RwKILytlc9TL4gbHP4QT6IXA==
 -----END PUBLIC KEY-----`;
 
-var serverKey = new ECKey(serverPublicKeyPem, 'pem');
-var clientKey = new ECKey(clientPrivateKeyPem, 'pem');
+var serverKey = new ECKey(serverPrivateKeyPem, 'pem');
+var clientKey = new ECKey(clientPublicKeyPem, 'pem');
 
-var secret = clientKey.computeSecret(serverKey);
+let secret = serverKey.computeSecret(clientKey);
 
+secret = secret.slice(-8);
 console.log(secret);
+
+const crypto = require('crypto');
+
+const md5 = crypto.createHash('md5');
+const sha1 = crypto.createHash('sha1');
+const sha256 = crypto.createHash('sha256');
+
+md5.update(secret);
+sha1.update(secret);
+sha256.update(secret);
+
+console.log('md5:', crypto.createHash('md5').update(secret).digest('hex'));
+console.log('sha1:', sha1.digest('hex'));
+console.log('sha256:', sha256.digest('hex'));
