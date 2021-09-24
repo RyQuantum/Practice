@@ -45,6 +45,7 @@ namespace Host
                 var deviceDefinitions = (await hidFactory.GetConnectedDeviceDefinitionsAsync().ConfigureAwait(false)).ToList();
                 if (deviceDefinitions.Count == 0) continue;
                 await InitializeAsync(deviceDefinitions);
+                return;
             }
         }
 
@@ -57,23 +58,20 @@ namespace Host
 
             //Create the request buffer
             var buffer = new byte[65];
-            buffer[0] = 0x01;
-            buffer[1] = 0x3f;
-            buffer[2] = 0x23;
-            buffer[3] = 0x23;
+            buffer[3] = 0x01;
 
             //Write and read the data to the device
             var readBuffer = await device.WriteAndReadAsync(buffer).ConfigureAwait(false);
-            result = readBuffer.Data;
+            result = readBuffer.Data.Skip(1).ToArray();
             await ReceiveAsync();
         }
 
         private async Task ReceiveAsync()
         {
-            while (System.Text.Encoding.ASCII.GetString(result.Skip(result.Length - 33).ToArray()) != "-----END CERTIFICATE REQUEST-----")
+            while (System.Text.Encoding.ASCII.GetString(result.Skip(result.Length - 34).ToArray()) != "-----END CERTIFICATE REQUEST-----\n")
             {
                 var readBuffer = await device.ReadAsync().ConfigureAwait(false);
-                result = result.Skip(0).Concat(readBuffer.Data.Skip(0)).ToArray();
+                result = result.Skip(0).Concat(readBuffer.Data.Skip(1).TakeWhile(d => d != 0)).ToArray();
                 //byte[] rv = new byte[result.Length + readBuffer.Data.Length];
                 //System.Buffer.BlockCopy(result, 0, rv, 0, result.Length);
                 //System.Buffer.BlockCopy(readBuffer.Data, 0, rv, result.Length, readBuffer.Data.Length);
@@ -101,7 +99,7 @@ namespace Host
             process.StartInfo.CreateNoWindow = false;   //是否在新窗口中启动该进程的值 (不显示程序窗口)
             process.StartInfo.RedirectStandardInput = true;
             process.Start();
-            string str1 = ".\\openssl\\openssl.exe x509 -req -in .\\tmp\\client.csr -out .\\tmp\\client.crt -signkey server.key -days 365";
+            string str1 = ".\\openssl\\openssl.exe x509 -req -in .\\tmp\\client.csr -out .\\tmp\\client.crt -signkey .\\openssl\\server.key -days 365";
             Debug.WriteLine("Generate crt file");
             //print("Generate crt file");
             //print("Send back to device");
@@ -195,6 +193,7 @@ namespace Host
             if (thread != null) return;
             Debug.WriteLine("New thread");
             thread = new Thread(Scan);
+            thread.Start();
         }
     }
 }
