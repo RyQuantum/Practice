@@ -10,6 +10,7 @@ using System.Threading;
 using System.Collections.Generic;
 using System.Diagnostics;
 using System.IO;
+using System.IO.Pipes;
 
 namespace Host
 {
@@ -61,8 +62,14 @@ namespace Host
             buffer[3] = 0x01;
 
             //Write and read the data to the device
+            listBox1.Invoke(new MethodInvoker(() =>
+            {
+                listBox1.Items.Add("Request csr file:");
+                listBox1.Items.Add("Send: " + BitConverter.ToString(buffer.Skip(1).ToArray()).Replace("-", ""));
+            }));
             var readBuffer = await device.WriteAndReadAsync(buffer).ConfigureAwait(false);
             result = readBuffer.Data.Skip(1).ToArray();
+            listBox1.Invoke(new MethodInvoker(() => listBox1.Items.Add("Receive: " + BitConverter.ToString(result).Replace("-", ""))));
             await ReceiveAsync();
         }
 
@@ -70,8 +77,9 @@ namespace Host
         {
             while (System.Text.Encoding.ASCII.GetString(result.Skip(result.Length - 34).ToArray()) != "-----END CERTIFICATE REQUEST-----\n")
             {
-                var readBuffer = await device.ReadAsync().ConfigureAwait(false);
-                result = result.Skip(0).Concat(readBuffer.Data.Skip(1).TakeWhile(d => d != 0)).ToArray();
+                var readBuffer = (await device.ReadAsync().ConfigureAwait(false)).Data.Skip(1).ToArray();
+                listBox1.Invoke(new MethodInvoker(() => listBox1.Items.Add("Receive: " + BitConverter.ToString(readBuffer).Replace("-", ""))));
+                result = result.Concat(readBuffer.TakeWhile(d => d != 0)).ToArray();
                 //byte[] rv = new byte[result.Length + readBuffer.Data.Length];
                 //System.Buffer.BlockCopy(result, 0, rv, 0, result.Length);
                 //System.Buffer.BlockCopy(readBuffer.Data, 0, rv, result.Length, readBuffer.Data.Length);
@@ -87,25 +95,56 @@ namespace Host
                 Directory.CreateDirectory("tmp");
             }
             await File.WriteAllBytesAsync("tmp/client.csr", result);
+            listBox1.Invoke(new MethodInvoker(() => listBox1.Items.Add("Save csr file")));
             Debug.WriteLine("Save csr file");
             GenerateCertificate();
         }
 
+        private const string PIPE_NAME = "ecc_pipe";
+        private void WaitingForECCResult()
+        {
+            using (NamedPipeServerStream pipeServer =
+                new NamedPipeServerStream(PIPE_NAME, PipeDirection.InOut, 1))
+            {
+                try
+                {
+                    pipeServer.WaitForConnection();
+                    pipeServer.ReadMode = PipeTransmissionMode.Byte;
+                    using (StreamReader sr = new StreamReader(pipeServer))
+                    {
+                        string message = sr.ReadLine();
+                        listBox1.Invoke(new MethodInvoker(() => listBox1.Items.Add(message)));
+                    }
+                }
+                catch (IOException ex)
+                {
+                    MessageBox.Show("监听管道失败：" + ex.Message);
+                }
+            }
+        }
         private void GenerateCertificate()
         {
+            Thread thread = new Thread(WaitingForECCResult);
+            thread.Start();
             Process process = new Process();
             process.StartInfo.FileName = "cmd.exe";
             process.StartInfo.UseShellExecute = false;   //是否使用操作系统shell启动 
-            process.StartInfo.CreateNoWindow = false;   //是否在新窗口中启动该进程的值 (不显示程序窗口)
+            process.StartInfo.CreateNoWindow = true;   //是否在新窗口中启动该进程的值 (不显示程序窗口)
             process.StartInfo.RedirectStandardInput = true;
             process.Start();
+            listBox1.Invoke(new MethodInvoker(() => listBox1.Items.Add("Launch OpenSSL")));
             string str1 = ".\\openssl\\openssl.exe x509 -req -in .\\tmp\\client.csr -out .\\tmp\\client.crt -signkey .\\openssl\\server.key -days 365";
             Debug.WriteLine("Generate crt file");
             //print("Generate crt file");
             //print("Send back to device");
             process.StandardInput.WriteLine(str1);
+            listBox1.Invoke(new MethodInvoker(() => listBox1.Items.Add("Generate certificate")));
             string str2 = ".\\openssl\\openssl.exe req -in .\\tmp\\client.csr -noout -pubkey -config .\\openssl\\openssl.cnf -out .\\tmp\\client_pub.key";
-            process.StandardInput.WriteLine(str2 + "&exit");
+            process.StandardInput.WriteLine(str2);
+            listBox1.Invoke(new MethodInvoker(() => listBox1.Items.Add("Extract lock's public key")));
+            string str3 = ".\\ecc\\node-v16.10.0-win-x86\\node.exe .\\ecc\\indes.js";
+            process.StandardInput.WriteLine(str3 + "&exit");
+            //process.StandardInput.WriteLine(str3);
             process.WaitForExit();  //等待程序执行完退出进程
             process.Close();
             //byte[] b = System.Text.Encoding.UTF8.GetBytes(text);
@@ -116,13 +155,20 @@ namespace Host
 
         private async Task ReadAndSendAsync()
         {
+            listBox1.Invoke(new MethodInvoker(() => listBox1.Items.Add("Return crt file:")));
             Byte[] bytes = System.IO.File.ReadAllBytes(".\\tmp\\client.crt");
-            var num = bytes.Length / 64;
-            if (num * 64 < bytes.Length) num++;
+            var num = bytes.Length / 63;
+            if (num * 63 < bytes.Length) num++;
             for (int i = 0; i < num; i++)
             {
-                var buffer = bytes.Skip(i * 64).Take(64).Prepend((byte) 0).ToArray();
+                var buffer = bytes.Skip(i * 63).Take(63).Prepend((byte) 0).Append((byte) 0).ToArray();
+                if (i == num - 1) buffer = buffer.Concat(new byte[65 - buffer.Length]).ToArray();
                 await device.WriteAsync(buffer).ConfigureAwait(false);
+                listBox1.Invoke(new MethodInvoker(() =>
+                {
+                    listBox1.Items.Add("Send: " + BitConverter.ToString(buffer.Skip(1).ToArray()).Replace("-", ""));
+                    listBox1.TopIndex = listBox1.Items.Count - 1;
+                }));
             }
         }
 
