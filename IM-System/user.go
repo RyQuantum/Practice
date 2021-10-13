@@ -1,6 +1,9 @@
 package main
 
-import "net"
+import (
+	"net"
+	"strings"
+)
 
 type User struct {
 	Name   string
@@ -76,6 +79,25 @@ func (this *User) DoMessage(msg string) {
 			this.Name = newName
 			this.SendMsg("You have successfully update the name:" + this.Name + "\n")
 		}
+	} else if len(msg) > 4 && msg[:3] == "to|" {
+		remoteName := strings.Split(msg, "|")[1]
+		if remoteName == "" {
+			this.SendMsg("Message format is invalid, please use \"to|Tom|Hello\" format\n")
+			return
+		}
+
+		remoteUser, ok := this.server.OnlineMap[remoteName]
+		if !ok {
+			this.SendMsg("This username doesn't exist\n")
+			return
+		}
+
+		content := strings.Split(msg, "|")[2]
+		if content == "" {
+			this.SendMsg("No content, please retry\n")
+			return
+		}
+		remoteUser.SendMsg(this.Name + " says: " + content + "\n")
 	} else {
 		this.server.Broadcast(this, msg)
 	}
