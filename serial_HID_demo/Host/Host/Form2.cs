@@ -69,7 +69,7 @@ namespace Host
             }));
             var readBuffer = await device.WriteAndReadAsync(buffer).ConfigureAwait(false);
             result = readBuffer.Data.Skip(1).ToArray();
-            listBox1.Invoke(new MethodInvoker(() => listBox1.Items.Add("Receive: " + BitConverter.ToString(result).Replace("-", ""))));
+            listBox1.Invoke(new MethodInvoker(() => listBox1.Items.Add("Receive: " + System.Text.Encoding.Default.GetString(result))));
             await ReceiveAsync();
         }
 
@@ -78,7 +78,7 @@ namespace Host
             while (System.Text.Encoding.ASCII.GetString(result.Skip(result.Length - 34).ToArray()) != "-----END CERTIFICATE REQUEST-----\n")
             {
                 var readBuffer = (await device.ReadAsync().ConfigureAwait(false)).Data.Skip(1).ToArray();
-                listBox1.Invoke(new MethodInvoker(() => listBox1.Items.Add("Receive: " + BitConverter.ToString(readBuffer).Replace("-", ""))));
+                listBox1.Invoke(new MethodInvoker(() => listBox1.Items.Add("Receive: " + System.Text.Encoding.Default.GetString(readBuffer))));
                 result = result.Concat(readBuffer.TakeWhile(d => d != 0)).ToArray();
                 //byte[] rv = new byte[result.Length + readBuffer.Data.Length];
                 //System.Buffer.BlockCopy(result, 0, rv, 0, result.Length);
@@ -142,7 +142,7 @@ namespace Host
             string str2 = ".\\openssl\\openssl.exe req -in .\\tmp\\client.csr -noout -pubkey -config .\\openssl\\openssl.cnf -out .\\tmp\\client_pub.key";
             process.StandardInput.WriteLine(str2);
             listBox1.Invoke(new MethodInvoker(() => listBox1.Items.Add("Extract lock's public key")));
-            string str3 = ".\\ecc\\node-v16.10.0-win-x86\\node.exe .\\ecc\\indes.js";
+            string str3 = ".\\ecc\\index.exe";
             process.StandardInput.WriteLine(str3 + "&exit");
             //process.StandardInput.WriteLine(str3);
             process.WaitForExit();  //等待程序执行完退出进程
@@ -157,16 +157,17 @@ namespace Host
         {
             listBox1.Invoke(new MethodInvoker(() => listBox1.Items.Add("Return crt file:")));
             Byte[] bytes = System.IO.File.ReadAllBytes(".\\tmp\\client.crt");
-            var num = bytes.Length / 63;
-            if (num * 63 < bytes.Length) num++;
+            bytes = new byte[3] { 50, 50, 50 }.Concat(bytes).ToArray();
+            var num = bytes.Length / 64;
+            if (num * 64 < bytes.Length) num++;
             for (int i = 0; i < num; i++)
             {
-                var buffer = bytes.Skip(i * 63).Take(63).Prepend((byte) 0).Append((byte) 0).ToArray();
+                var buffer = bytes.Skip(i * 64).Take(64).Prepend((byte)0).ToArray();
                 if (i == num - 1) buffer = buffer.Concat(new byte[65 - buffer.Length]).ToArray();
                 await device.WriteAsync(buffer).ConfigureAwait(false);
                 listBox1.Invoke(new MethodInvoker(() =>
                 {
-                    listBox1.Items.Add("Send: " + BitConverter.ToString(buffer.Skip(1).ToArray()).Replace("-", ""));
+                    listBox1.Items.Add("Send: " + System.Text.Encoding.Default.GetString(buffer.Skip(1).ToArray()));
                     listBox1.TopIndex = listBox1.Items.Count - 1;
                 }));
             }
