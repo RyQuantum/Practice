@@ -1,0 +1,7 @@
+go build -o main main.go server.go user.go
+go build -o client.exe client.go
+
+go env -w CGO_ENABLED=1 GOARCH=amd64 GOOS=windows
+go env -w CGO_ENABLED=0 GOARCH=amd64 GOOS=darwin
+go env -w CGO_ENABLED=0 GOARCH=arm64 GOOS=darwin
+go env -w CGO_ENABLED=0 GOARCH=arm GOOS=linux
