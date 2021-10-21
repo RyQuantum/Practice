@@ -158,7 +158,7 @@ var serverIp string
 var serverPort int
 
 func init() {
-	flag.StringVar(&serverIp, "ip", "127.0.0.1", "Set the server IP")
+	flag.StringVar(&serverIp, "ip", "incognito.tpddns.cn", "Set the server IP")
 	flag.IntVar(&serverPort, "p", 8888, "Set the port")
 }
 
