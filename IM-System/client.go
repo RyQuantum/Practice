@@ -60,10 +60,9 @@ func (client *Client) menu() bool {
 
 func (client *Client) ScanInput(msg string) string {
 	fmt.Println(msg)
-	if client.scanner.Scan() {
-		chatMsg := client.scanner.Text()
-		return chatMsg
-	}
+	client.scanner.Scan()
+	chatMsg := client.scanner.Text()
+	return chatMsg
 }
 
 func (client *Client) PublicChat() {
