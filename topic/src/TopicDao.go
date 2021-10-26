@@ -17,13 +17,29 @@ func MustLogin() gin.HandlerFunc {
 }
 
 func GetTopicDetail(c *gin.Context) {
-	c.String(200, "get topicId=%s post", c.Param("topic_id"))
+	c.JSON(200, CreateTopic(101, "post title"))
 }
 
 func NewTopic(c *gin.Context) {
-	c.String(200, "New topic")
+	topic := Topic{}
+	err := c.BindJSON(&topic)
+	if err != nil {
+		c.String(400, "invalid parameter: %s", err.Error())
+	} else {
+		c.JSON(200, topic)
+	}
 }
 
 func DelTopic(c *gin.Context) {
 	c.String(200, "Delete topic")
+}
+
+func GetTopicList(c *gin.Context) {
+	query := TopicQuery{}
+	err := c.BindQuery(&query)
+	if err != nil {
+		c.String(400, "invalid parameter: %s", err.Error())
+	} else {
+		c.JSON(200, query)
+	}
 }
