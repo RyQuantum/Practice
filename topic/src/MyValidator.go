@@ -1,14 +1,15 @@
 package src
 
 import (
+	"fmt"
 	"github.com/go-playground/validator/v10"
-	"reflect"
 	"regexp"
 )
 
-func TopicUrl(v *validator.Validate, topStruct reflect.Value, currentStructOrField reflect.Value, field reflect.Value, fieldType reflect.Type, fieldKind reflect.Kind, param string) bool {
-	if _, ok := topStruct.Interface().(*Topic); ok {
-		if matched, _ := regexp.MatchString(`^\w{4,10}$`, field.String()); matched {
+func TopicUrl(field validator.FieldLevel) bool {
+	if str := field.Field().String(); len(str) != 0 {
+		fmt.Println(str)
+		if matched, _ := regexp.MatchString(`\w{4,10}`, str); matched {
 			return true
 		}
 	}
