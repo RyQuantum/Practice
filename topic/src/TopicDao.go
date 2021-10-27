@@ -30,6 +30,16 @@ func NewTopic(c *gin.Context) {
 	}
 }
 
+func NewTopics(c *gin.Context) {
+	topics := Topics{}
+	err := c.BindJSON(&topics)
+	if err != nil {
+		c.String(400, "invalid parameter: %s", err.Error())
+	} else {
+		c.JSON(200, topics)
+	}
+}
+
 func DelTopic(c *gin.Context) {
 	c.String(200, "Delete topic")
 }

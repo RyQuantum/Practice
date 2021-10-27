@@ -9,6 +9,11 @@ type Topic struct {
 	TopicUrl        string `json:"url" binding:"omitempty,topicurl"`
 }
 
+type Topics struct {
+	TopicList     []Topic `json:"topics" binding:"gt=0,lte=3,dive"`
+	TopicListSize int     `json:"size"` //TODO size validation
+}
+
 func CreateTopic(id int, title string) Topic {
 	return Topic{TopicID: id, TopicTitle: title}
 }
