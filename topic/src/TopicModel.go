@@ -6,6 +6,7 @@ type Topic struct {
 	TopicShortTitle string `json:"stitle" binding:"required,nefield=TopicTitle"`
 	UserIP          string `json:"ip" binding:"ipv4"`
 	TopicScore      int    `json:"score" binding:"omitempty,gt=5"`
+	TopicUrl        string `json:"url" binding:"omitempty,topicurl"`
 }
 
 func CreateTopic(id int, title string) Topic {
