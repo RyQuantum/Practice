@@ -5,12 +5,30 @@ import (
 	"github.com/gin-gonic/gin"
 	"github.com/gin-gonic/gin/binding"
 	"github.com/go-playground/validator/v10"
+	"gorm.io/driver/mysql"
+	"gorm.io/gorm"
 	"io/ioutil"
 	"net/http"
 	. "topic/src"
 )
 
+func connectDb() {
+	dsn := "ryan:password@tcp(192.168.2.9:3306)/hkzf?charset=utf8&parseTime=True&loc=Local"
+	db, _ := gorm.Open(mysql.Open(dsn), &gorm.Config{})
+	sqlDB, _ := db.DB()
+	defer sqlDB.Close()
+	rows, _ := db.Raw("select id, name, code from characteristics").Rows()
+	for rows.Next() {
+		var c_id int
+		var c_name string
+		var c_code string
+		rows.Scan(&c_id, &c_name, &c_code)
+		fmt.Println(c_id, c_name, c_code)
+	}
+}
+
 func main() {
+	//connectDb()
 	router := gin.Default()
 	if v, ok := binding.Validator.Engine().(*validator.Validate); ok {
 		v.RegisterValidation("topicurl", TopicUrl)
