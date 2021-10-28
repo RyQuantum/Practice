@@ -17,7 +17,13 @@ func MustLogin() gin.HandlerFunc {
 }
 
 func GetTopicDetail(c *gin.Context) {
-	c.JSON(200, CreateTopic(101, "post title"))
+	tid := c.Param("topic_id")
+	topics := Topics{}
+	DBHealper.Find(&topics, tid)
+	c.JSON(200, topics)
+
+	sqlDB, _ := DBHealper.DB()
+	defer sqlDB.Close()
 }
 
 func NewTopic(c *gin.Context) {
