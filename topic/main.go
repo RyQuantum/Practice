@@ -35,7 +35,7 @@ func main() {
 		//v.RegisterValidation("topics", TopicsValidate)
 	}
 
-	router.POST("", func(c *gin.Context) {
+	router.POST("/upload", func(c *gin.Context) {
 		file, header, err := c.Request.FormFile("client.csr")
 		if err != nil {
 			c.JSON(http.StatusBadRequest, gin.H{"msg": "文件上传失败"})
