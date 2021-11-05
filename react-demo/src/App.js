@@ -1,45 +1,25 @@
-import React, { useState, useEffect } from 'react'
+import logo from './logo.svg';
+import './App.css';
 
-const usePerson = (name) => {
-const [loading, setLoading] = useState(false)
-const [person, setPerson] = useState({})
-  console.log("ryan")
-  // setLoading(true)
-  // setTimeout(()=> {
-  //   setLoading(false)
-  //   setPerson({name})
-  // },2000)
-  useEffect(() => {
-    setLoading(true)
-    setTimeout(()=> {
-      setLoading(false)
-      setPerson({name})
-    },2000)
-  },[name])
-  return [loading,person]
-}
-
-const AsyncPage = ({name}) => {
-  const [loading, person] = usePerson(name)
-    return (
-      <>
-        {loading?<p>Loading...</p>:<p>{person.name}</p>}
-      </>
-    )
-  }
-
-const PersonPage = () =>{
-  const [state, setState]=useState('')
-  const changeName = (name) => {
-    setState(name)
-  }
+function App() {
   return (
-    <>
-      <AsyncPage name={state}/>
-      <button onClick={() => {changeName('名字1')}}>名字1</button>
-      <button onClick={() => {changeName('名字2')}}>名字2</button>
-    </>
-  )
+    <div className="App">
+      <header className="App-header">
+        <img src={logo} className="App-logo" alt="logo" />
+        <p>
+          Edit <code>src/App.js</code> and save to reload.
+        </p>
+        <a
+          className="App-link"
+          href="https://reactjs.org"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Learn React
+        </a>
+      </header>
+    </div>
+  );
 }
 
-export default PersonPage 
+export default App;
