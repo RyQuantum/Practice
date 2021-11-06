@@ -9,11 +9,6 @@ const lengthOfLongestSubstring = function (s) {
       map[s[j]] = j
     } else {
       max = Math.max(max, j - i)
-      // for (let k = i; k <= map[s[j]]; k++) {
-      //
-      //   map[s[i]] = undefined
-      //   i++
-      // }
       while (i <= map[s[j]]) {
         map[s[i]] = undefined
         i++
