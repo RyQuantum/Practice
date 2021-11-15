@@ -51,7 +51,7 @@
             this.comboBoxCom.FormattingEnabled = true;
             this.comboBoxCom.Location = new System.Drawing.Point(65, 12);
             this.comboBoxCom.Name = "comboBoxCom";
-            this.comboBoxCom.Size = new System.Drawing.Size(121, 25);
+            this.comboBoxCom.Size = new System.Drawing.Size(121, 32);
             this.comboBoxCom.TabIndex = 5;
             // 
             // label1
@@ -59,16 +59,16 @@
             this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(25, 15);
+            this.label1.Location = new System.Drawing.Point(19, 16);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(32, 17);
+            this.label1.Size = new System.Drawing.Size(46, 24);
             this.label1.TabIndex = 0;
             this.label1.Text = "Port";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             // 
             // buttonOpenCloseCom
             // 
-            this.buttonOpenCloseCom.Location = new System.Drawing.Point(374, 9);
+            this.buttonOpenCloseCom.Location = new System.Drawing.Point(376, 12);
             this.buttonOpenCloseCom.Name = "buttonOpenCloseCom";
             this.buttonOpenCloseCom.Size = new System.Drawing.Size(111, 33);
             this.buttonOpenCloseCom.TabIndex = 3;
@@ -82,9 +82,9 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.groupBoxReceiveData.Controls.Add(this.textBoxReceive);
-            this.groupBoxReceiveData.Location = new System.Drawing.Point(19, 48);
+            this.groupBoxReceiveData.Location = new System.Drawing.Point(19, 50);
             this.groupBoxReceiveData.Name = "groupBoxReceiveData";
-            this.groupBoxReceiveData.Size = new System.Drawing.Size(594, 272);
+            this.groupBoxReceiveData.Size = new System.Drawing.Size(786, 416);
             this.groupBoxReceiveData.TabIndex = 7;
             this.groupBoxReceiveData.TabStop = false;
             this.groupBoxReceiveData.Text = "Receive data";
@@ -92,16 +92,16 @@
             // textBoxReceive
             // 
             this.textBoxReceive.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.textBoxReceive.Location = new System.Drawing.Point(6, 19);
+            this.textBoxReceive.Location = new System.Drawing.Point(6, 30);
             this.textBoxReceive.Multiline = true;
             this.textBoxReceive.Name = "textBoxReceive";
             this.textBoxReceive.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBoxReceive.Size = new System.Drawing.Size(581, 245);
+            this.textBoxReceive.Size = new System.Drawing.Size(774, 382);
             this.textBoxReceive.TabIndex = 0;
             // 
             // Button_Refresh
             // 
-            this.Button_Refresh.Location = new System.Drawing.Point(229, 9);
+            this.Button_Refresh.Location = new System.Drawing.Point(227, 12);
             this.Button_Refresh.Name = "Button_Refresh";
             this.Button_Refresh.Size = new System.Drawing.Size(110, 33);
             this.Button_Refresh.TabIndex = 10;
@@ -151,9 +151,9 @@
             // 
             // Form2
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 24F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(625, 332);
+            this.ClientSize = new System.Drawing.Size(817, 478);
             this.Controls.Add(this.Button_Refresh);
             this.Controls.Add(this.groupBoxReceiveData);
             this.Controls.Add(this.buttonOpenCloseCom);

@@ -17,6 +17,10 @@ namespace V4HubTester
 
         //实例化串口对象
         SerialPort serialPort = new SerialPort();
+        string stringBuffer = "";
+        //bool isTesting = false;
+        bool hasResult = false;
+        //bool isSaved = false;
 
         String saveDataFile = null;
         FileStream saveDataFS = null;
@@ -298,21 +302,68 @@ namespace V4HubTester
         /// <param name="tmp"></param>
         private void receivedDataControl(byte[] tmp)
         {
+            //isTesting = true;
+            String log = Encoding.ASCII.GetString(tmp);
+            stringBuffer += log;
+            serialPort.DiscardInBuffer();
 
-            if (hubObj == null)
-            {
-                hubObj = new Hub();
-                db.Hubs.Add(hubObj);
-                db.SaveChanges();
-                hubObj = db.Hubs.OrderByDescending(l => true).FirstOrDefault(l => true);
-            }
+            //if (hubObj == null)
+            //{
+            //    hubObj = new Hub();
+            //    //db.Hubs.Add(hubObj);
+            //    //db.SaveChanges();
+            //    //hubObj = db.Hubs.OrderByDescending(l => true).FirstOrDefault(l => true);
+            //}
             this.BeginInvoke((EventHandler)delegate
             {
-                String log = Encoding.ASCII.GetString(tmp) + "\r\n";
+                if (log == "\0")
+                {
+                    textBoxReceive.Text = "";
+                    //isTesting = false;
+                    hasResult = false;
+                    return;
+                }
                 textBoxReceive.AppendText(log);
-                serialPort.DiscardInBuffer();
-                hubObj.Log = hubObj.Log != null ? hubObj.Log : "" + log;
-                db.SaveChanges();
+                //hubObj.Log = textBoxReceive.Text;
+                if (!hasResult)
+                {
+                    var index = textBoxReceive.Text.IndexOf("result_end");
+                    if (index != -1)
+                    {
+                        hubObj = new Hub();
+
+                        var i = textBoxReceive.Text.IndexOf("PCBA: WiFi");
+                        var j = textBoxReceive.Text.IndexOf("PCBA:   BT");
+
+                        if( i != -1) hubObj.WifiMac = textBoxReceive.Text.Substring(i + 13, 17);
+                        if (j != -1) hubObj.BtMac = textBoxReceive.Text.Substring(j + 13, 17);
+                        db.Hubs.Add(hubObj);
+                        db.SaveChanges();
+                        //isTesting = false;
+                        hasResult = true;
+                    }
+                    //var j = textBoxReceive.Text.IndexOf("result_start==========================");
+
+                }
+
+                //else if (!isSaved)
+                //{
+                //    var index = textBoxReceive.Text.IndexOf("result_start==========================");
+                //    if (index != -1)
+                //    {
+                //        hubObj = new Hub();
+                //        isTesting = true;
+                //        var i = textBoxReceive.Text.IndexOf("Wi-Fi MAC:");
+                //        var j = textBoxReceive.Text.IndexOf("BT MAC:");
+
+                //        hubObj.WifiMac = textBoxReceive.Text.Substring(i + 11, 17);
+                //        hubObj.BtMac = textBoxReceive.Text.Substring(j + 8, 17);
+                //        db.Hubs.Add(hubObj);
+                //        db.SaveChanges();
+                //        isSaved = true;
+                //    }
+                //}
+                //db.SaveChanges();
             });
         }
 

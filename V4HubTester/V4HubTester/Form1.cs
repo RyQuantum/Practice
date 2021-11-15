@@ -19,15 +19,18 @@ namespace V4HubTester
             InitializeComponent();
 
             DataColumn col1 = new DataColumn("id", typeof(int));
-            DataColumn col2 = new DataColumn("HubMac", typeof(string));
+            DataColumn col2 = new DataColumn("WifiMac", typeof(string));
+            DataColumn col3 = new DataColumn("BtMac", typeof(string));
             hubTable.Columns.Add(col1);
             hubTable.Columns.Add(col2);
+            hubTable.Columns.Add(col3);
 
             foreach (var hub in hubs)
             {
                 DataRow dr = hubTable.NewRow();
                 dr["id"] = hub.id;
-                dr["HubMac"] = hub.HubMac;
+                dr["WifiMac"] = hub.WifiMac;
+                dr["BtMac"] = hub.BtMac;
                 hubTable.Rows.Add(dr);
             }
             bindDataSource();

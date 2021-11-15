@@ -30,8 +30,8 @@
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HubMac = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Log = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.WifiMac = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.BtMac = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -41,38 +41,47 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
-            this.HubMac,
-            this.Log});
-            this.dataGridView1.Location = new System.Drawing.Point(12, 12);
+            this.WifiMac,
+            this.BtMac});
+            this.dataGridView1.Location = new System.Drawing.Point(17, 20);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowHeadersWidth = 62;
             this.dataGridView1.RowTemplate.Height = 25;
-            this.dataGridView1.Size = new System.Drawing.Size(473, 303);
+            this.dataGridView1.Size = new System.Drawing.Size(676, 505);
             this.dataGridView1.TabIndex = 0;
             // 
             // id
             // 
             this.id.DataPropertyName = "id";
             this.id.HeaderText = "id";
+            this.id.MinimumWidth = 8;
             this.id.Name = "id";
+            this.id.Width = 150;
             // 
-            // HubMac
+            // WifiMac
             // 
-            this.HubMac.DataPropertyName = "HubMac";
-            this.HubMac.HeaderText = "HubMac";
-            this.HubMac.Name = "HubMac";
+            this.WifiMac.DataPropertyName = "WifiMac";
+            this.WifiMac.HeaderText = "WifiMac";
+            this.WifiMac.MinimumWidth = 8;
+            this.WifiMac.Name = "WifiMac";
+            this.WifiMac.Width = 150;
             // 
-            // Log
+            // BtMac
             // 
-            this.Log.HeaderText = "Log";
-            this.Log.Name = "Log";
-            this.Log.Visible = false;
+            this.BtMac.DataPropertyName = "BtMac";
+            this.BtMac.HeaderText = "BtMac";
+            this.BtMac.MinimumWidth = 8;
+            this.BtMac.Name = "BtMac";
+            this.BtMac.Width = 150;
             // 
             // Form1
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(497, 327);
+            this.ClientSize = new System.Drawing.Size(710, 545);
             this.Controls.Add(this.dataGridView1);
+            this.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Hub list";
@@ -85,7 +94,7 @@
 
         private DataGridView dataGridView1;
         private DataGridViewTextBoxColumn id;
-        private DataGridViewTextBoxColumn HubMac;
-        private DataGridViewTextBoxColumn Log;
+        private DataGridViewTextBoxColumn WifiMac;
+        private DataGridViewTextBoxColumn BtMac;
     }
 }
