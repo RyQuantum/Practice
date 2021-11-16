@@ -14,8 +14,7 @@ var threeSum = function(nums) {
                 while (j < k && nums[k] === nums[k - 1]) k--
                 j++;
                 k--;
-            }
-            else if (sum < target) j++
+            } else if (sum < target) j++
             else k--
         }
     }

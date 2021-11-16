@@ -1,9 +1,11 @@
 var hasCycle = function(head) {
+    if (!head) return false
     let cur = head.next
-    const arr = [head]
+    const set = new Set()
+    set.add(head)
     while (cur != null) {
-        if ((arr.filter(elm => elm === cur)).length > 0) return true
-        arr.push(cur)
+        if (set.has(cur)) return true
+        set.add(cur)
         cur = cur.next
     }
     return false
