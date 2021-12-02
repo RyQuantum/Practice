@@ -1,0 +1,11 @@
+{
+  "Version": 1,
+  "ProjectMap": {
+    "34e70e13-896e-4861-8972-b0ccffee6065": {
+      "ProjectGuid": "34e70e13-896e-4861-8972-b0ccffee6065",
+      "DisplayName": "PanelLabelPrinter",
+      "ColorIndex": 0
+    }
+  },
+  "NextColorIndex": 1
+}
