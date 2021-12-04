@@ -17,10 +17,8 @@ namespace V4HubTester
                 var hubs = db.Hubs.Where(hub => count - hub.id < 10).ToArray();
                 //Application.Run(new MainForm(db, filePath, hubs));
                 ApplicationConfiguration.Initialize();
-                Application.Run(new Form1(db));
+                Application.Run(new MainForm(db, filePath, hubs));
             }
-
-            //Application.Run(new Form1());
         }
     }
 }

@@ -8,5 +8,11 @@
     <Compile Update="InputDialog.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="UploadingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
 </Project>

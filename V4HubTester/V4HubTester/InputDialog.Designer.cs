@@ -80,6 +80,7 @@
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.label1);
             this.Name = "InputDialog";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "InputDialog";
             this.ResumeLayout(false);
             this.PerformLayout();
