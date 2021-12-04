@@ -5,7 +5,6 @@ namespace V4HubTester
 {
     public partial class Form1 : Form
     {
-        HubDBContext db;
         MainForm mainForm;
         // use integer (position) to represent which part of the UI and serial port the user is setting
         int position = 1; // 1: top left; 2: top right; 3: bottom left; 4: bottom right
@@ -29,10 +28,9 @@ namespace V4HubTester
         SerialPort serialPort4 = new SerialPort();
 
         // save mainForm variable for updating the newest data on dataGridView after testing
-        public Form1(HubDBContext db, MainForm mainForm) //TODO add mainForm
+        public Form1(MainForm mainForm)
         {
             InitializeComponent();
-            this.db = db;
             this.mainForm = mainForm;
             serialPort1.DataReceived += new SerialDataReceivedEventHandler(serialPort_DataReceived);
             serialPort2.DataReceived += new SerialDataReceivedEventHandler(serialPort_DataReceived);
@@ -460,98 +458,102 @@ namespace V4HubTester
                             states["hub" + pos]["phase"] = 5;
                             tutorial.Text = "请根据实际情况输入结果";
                             info.Text = "完成后点击保存";
-                            Hub hubObj = new Hub();
-
-                            // extract the data from serial log
-                            var pcbaCpuIndex = text.IndexOf("PCBA:  CPU");
-                            if (pcbaCpuIndex != -1) hubObj.PCBACPU = text.Substring(pcbaCpuIndex + 13, 16);
-
-                            var pcbaEth0Index = text.IndexOf("PCBA: ETH0");
-                            if (pcbaEth0Index != -1) hubObj.PCBAETH0 = text.Substring(pcbaEth0Index + 13, 4);
-
-                            var pcbaWifiIndex = text.IndexOf("PCBA: WiFi");
-                            if (pcbaWifiIndex != -1) hubObj.PCBAWiFi = text.Substring(pcbaWifiIndex + 13, 17);
-
-                            var pcbaBtIndex = text.IndexOf("PCBA:   BT");
-                            if (pcbaBtIndex != -1) hubObj.PCBABT = text.Substring(pcbaBtIndex + 13, 17);
-
-                            var pcbaImeiIndex = text.IndexOf("PCBA: IMEI");
-                            if (pcbaImeiIndex != -1) hubObj.PCBAIMEI = text.Substring(pcbaImeiIndex + 13, 15);
-
-                            var pcbaCcidIndex = text.IndexOf("PCBA: CCID");
-                            if (pcbaCcidIndex != -1) hubObj.PCBACCID = text.Substring(pcbaCcidIndex + 13, 20);
-
-                            var tfCardCapIndex = text.IndexOf("TFCard:  Cap");
-                            if (tfCardCapIndex != -1) hubObj.TFCardCap = text.Substring(tfCardCapIndex + 15, 4);
-
-                            var adcDcIndex = text.IndexOf("ADC:   DC");
-                            if (adcDcIndex != -1) hubObj.ADCDC = text.Substring(adcDcIndex + 12, 5);
-
-                            var adcBatIndex = text.IndexOf("ADC:  BAT");
-                            if (adcBatIndex != -1) hubObj.ADCBAT = text.Substring(adcBatIndex + 12, 5);
-
-                            var adcLteIndex = text.IndexOf("ADC:  LTE");
-                            if (adcLteIndex != -1) hubObj.ADCLTE = text.Substring(adcLteIndex + 12, 6);
-
-                            var eth0PingIndex = text.IndexOf("ETH0: PING");
-                            if (eth0PingIndex != -1) hubObj.ETH0PING = text.Substring(eth0PingIndex + 13, 4);
-
-                            var ltePwrIndex = text.IndexOf("LTE:  PWR");
-                            if (ltePwrIndex != -1) hubObj.LTEPWR = text.Substring(ltePwrIndex + 12, 4);
-
-                            var lteWdisIndex = text.IndexOf("LTE: WDIS");
-                            if (lteWdisIndex != -1) hubObj.LTEWDIS = text.Substring(lteWdisIndex + 12, 4);
-
-                            var lteCommIndex = text.IndexOf("LTE: COMM");
-                            if (lteCommIndex != -1) hubObj.LTECOMM = text.Substring(lteCommIndex + 12, 4);
-
-                            var zwavePwrIndex = text.IndexOf("ZWAVE:  PWR");
-                            if (zwavePwrIndex != -1) hubObj.ZWAVEPWR = text.Substring(zwavePwrIndex + 14, 4);
-
-                            var zwaveCommIndex = text.IndexOf("ZWAVE: COMM");
-                            if (zwaveCommIndex != -1) hubObj.ZWAVECOMM = text.Substring(zwaveCommIndex + 14, 4);
-
-                            var zwaveNvrIndex = text.IndexOf("ZWAVE:  NVR");
-                            if (zwaveNvrIndex != -1) hubObj.ZWAVENVR = text.Substring(zwaveNvrIndex + 14, 4);
-
-                            var wifiPingIndex = text.IndexOf("Wi-Fi: PING");
-                            if (wifiPingIndex != -1) hubObj.WiFiPING = text.Substring(wifiPingIndex + 14, 4);
-
-                            var btScanIndex = text.IndexOf("BT: SCAN");
-                            if (btScanIndex != -1) hubObj.BTSCAN = text.Substring(btScanIndex + 11, 4);
-
-                            // replace RESULTTIME by current time
-                            hubObj.RESULTTIME = DateTime.Now.ToString("yyyyMMddHHmmss");
-                            resultTimes["hub" + pos] = hubObj.RESULTTIME;
-
-                            hubObj.KeyUp = richTextBox.Text.IndexOf("[ KeyUp   ] has been detected.") != -1;
-                            hubObj.KeyDown = richTextBox.Text.IndexOf("[ KeyDown ] has been detected.") != -1;
-                            hubObj.KeyPwr = richTextBox.Text.IndexOf("[ KeyPwr ] has been detected.") != -1;
-
-                            // get QRcode and save into db
-                            switch (pos)
+                            using (var db = new HubDBContext())
                             {
-                                case 1:
-                                    button5.Enabled = true;
-                                    hubObj.PCBA = label19.Text.Substring(6);
-                                    break;
-                                case 2:
-                                    button7.Enabled = true;
-                                    hubObj.PCBA = label29.Text.Substring(6);
-                                    break;
-                                case 3:
-                                    button9.Enabled = true;
-                                    hubObj.PCBA = label39.Text.Substring(6);
-                                    break;
-                                case 4:
-                                    button11.Enabled = true;
-                                    hubObj.PCBA = label49.Text.Substring(6);
-                                    break;
-                            }
 
-                            // add to db
-                            db.Hubs.Add(hubObj);
-                            db.SaveChanges();
+                                Hub hubObj = new Hub();
+
+                                // extract the data from serial log
+                                var pcbaCpuIndex = text.IndexOf("PCBA:  CPU");
+                                if (pcbaCpuIndex != -1) hubObj.PCBACPU = text.Substring(pcbaCpuIndex + 13, 16);
+
+                                var pcbaEth0Index = text.IndexOf("PCBA: ETH0");
+                                if (pcbaEth0Index != -1) hubObj.PCBAETH0 = text.Substring(pcbaEth0Index + 13, 4);
+
+                                var pcbaWifiIndex = text.IndexOf("PCBA: WiFi");
+                                if (pcbaWifiIndex != -1) hubObj.PCBAWiFi = text.Substring(pcbaWifiIndex + 13, 17);
+
+                                var pcbaBtIndex = text.IndexOf("PCBA:   BT");
+                                if (pcbaBtIndex != -1) hubObj.PCBABT = text.Substring(pcbaBtIndex + 13, 17);
+
+                                var pcbaImeiIndex = text.IndexOf("PCBA: IMEI");
+                                if (pcbaImeiIndex != -1) hubObj.PCBAIMEI = text.Substring(pcbaImeiIndex + 13, 15);
+
+                                var pcbaCcidIndex = text.IndexOf("PCBA: CCID");
+                                if (pcbaCcidIndex != -1) hubObj.PCBACCID = text.Substring(pcbaCcidIndex + 13, 20);
+
+                                var tfCardCapIndex = text.IndexOf("TFCard:  Cap");
+                                if (tfCardCapIndex != -1) hubObj.TFCardCap = text.Substring(tfCardCapIndex + 15, 4);
+
+                                var adcDcIndex = text.IndexOf("ADC:   DC");
+                                if (adcDcIndex != -1) hubObj.ADCDC = text.Substring(adcDcIndex + 12, 5);
+
+                                var adcBatIndex = text.IndexOf("ADC:  BAT");
+                                if (adcBatIndex != -1) hubObj.ADCBAT = text.Substring(adcBatIndex + 12, 5);
+
+                                var adcLteIndex = text.IndexOf("ADC:  LTE");
+                                if (adcLteIndex != -1) hubObj.ADCLTE = text.Substring(adcLteIndex + 12, 6);
+
+                                var eth0PingIndex = text.IndexOf("ETH0: PING");
+                                if (eth0PingIndex != -1) hubObj.ETH0PING = text.Substring(eth0PingIndex + 13, 4);
+
+                                var ltePwrIndex = text.IndexOf("LTE:  PWR");
+                                if (ltePwrIndex != -1) hubObj.LTEPWR = text.Substring(ltePwrIndex + 12, 4);
+
+                                var lteWdisIndex = text.IndexOf("LTE: WDIS");
+                                if (lteWdisIndex != -1) hubObj.LTEWDIS = text.Substring(lteWdisIndex + 12, 4);
+
+                                var lteCommIndex = text.IndexOf("LTE: COMM");
+                                if (lteCommIndex != -1) hubObj.LTECOMM = text.Substring(lteCommIndex + 12, 4);
+
+                                var zwavePwrIndex = text.IndexOf("ZWAVE:  PWR");
+                                if (zwavePwrIndex != -1) hubObj.ZWAVEPWR = text.Substring(zwavePwrIndex + 14, 4);
+
+                                var zwaveCommIndex = text.IndexOf("ZWAVE: COMM");
+                                if (zwaveCommIndex != -1) hubObj.ZWAVECOMM = text.Substring(zwaveCommIndex + 14, 4);
+
+                                var zwaveNvrIndex = text.IndexOf("ZWAVE:  NVR");
+                                if (zwaveNvrIndex != -1) hubObj.ZWAVENVR = text.Substring(zwaveNvrIndex + 14, 4);
+
+                                var wifiPingIndex = text.IndexOf("Wi-Fi: PING");
+                                if (wifiPingIndex != -1) hubObj.WiFiPING = text.Substring(wifiPingIndex + 14, 4);
+
+                                var btScanIndex = text.IndexOf("BT: SCAN");
+                                if (btScanIndex != -1) hubObj.BTSCAN = text.Substring(btScanIndex + 11, 4);
+
+                                // replace RESULTTIME by current time
+                                hubObj.RESULTTIME = DateTime.Now.ToString("yyyyMMddHHmmss");
+                                resultTimes["hub" + pos] = hubObj.RESULTTIME;
+
+                                hubObj.KeyUp = richTextBox.Text.IndexOf("[ KeyUp   ] has been detected.") != -1;
+                                hubObj.KeyDown = richTextBox.Text.IndexOf("[ KeyDown ] has been detected.") != -1;
+                                hubObj.KeyPwr = richTextBox.Text.IndexOf("[ KeyPwr ] has been detected.") != -1;
+
+                                // get QRcode and save into db
+                                switch (pos)
+                                {
+                                    case 1:
+                                        button5.Enabled = true;
+                                        hubObj.PCBA = label19.Text.Substring(6);
+                                        break;
+                                    case 2:
+                                        button7.Enabled = true;
+                                        hubObj.PCBA = label29.Text.Substring(6);
+                                        break;
+                                    case 3:
+                                        button9.Enabled = true;
+                                        hubObj.PCBA = label39.Text.Substring(6);
+                                        break;
+                                    case 4:
+                                        button11.Enabled = true;
+                                        hubObj.PCBA = label49.Text.Substring(6);
+                                        break;
+                                }
+
+                                // add to db
+                                db.Hubs.Add(hubObj);
+                                db.SaveChanges();
+                            }
                             mainForm.presentNewestTable();
                             break;
                         default:
@@ -666,7 +668,7 @@ namespace V4HubTester
         private void button6_Click(object sender, EventArgs e)
         {
             // pass db to verify duplication; pass button name to identify the sender
-            Form inputDialog = new InputDialog(db, this, (sender as Button).Name);
+            Form inputDialog = new InputDialog(this, (sender as Button).Name);
             inputDialog.Show();
         }
 
@@ -711,14 +713,17 @@ namespace V4HubTester
                 MessageBox.Show("Please input all results, then save them.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            // resultTime is the identifier
-            String resultTime = resultTimes["hub1"];
-            var hub = db.Hubs.OrderByDescending(h => h.id).FirstOrDefault(h => h.RESULTTIME == resultTime);
-            hub.GreenLights = radioButton8.Checked;
-            hub.RGBLight = radioButton6.Checked;
-            hub.USBScreen = radioButton4.Checked;
-            hub.Ammeter = radioButton2.Checked;
-            db.SaveChanges();
+            using (var db = new HubDBContext())
+            {
+                // resultTime is the identifier
+                String resultTime = resultTimes["hub1"];
+                var hub = db.Hubs.OrderByDescending(h => h.id).FirstOrDefault(h => h.RESULTTIME == resultTime);
+                hub.GreenLights = radioButton8.Checked;
+                hub.RGBLight = radioButton6.Checked;
+                hub.USBScreen = radioButton4.Checked;
+                hub.Ammeter = radioButton2.Checked;
+                db.SaveChanges();
+            }
             label10.ForeColor = Color.Green;
             label10.Text = "Saved";
         }
@@ -731,14 +736,17 @@ namespace V4HubTester
                 MessageBox.Show("Please verify the all items and input the results, then save them.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            // resultTime is the identifier
-            String resultTime = resultTimes["hub2"];
-            var hub = db.Hubs.OrderByDescending(h => h.id).FirstOrDefault(h => h.RESULTTIME == resultTime);
-            hub.GreenLights = radioButton22.Checked;
-            hub.RGBLight = radioButton20.Checked;
-            hub.USBScreen = radioButton18.Checked;
-            hub.Ammeter = radioButton16.Checked;
-            db.SaveChanges();
+            using (var db = new HubDBContext())
+            {
+                // resultTime is the identifier
+                String resultTime = resultTimes["hub2"];
+                var hub = db.Hubs.OrderByDescending(h => h.id).FirstOrDefault(h => h.RESULTTIME == resultTime);
+                hub.GreenLights = radioButton22.Checked;
+                hub.RGBLight = radioButton20.Checked;
+                hub.USBScreen = radioButton18.Checked;
+                hub.Ammeter = radioButton16.Checked;
+                db.SaveChanges();
+            }
             label20.ForeColor = Color.Green;
             label20.Text = "Saved";
         }
@@ -751,14 +759,17 @@ namespace V4HubTester
                 MessageBox.Show("Please verify the all items and input the results, then save them.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            // resultTime is the identifier
-            String resultTime = resultTimes["hub3"];
-            var hub = db.Hubs.OrderByDescending(h => h.id).FirstOrDefault(h => h.RESULTTIME == resultTime);
-            hub.GreenLights = radioButton36.Checked;
-            hub.RGBLight = radioButton34.Checked;
-            hub.USBScreen = radioButton32.Checked;
-            hub.Ammeter = radioButton30.Checked;
-            db.SaveChanges();
+            using (var db = new HubDBContext())
+            {
+                // resultTime is the identifier
+                String resultTime = resultTimes["hub3"];
+                var hub = db.Hubs.OrderByDescending(h => h.id).FirstOrDefault(h => h.RESULTTIME == resultTime);
+                hub.GreenLights = radioButton36.Checked;
+                hub.RGBLight = radioButton34.Checked;
+                hub.USBScreen = radioButton32.Checked;
+                hub.Ammeter = radioButton30.Checked;
+                db.SaveChanges();
+            }
             label30.ForeColor = Color.Green;
             label30.Text = "Saved";
         }
@@ -771,14 +782,17 @@ namespace V4HubTester
                 MessageBox.Show("Please verify the all items and input the results, then save them.", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
-            // resultTime is the identifier
-            String resultTime = resultTimes["hub4"];
-            var hub = db.Hubs.OrderByDescending(h => h.id).FirstOrDefault(h => h.RESULTTIME == resultTime);
-            hub.GreenLights = radioButton50.Checked;
-            hub.RGBLight = radioButton48.Checked;
-            hub.USBScreen = radioButton46.Checked;
-            hub.Ammeter = radioButton44.Checked;
-            db.SaveChanges();
+            using (var db = new HubDBContext())
+            {
+                // resultTime is the identifier
+                String resultTime = resultTimes["hub4"];
+                var hub = db.Hubs.OrderByDescending(h => h.id).FirstOrDefault(h => h.RESULTTIME == resultTime);
+                hub.GreenLights = radioButton50.Checked;
+                hub.RGBLight = radioButton48.Checked;
+                hub.USBScreen = radioButton46.Checked;
+                hub.Ammeter = radioButton44.Checked;
+                db.SaveChanges();
+            }
             label40.ForeColor = Color.Green;
             label40.Text = "Saved";
         }

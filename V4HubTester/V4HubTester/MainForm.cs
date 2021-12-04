@@ -13,13 +13,17 @@ namespace V4HubTester
         private DataTable hubTable = new DataTable();
         String filePath;
         private Form form1;
-        public MainForm(HubDBContext db, String filePath, Hub[] hubs)
+        public MainForm(String filePath)
         {
             this.filePath = filePath;
             InitializeComponent();
-
-            bindDataSource(hubs);
-            form1 = new Form1(db, this);
+            using (var db = new HubDBContext())
+            {
+                var count = db.Hubs.Count();
+                var hubs = db.Hubs.Where(hub => count - hub.id < 10).ToArray();
+                bindDataSource(hubs);
+            }
+            form1 = new Form1(this);
             form1.Show();
         }
 
@@ -29,9 +33,10 @@ namespace V4HubTester
             using (var db = new HubDBContext())
             {
                 var count = db.Hubs.Count();
-                // only get the latest 20 records
+                // only get the latest 10 records
                 var hubs = db.Hubs.Where(hub => count - hub.id < 10).ToArray();
                 bindDataSource(hubs);
+                DisableDefaultSelection();
             }
         }
 
@@ -117,6 +122,11 @@ namespace V4HubTester
 
         private void MainForm_Load(object sender, EventArgs e)
         {
+            DisableDefaultSelection();
+        }
+
+        private void DisableDefaultSelection()
+        {
             dataGridView1.ClearSelection();
             dataGridView1.FirstDisplayedScrollingRowIndex = dataGridView1.Rows.Count - 1;
             dataGridView1.RowHeadersDefaultCellStyle.Padding = new Padding(dataGridView1.RowHeadersWidth);
@@ -171,6 +181,11 @@ namespace V4HubTester
             }
             finally
             {
+                foreach (Attachment attachment in message.Attachments)
+                {
+                    attachment.Dispose();
+                }
+                message.Attachments.Dispose();
                 smtpClient.Dispose();
             }
 

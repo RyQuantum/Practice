@@ -49,6 +49,7 @@
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "UploadingForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "UploadingForm";
             this.TopMost = true;
             this.ResumeLayout(false);

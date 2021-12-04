@@ -13,12 +13,10 @@ namespace V4HubTester
             using (var db = new HubDBContext(@"data source=" + filePath))
             {
                 var count = db.Hubs.Count();
-                // only get the latest 20 records
-                var hubs = db.Hubs.Where(hub => count - hub.id < 10).ToArray();
-                //Application.Run(new MainForm(db, filePath, hubs));
-                ApplicationConfiguration.Initialize();
-                Application.Run(new MainForm(db, filePath, hubs));
+                Console.WriteLine("count: " + count);
             }
+            ApplicationConfiguration.Initialize();
+            Application.Run(new MainForm(filePath));
         }
     }
 }
