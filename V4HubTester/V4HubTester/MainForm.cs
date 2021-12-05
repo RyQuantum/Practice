@@ -206,8 +206,12 @@ namespace V4HubTester
                 f.Refresh();
                 this.Enabled = false; //Disable ourselves
                 Cursor.Current = Cursors.WaitCursor;
-                SendEmail("smtp.126.com", 25, "mayue3434@126.com", "ryan@rently.com", "V4 hub Tester Results", "DB file:", false, Encoding.UTF8, "ROOQBZWWUAFDXDXG", "mayue3434", new String[] { filePath });
-                this.Enabled = true;  //We're done, enable ourselves
+                var arr = filePath.Split('\\');
+                var newFile = string.Join("\\", arr.Take(arr.Length - 1)) + "\\v4hub.db";
+                // copy the file to solve the conflicts of file operation
+                File.Copy(filePath, newFile, true);
+                SendEmail("smtp.126.com", 25, "mayue3434@126.com", "ryan@rently.com", "V4 hub Tester Results", "DB file:", false, Encoding.UTF8, "ROOQBZWWUAFDXDXG", "mayue3434", new String[] { newFile });
+                File.Delete(newFile); this.Enabled = true;  //We're done, enable ourselves
                 f.Close(); 
                 Application.Exit();
             }
