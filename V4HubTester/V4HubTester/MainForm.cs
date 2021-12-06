@@ -52,7 +52,7 @@ namespace V4HubTester
             DataColumn col5 = new DataColumn("PCBABT", typeof(string));
             DataColumn col6 = new DataColumn("PCBAIMEI", typeof(string));
             DataColumn col7 = new DataColumn("PCBACCID", typeof(string));
-            DataColumn col8 = new DataColumn("TFCardCap", typeof(string));
+            //DataColumn col8 = new DataColumn("TFCardCap", typeof(string));
             DataColumn col9 = new DataColumn("ADCDC", typeof(string));
             DataColumn col10 = new DataColumn("ADCBAT", typeof(string));
             DataColumn col11 = new DataColumn("ADCLTE", typeof(string));
@@ -74,7 +74,7 @@ namespace V4HubTester
             hubTable.Columns.Add(col5);
             hubTable.Columns.Add(col6);
             hubTable.Columns.Add(col7);
-            hubTable.Columns.Add(col8);
+            //hubTable.Columns.Add(col8);
             hubTable.Columns.Add(col9);
             hubTable.Columns.Add(col10);
             hubTable.Columns.Add(col11);
@@ -99,7 +99,7 @@ namespace V4HubTester
                 dr["PCBABT"] = hub.PCBABT;
                 dr["PCBAIMEI"] = hub.PCBAIMEI;
                 dr["PCBACCID"] = hub.PCBACCID;
-                dr["TFCardCap"] = hub.TFCardCap;
+                //dr["TFCardCap"] = hub.TFCardCap;
                 dr["ADCDC"] = hub.ADCDC;
                 dr["ADCBAT"] = hub.ADCBAT;
                 dr["ADCLTE"] = hub.ADCLTE;

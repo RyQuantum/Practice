@@ -37,7 +37,6 @@
             this.PCBABT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PCBAIMEI = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PCBACCID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.TFCardCap = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ADCDC = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ADCBAT = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ADCLTE = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -71,7 +70,6 @@
             this.PCBABT,
             this.PCBAIMEI,
             this.PCBACCID,
-            this.TFCardCap,
             this.ADCDC,
             this.ADCBAT,
             this.ADCLTE,
@@ -127,7 +125,7 @@
             this.PCBAETH0.MinimumWidth = 8;
             this.PCBAETH0.Name = "PCBAETH0";
             this.PCBAETH0.ReadOnly = true;
-            this.PCBAETH0.Width = 70;
+            this.PCBAETH0.Width = 160;
             // 
             // PCBAWiFi
             // 
@@ -164,15 +162,6 @@
             this.PCBACCID.Name = "PCBACCID";
             this.PCBACCID.ReadOnly = true;
             this.PCBACCID.Width = 220;
-            // 
-            // TFCardCap
-            // 
-            this.TFCardCap.DataPropertyName = "TFCardCap";
-            this.TFCardCap.HeaderText = "TFCardCap";
-            this.TFCardCap.MinimumWidth = 8;
-            this.TFCardCap.Name = "TFCardCap";
-            this.TFCardCap.ReadOnly = true;
-            this.TFCardCap.Width = 70;
             // 
             // ADCDC
             // 
@@ -318,7 +307,6 @@
         private DataGridViewTextBoxColumn PCBABT;
         private DataGridViewTextBoxColumn PCBAIMEI;
         private DataGridViewTextBoxColumn PCBACCID;
-        private DataGridViewTextBoxColumn TFCardCap;
         private DataGridViewTextBoxColumn ADCDC;
         private DataGridViewTextBoxColumn ADCBAT;
         private DataGridViewTextBoxColumn ADCLTE;

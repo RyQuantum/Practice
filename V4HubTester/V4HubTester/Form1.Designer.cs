@@ -37,6 +37,8 @@
             this.comboBox4 = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
             this.panel20 = new System.Windows.Forms.Panel();
+            this.label37 = new System.Windows.Forms.Label();
+            this.button17 = new System.Windows.Forms.Button();
             this.label40 = new System.Windows.Forms.Label();
             this.panel21 = new System.Windows.Forms.Panel();
             this.radioButton45 = new System.Windows.Forms.RadioButton();
@@ -65,6 +67,8 @@
             this.comboBox3 = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panel15 = new System.Windows.Forms.Panel();
+            this.label36 = new System.Windows.Forms.Label();
+            this.button16 = new System.Windows.Forms.Button();
             this.label30 = new System.Windows.Forms.Label();
             this.panel16 = new System.Windows.Forms.Panel();
             this.radioButton31 = new System.Windows.Forms.RadioButton();
@@ -93,6 +97,8 @@
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel5 = new System.Windows.Forms.Panel();
+            this.label27 = new System.Windows.Forms.Label();
+            this.button14 = new System.Windows.Forms.Button();
             this.label10 = new System.Windows.Forms.Label();
             this.panel7 = new System.Windows.Forms.Panel();
             this.radioButton3 = new System.Windows.Forms.RadioButton();
@@ -121,6 +127,8 @@
             this.comboBox2 = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel10 = new System.Windows.Forms.Panel();
+            this.label28 = new System.Windows.Forms.Label();
+            this.button15 = new System.Windows.Forms.Button();
             this.label20 = new System.Windows.Forms.Label();
             this.panel11 = new System.Windows.Forms.Panel();
             this.radioButton17 = new System.Windows.Forms.RadioButton();
@@ -194,7 +202,7 @@
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(1196, 616);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(1196, 752);
             this.tableLayoutPanel1.TabIndex = 1;
             // 
             // panel4
@@ -208,9 +216,9 @@
             this.panel4.Controls.Add(this.label4);
             this.panel4.Controls.Add(this.panel20);
             this.panel4.Controls.Add(this.richTextBox4);
-            this.panel4.Location = new System.Drawing.Point(601, 311);
+            this.panel4.Location = new System.Drawing.Point(601, 379);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(592, 302);
+            this.panel4.Size = new System.Drawing.Size(592, 370);
             this.panel4.TabIndex = 3;
             // 
             // label8
@@ -262,6 +270,8 @@
             // 
             this.panel20.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel20.Controls.Add(this.label37);
+            this.panel20.Controls.Add(this.button17);
             this.panel20.Controls.Add(this.label40);
             this.panel20.Controls.Add(this.panel21);
             this.panel20.Controls.Add(this.panel22);
@@ -277,8 +287,29 @@
             this.panel20.Controls.Add(this.label41);
             this.panel20.Location = new System.Drawing.Point(338, 3);
             this.panel20.Name = "panel20";
-            this.panel20.Size = new System.Drawing.Size(251, 296);
+            this.panel20.Size = new System.Drawing.Size(251, 364);
             this.panel20.TabIndex = 8;
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label37.ForeColor = System.Drawing.Color.LimeGreen;
+            this.label37.Location = new System.Drawing.Point(0, 299);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(0, 65);
+            this.label37.TabIndex = 13;
+            // 
+            // button17
+            // 
+            this.button17.Enabled = false;
+            this.button17.Location = new System.Drawing.Point(147, 49);
+            this.button17.Name = "button17";
+            this.button17.Size = new System.Drawing.Size(101, 34);
+            this.button17.TabIndex = 12;
+            this.button17.Text = "Start test";
+            this.button17.UseVisualStyleBackColor = true;
+            this.button17.Click += new System.EventHandler(this.button17_Click);
             // 
             // label40
             // 
@@ -414,7 +445,7 @@
             // 
             // button12
             // 
-            this.button12.Location = new System.Drawing.Point(175, 49);
+            this.button12.Location = new System.Drawing.Point(68, 49);
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(73, 34);
             this.button12.TabIndex = 7;
@@ -494,7 +525,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.richTextBox4.Location = new System.Drawing.Point(3, 42);
             this.richTextBox4.Name = "richTextBox4";
-            this.richTextBox4.Size = new System.Drawing.Size(329, 257);
+            this.richTextBox4.Size = new System.Drawing.Size(329, 325);
             this.richTextBox4.TabIndex = 7;
             this.richTextBox4.Text = "";
             // 
@@ -509,9 +540,9 @@
             this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.panel15);
             this.panel3.Controls.Add(this.richTextBox3);
-            this.panel3.Location = new System.Drawing.Point(3, 311);
+            this.panel3.Location = new System.Drawing.Point(3, 379);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(592, 302);
+            this.panel3.Size = new System.Drawing.Size(592, 370);
             this.panel3.TabIndex = 2;
             // 
             // label7
@@ -563,6 +594,8 @@
             // 
             this.panel15.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel15.Controls.Add(this.label36);
+            this.panel15.Controls.Add(this.button16);
             this.panel15.Controls.Add(this.label30);
             this.panel15.Controls.Add(this.panel16);
             this.panel15.Controls.Add(this.panel17);
@@ -578,8 +611,29 @@
             this.panel15.Controls.Add(this.label31);
             this.panel15.Location = new System.Drawing.Point(338, 3);
             this.panel15.Name = "panel15";
-            this.panel15.Size = new System.Drawing.Size(251, 296);
+            this.panel15.Size = new System.Drawing.Size(251, 364);
             this.panel15.TabIndex = 8;
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label36.ForeColor = System.Drawing.Color.LimeGreen;
+            this.label36.Location = new System.Drawing.Point(0, 299);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(0, 65);
+            this.label36.TabIndex = 13;
+            // 
+            // button16
+            // 
+            this.button16.Enabled = false;
+            this.button16.Location = new System.Drawing.Point(147, 49);
+            this.button16.Name = "button16";
+            this.button16.Size = new System.Drawing.Size(101, 34);
+            this.button16.TabIndex = 12;
+            this.button16.Text = "Start test";
+            this.button16.UseVisualStyleBackColor = true;
+            this.button16.Click += new System.EventHandler(this.button16_Click);
             // 
             // label30
             // 
@@ -715,7 +769,7 @@
             // 
             // button10
             // 
-            this.button10.Location = new System.Drawing.Point(175, 49);
+            this.button10.Location = new System.Drawing.Point(68, 49);
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(73, 34);
             this.button10.TabIndex = 7;
@@ -795,7 +849,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.richTextBox3.Location = new System.Drawing.Point(3, 42);
             this.richTextBox3.Name = "richTextBox3";
-            this.richTextBox3.Size = new System.Drawing.Size(329, 257);
+            this.richTextBox3.Size = new System.Drawing.Size(329, 325);
             this.richTextBox3.TabIndex = 7;
             this.richTextBox3.Text = "";
             // 
@@ -812,7 +866,7 @@
             this.panel1.Controls.Add(this.richTextBox1);
             this.panel1.Location = new System.Drawing.Point(3, 3);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(592, 302);
+            this.panel1.Size = new System.Drawing.Size(592, 370);
             this.panel1.TabIndex = 0;
             // 
             // label5
@@ -863,6 +917,8 @@
             // 
             this.panel5.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel5.Controls.Add(this.label27);
+            this.panel5.Controls.Add(this.button14);
             this.panel5.Controls.Add(this.label10);
             this.panel5.Controls.Add(this.panel7);
             this.panel5.Controls.Add(this.panel8);
@@ -878,8 +934,29 @@
             this.panel5.Controls.Add(this.label11);
             this.panel5.Location = new System.Drawing.Point(338, 3);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(251, 296);
+            this.panel5.Size = new System.Drawing.Size(251, 364);
             this.panel5.TabIndex = 2;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label27.ForeColor = System.Drawing.Color.LimeGreen;
+            this.label27.Location = new System.Drawing.Point(3, 299);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(0, 65);
+            this.label27.TabIndex = 12;
+            // 
+            // button14
+            // 
+            this.button14.Enabled = false;
+            this.button14.Location = new System.Drawing.Point(147, 49);
+            this.button14.Name = "button14";
+            this.button14.Size = new System.Drawing.Size(101, 34);
+            this.button14.TabIndex = 11;
+            this.button14.Text = "Start test";
+            this.button14.UseVisualStyleBackColor = true;
+            this.button14.Click += new System.EventHandler(this.button14_Click);
             // 
             // label10
             // 
@@ -1015,7 +1092,7 @@
             // 
             // button6
             // 
-            this.button6.Location = new System.Drawing.Point(175, 49);
+            this.button6.Location = new System.Drawing.Point(68, 49);
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(73, 34);
             this.button6.TabIndex = 7;
@@ -1094,7 +1171,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.richTextBox1.Location = new System.Drawing.Point(3, 42);
             this.richTextBox1.Name = "richTextBox1";
-            this.richTextBox1.Size = new System.Drawing.Size(329, 257);
+            this.richTextBox1.Size = new System.Drawing.Size(329, 325);
             this.richTextBox1.TabIndex = 1;
             this.richTextBox1.Text = "";
             // 
@@ -1111,7 +1188,7 @@
             this.panel2.Controls.Add(this.richTextBox2);
             this.panel2.Location = new System.Drawing.Point(601, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(592, 302);
+            this.panel2.Size = new System.Drawing.Size(592, 370);
             this.panel2.TabIndex = 1;
             // 
             // label6
@@ -1163,6 +1240,8 @@
             // 
             this.panel10.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.panel10.Controls.Add(this.label28);
+            this.panel10.Controls.Add(this.button15);
             this.panel10.Controls.Add(this.label20);
             this.panel10.Controls.Add(this.panel11);
             this.panel10.Controls.Add(this.panel12);
@@ -1178,8 +1257,29 @@
             this.panel10.Controls.Add(this.label21);
             this.panel10.Location = new System.Drawing.Point(338, 3);
             this.panel10.Name = "panel10";
-            this.panel10.Size = new System.Drawing.Size(251, 296);
+            this.panel10.Size = new System.Drawing.Size(251, 364);
             this.panel10.TabIndex = 8;
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Segoe UI", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label28.ForeColor = System.Drawing.Color.LimeGreen;
+            this.label28.Location = new System.Drawing.Point(0, 299);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(0, 65);
+            this.label28.TabIndex = 13;
+            // 
+            // button15
+            // 
+            this.button15.Enabled = false;
+            this.button15.Location = new System.Drawing.Point(147, 49);
+            this.button15.Name = "button15";
+            this.button15.Size = new System.Drawing.Size(101, 34);
+            this.button15.TabIndex = 12;
+            this.button15.Text = "Start test";
+            this.button15.UseVisualStyleBackColor = true;
+            this.button15.Click += new System.EventHandler(this.button15_Click);
             // 
             // label20
             // 
@@ -1315,7 +1415,7 @@
             // 
             // button8
             // 
-            this.button8.Location = new System.Drawing.Point(175, 49);
+            this.button8.Location = new System.Drawing.Point(68, 49);
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(73, 34);
             this.button8.TabIndex = 7;
@@ -1395,7 +1495,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.richTextBox2.Location = new System.Drawing.Point(3, 42);
             this.richTextBox2.Name = "richTextBox2";
-            this.richTextBox2.Size = new System.Drawing.Size(329, 257);
+            this.richTextBox2.Size = new System.Drawing.Size(329, 325);
             this.richTextBox2.TabIndex = 7;
             this.richTextBox2.Text = "";
             // 
@@ -1425,11 +1525,11 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1220, 678);
+            this.ClientSize = new System.Drawing.Size(1220, 814);
             this.Controls.Add(this.button13);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.tableLayoutPanel1);
-            this.MinimumSize = new System.Drawing.Size(1242, 734);
+            this.MinimumSize = new System.Drawing.Size(1242, 870);
             this.Name = "Form1";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
@@ -1605,5 +1705,13 @@
         private Label label29;
         private Label label21;
         private RichTextBox richTextBox2;
+        private Button button17;
+        private Button button16;
+        private Button button15;
+        private Button button14;
+        private Label label37;
+        private Label label36;
+        private Label label27;
+        private Label label28;
     }
 }
