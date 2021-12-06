@@ -17,6 +17,8 @@ namespace V4HubTester
         {
             this.filePath = filePath;
             InitializeComponent();
+            dataGridView1.Columns.Cast<DataGridViewColumn>().ToList().ForEach(f => f.SortMode = DataGridViewColumnSortMode.NotSortable);
+
             using (var db = new HubDBContext())
             {
                 var count = db.Hubs.Count();
