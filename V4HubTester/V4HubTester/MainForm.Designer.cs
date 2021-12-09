@@ -30,7 +30,7 @@
         {
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PCBA = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.QRCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PCBACPU = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PCBAETH0 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.PCBAWiFi = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -63,7 +63,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id,
-            this.PCBA,
+            this.QRCode,
             this.PCBACPU,
             this.PCBAETH0,
             this.PCBAWiFi,
@@ -100,14 +100,14 @@
             this.id.ReadOnly = true;
             this.id.Width = 50;
             // 
-            // PCBA
+            // QRCode
             // 
-            this.PCBA.DataPropertyName = "PCBA";
-            this.PCBA.HeaderText = "PCBA";
-            this.PCBA.MinimumWidth = 8;
-            this.PCBA.Name = "PCBA";
-            this.PCBA.ReadOnly = true;
-            this.PCBA.Width = 150;
+            this.QRCode.DataPropertyName = "QRCode";
+            this.QRCode.HeaderText = "QRCode";
+            this.QRCode.MinimumWidth = 8;
+            this.QRCode.Name = "QRCode";
+            this.QRCode.ReadOnly = true;
+            this.QRCode.Width = 150;
             // 
             // PCBACPU
             // 
@@ -300,7 +300,7 @@
 
         private DataGridView dataGridView1;
         private DataGridViewTextBoxColumn id;
-        private DataGridViewTextBoxColumn PCBA;
+        private DataGridViewTextBoxColumn QRCode;
         private DataGridViewTextBoxColumn PCBACPU;
         private DataGridViewTextBoxColumn PCBAETH0;
         private DataGridViewTextBoxColumn PCBAWiFi;

@@ -140,29 +140,31 @@ namespace V4HubTester
                 serialPort.Close();
                 return;
             }
-            String newAdded = "", newRemoved = "";
+            List<String> newAdded = new List<String>();
             // compare old and new list, get the newly added item
             for (int i = 0; i < portList.Length; i++)
             {
                 if (!comboBox.Items.Contains(portList[i]))
                 {
-                    newAdded = portList[i];
-                    comboBox.Items.Add(newAdded);
+                    newAdded.Add(portList[i]);
+                    comboBox.Items.Add(portList[i]);
                 }
             }
             for (int i = 0; i < comboBox.Items.Count; i++)
             {
                 if (!portList.Contains(comboBox.Items[i].ToString()))
                 {
-                    newRemoved = comboBox.Items[i].ToString();
                     comboBox.Items.RemoveAt(i);
                 }
             }
             // always display the newly added item to the comboBox
-            if (newAdded != "" && !ports.Contains(newAdded))
+            newAdded.ForEach(item =>
             {
-                comboBox.Text = newAdded;
-            }
+                if (!ports.Contains(item))
+                {
+                    comboBox.Text = item;
+                }
+            });
         }
 
         //update the serial list and add it to the comboBox 
@@ -268,7 +270,7 @@ namespace V4HubTester
                         arrow = label5;
                         tutorial = label11;
                         nextTutorial = label21;
-                        info = "Plug in the top right hub and click the connect button";
+                        info = "依据测试架方向，插入右上角USB转串口适配器，点击\"连接\"";
                         break;
                     case "button2":
                         button = button2;
@@ -278,7 +280,7 @@ namespace V4HubTester
                         arrow = label6;
                         tutorial = label21;
                         nextTutorial = label31;
-                        info = "Plug in the bottom left hub and click the connect button";
+                        info = "依据测试架方向，插入左下角USB转串口适配器，点击\"连接\"";
                         break;
                     case "button3":
                         button = button3;
@@ -288,7 +290,7 @@ namespace V4HubTester
                         arrow = label7;
                         tutorial = label31;
                         nextTutorial = label41;
-                        info = "Plug in the bottom right hub and click the connect button";
+                        info = "依据测试架方向，插入右下角USB转串口适配器，点击\"连接\"";
                         break;
                     case "button4":
                         button = button4;
@@ -298,7 +300,7 @@ namespace V4HubTester
                         arrow = label8;
                         tutorial = label41;
                         nextTutorial = label41;
-                        info = "Scan the barcode on the bottom of each board and start testing";
+                        info = "请扫描hub底部QR码、通电开机、并开始测试";
                         break;
                 }
                 // forbid user to manually click disconnect button
@@ -341,16 +343,16 @@ namespace V4HubTester
             switch (index)
             {
                 case 1:
-                    processData(serialPort1, richTextBox1, label11, label10);
+                    processData(serialPort1, richTextBox1, label11, label10, button14);
                     break;
                 case 2:
-                    processData(serialPort2, richTextBox2, label21, label20);
+                    processData(serialPort2, richTextBox2, label21, label20, button15);
                     break;
                 case 3:
-                    processData(serialPort3, richTextBox3, label31, label30);
+                    processData(serialPort3, richTextBox3, label31, label30, button16);
                     break;
                 case 4:
-                    processData(serialPort4, richTextBox4, label41, label40);
+                    processData(serialPort4, richTextBox4, label41, label40, button17);
                     break;
                 default:
                     return;
@@ -358,7 +360,7 @@ namespace V4HubTester
         }
 
         // process the data from serial port
-        private void processData(SerialPort serialPort, RichTextBox richTextBox, Label tutorial, Label info)
+        private void processData(SerialPort serialPort, RichTextBox richTextBox, Label tutorial, Label info, Button StartTestButton)
         {
             // get pos (equivalent to position)
             int pos = Array.IndexOf(ports, serialPort.PortName);
@@ -384,40 +386,44 @@ namespace V4HubTester
                         switch (pos)
                         {
                             case 1:
-                                label19.Text = "PCBA: ";
+                                label19.Text = "QR码: ";
                                 button6.Visible = true;
                                 setHub1Report(false);
                                 button5.Enabled = false;
+                                button14.Enabled = false;
                                 label10.Text = "";
                                 label10.ForeColor = Color.Black;
                                 label11.Text = "请扫描hub底部QR码";
                                 label27.Text = "";
                                 break;
                             case 2:
-                                label29.Text = "PCBA: ";
+                                label29.Text = "QR码: ";
                                 button8.Visible = true;
                                 setHub2Report(false);
                                 button7.Enabled = false;
+                                button15.Enabled = false;
                                 label20.Text = "";
                                 label20.ForeColor = Color.Black;
                                 label21.Text = "请扫描hub底部QR码";
                                 label28.Text = "";
                                 break;
                             case 3:
-                                label39.Text = "PCBA: ";
+                                label39.Text = "QR码: ";
                                 button10.Visible = true;
                                 setHub3Report(false);
                                 button9.Enabled = false;
+                                button16.Enabled = false;
                                 label30.Text = "";
                                 label30.ForeColor = Color.Black;
                                 label31.Text = "请扫描hub底部QR码";
                                 label36.Text = "";
                                 break;
                             case 4:
-                                label49.Text = "PCBA: ";
+                                label49.Text = "QR码: ";
                                 button12.Visible = true;
                                 setHub4Report(false);
                                 button11.Enabled = false;
+                                button17.Enabled = false;
                                 label40.Text = "";
                                 label40.ForeColor = Color.Black;
                                 label41.Text = "请扫描hub底部QR码";
@@ -433,23 +439,24 @@ namespace V4HubTester
                     var text = richTextBox.Text.Substring(states["hub" + pos]["index"]);
                     switch (states["hub" + pos]["phase"])
                     {
-                        case 0: // hub is launching, monitoring when it's done.
+                        case 0: // hub is launching, monitoring when can login.
                             if (text.IndexOf("imx6ull14x14evk login:") == -1) return;
                             states["hub" + pos]["phase"] = 1;
                             states["hub" + pos]["index"] = richTextBox.Text.Length;
                             serialPort.WriteLine("root");
                             break;
-                        case 1: // hub is launching, monitoring when it's done.
+                        case 1: // hub is launching, monitoring when can input password.
                             if (text.IndexOf("Password:") == -1) return;
                             states["hub" + pos]["phase"] = 2;
                             states["hub" + pos]["index"] = richTextBox.Text.Length;
                             serialPort.WriteLine("root");
                             break;
-                        case 2: // hub is launching, monitoring when it's done.
+                        case 2: // hub is launching, monitoring when launching it's done.
                             if (text.IndexOf("new high-speed USB device number 3 using ci_hdrc") == -1) return;
                             states["hub" + pos]["phase"] = 3;
                             states["hub" + pos]["index"] = richTextBox.Text.Length;
                             tutorial.Text = "请点击\"开始测试\"";
+                            StartTestButton.Enabled = true;
                             break;
                         case 3: // hub has launched, monitoring when it starts testing 
                             if (text.IndexOf("validateConsole") == -1) return;
@@ -476,7 +483,6 @@ namespace V4HubTester
                             info.Text = "完成后点击保存";
                             using (var db = new HubDBContext())
                             {
-
                                 Hub hubObj = new Hub();
 
                                 // extract the data from serial log
@@ -550,19 +556,19 @@ namespace V4HubTester
                                 {
                                     case 1:
                                         button5.Enabled = true;
-                                        hubObj.PCBA = label19.Text.Substring(6);
+                                        hubObj.QRCode = label19.Text.Substring(5);
                                         break;
                                     case 2:
                                         button7.Enabled = true;
-                                        hubObj.PCBA = label29.Text.Substring(6);
+                                        hubObj.QRCode = label29.Text.Substring(5);
                                         break;
                                     case 3:
                                         button9.Enabled = true;
-                                        hubObj.PCBA = label39.Text.Substring(6);
+                                        hubObj.QRCode = label39.Text.Substring(5);
                                         break;
                                     case 4:
                                         button11.Enabled = true;
-                                        hubObj.PCBA = label49.Text.Substring(6);
+                                        hubObj.QRCode = label49.Text.Substring(5);
                                         break;
                                 }
 
@@ -665,10 +671,10 @@ namespace V4HubTester
             label21.Enabled = false;
             label31.Enabled = false;
             label41.Enabled = false;
-            label19.Text = "PCBA: ";
-            label29.Text = "PCBA: ";
-            label39.Text = "PCBA: ";
-            label49.Text = "PCBA: ";
+            label19.Text = "QR码: ";
+            label29.Text = "QR码: ";
+            label39.Text = "QR码: ";
+            label49.Text = "QR码: ";
             label27.Text = "";
             label28.Text = "";
             label36.Text = "";
@@ -685,7 +691,7 @@ namespace V4HubTester
                 { "hub4", new Dictionary<String, int>() { { "phase", 0 }, { "index", 0 } } },
             };
             ports = new String[5];
-            label9.Text = "Plug in the top left hub and click the connect button";
+            label9.Text = "依据测试架方向，插入左上角USB转串口适配器";
         }
 
         // callback function for all scan buttons
@@ -706,7 +712,6 @@ namespace V4HubTester
                     label19.Text += qrCode;
                     button6.Visible = false;
                     label11.Text = label11.Text == "请扫描hub底部QR码" ? "通电启动hub" : label11.Text;
-                    button14.Enabled = true;
                     setHub1Report(true);
                     break;
                 case "button8":
@@ -749,15 +754,15 @@ namespace V4HubTester
                 hub.Ammeter = radioButton2.Checked;
                 db.SaveChanges();
                 label10.ForeColor = Color.Green;
-                label10.Text = "Saved";
+                label10.Text = "已保存";
                 // check the final result by all parameters
                 if (radioButton2.Checked && radioButton4.Checked && radioButton6.Checked && radioButton8.Checked && hub.PCBACPU.Substring(0, 4) != "FAIL" && hub.PCBAETH0.Substring(0, 4) != "FAIL" && hub.PCBAWiFi.Substring(0, 4) != "FAIL" && hub.PCBABT.Substring(0, 4) != "FAIL" && hub.PCBAIMEI.Substring(0, 4) != "FAIL" && hub.PCBACCID.Substring(0, 4) != "FAIL" && hub.ADCDC.Substring(0, 4) != "FAIL" && hub.ADCBAT.Substring(0, 4) != "FAIL" && hub.ADCLTE.Substring(0, 4) != "FAIL" && hub.ETH0PING.Substring(0, 4) != "FAIL" && hub.LTEPWR.Substring(0, 4) != "FAIL" && hub.LTEWDIS.Substring(0, 4) != "FAIL" && hub.LTECOMM.Substring(0, 4) != "FAIL" && hub.ZWAVEPWR.Substring(0, 4) != "FAIL" && hub.ZWAVECOMM.Substring(0, 4) != "FAIL" && hub.ZWAVENVR.Substring(0, 4) != "FAIL" && hub.WiFiPING.Substring(0, 4) != "FAIL" && hub.BTSCAN.Substring(0, 4) != "FAIL")
                 {
-                    label27.Text = "PASS";
+                    label27.Text = "通过";
                     label27.ForeColor = Color.LimeGreen;
                 } else
                 {
-                    label27.Text = "FAILED";
+                    label27.Text = "未通过";
                     label27.ForeColor = Color.Red;
                 }
             }
@@ -782,16 +787,16 @@ namespace V4HubTester
                 hub.Ammeter = radioButton16.Checked;
                 db.SaveChanges();
                 label20.ForeColor = Color.Green;
-                label20.Text = "Saved";
+                label20.Text = "已保存";
                 // check the final result by all parameters
                 if (radioButton16.Checked && radioButton18.Checked && radioButton20.Checked && radioButton22.Checked && hub.PCBACPU.Substring(0, 4) != "FAIL" && hub.PCBAETH0.Substring(0, 4) != "FAIL" && hub.PCBAWiFi.Substring(0, 4) != "FAIL" && hub.PCBABT.Substring(0, 4) != "FAIL" && hub.PCBAIMEI.Substring(0, 4) != "FAIL" && hub.PCBACCID.Substring(0, 4) != "FAIL" && hub.ADCDC.Substring(0, 4) != "FAIL" && hub.ADCBAT.Substring(0, 4) != "FAIL" && hub.ADCLTE.Substring(0, 4) != "FAIL" && hub.ETH0PING.Substring(0, 4) != "FAIL" && hub.LTEPWR.Substring(0, 4) != "FAIL" && hub.LTEWDIS.Substring(0, 4) != "FAIL" && hub.LTECOMM.Substring(0, 4) != "FAIL" && hub.ZWAVEPWR.Substring(0, 4) != "FAIL" && hub.ZWAVECOMM.Substring(0, 4) != "FAIL" && hub.ZWAVENVR.Substring(0, 4) != "FAIL" && hub.WiFiPING.Substring(0, 4) != "FAIL" && hub.BTSCAN.Substring(0, 4) != "FAIL")
                 {
-                    label28.Text = "PASS";
+                    label28.Text = "通过";
                     label28.ForeColor = Color.LimeGreen;
                 }
                 else
                 {
-                    label28.Text = "FAILED";
+                    label28.Text = "未通过";
                     label28.ForeColor = Color.Red;
                 }
             }
@@ -815,19 +820,17 @@ namespace V4HubTester
                 hub.USBScreen = radioButton32.Checked;
                 hub.Ammeter = radioButton30.Checked;
                 db.SaveChanges();
-                label20.ForeColor = Color.Green;
-                label20.Text = "Saved";
                 label30.ForeColor = Color.Green;
-                label30.Text = "Saved";
+                label30.Text = "已保存";
                 // check the final result by all parameters
                 if (radioButton30.Checked && radioButton32.Checked && radioButton34.Checked && radioButton36.Checked && hub.PCBACPU.Substring(0, 4) != "FAIL" && hub.PCBAETH0.Substring(0, 4) != "FAIL" && hub.PCBAWiFi.Substring(0, 4) != "FAIL" && hub.PCBABT.Substring(0, 4) != "FAIL" && hub.PCBAIMEI.Substring(0, 4) != "FAIL" && hub.PCBACCID.Substring(0, 4) != "FAIL" && hub.ADCDC.Substring(0, 4) != "FAIL" && hub.ADCBAT.Substring(0, 4) != "FAIL" && hub.ADCLTE.Substring(0, 4) != "FAIL" && hub.ETH0PING.Substring(0, 4) != "FAIL" && hub.LTEPWR.Substring(0, 4) != "FAIL" && hub.LTEWDIS.Substring(0, 4) != "FAIL" && hub.LTECOMM.Substring(0, 4) != "FAIL" && hub.ZWAVEPWR.Substring(0, 4) != "FAIL" && hub.ZWAVECOMM.Substring(0, 4) != "FAIL" && hub.ZWAVENVR.Substring(0, 4) != "FAIL" && hub.WiFiPING.Substring(0, 4) != "FAIL" && hub.BTSCAN.Substring(0, 4) != "FAIL")
                 {
-                    label36.Text = "PASS";
+                    label36.Text = "通过";
                     label36.ForeColor = Color.LimeGreen;
                 }
                 else
                 {
-                    label36.Text = "FAILED";
+                    label36.Text = "未通过";
                     label36.ForeColor = Color.Red;
                 }
             }
@@ -852,16 +855,16 @@ namespace V4HubTester
                 hub.Ammeter = radioButton44.Checked;
                 db.SaveChanges();
                 label40.ForeColor = Color.Green;
-                label40.Text = "Saved";
+                label40.Text = "已保存";
                 // check the final result by all parameters
                 if (radioButton30.Checked && radioButton32.Checked && radioButton34.Checked && radioButton36.Checked && hub.PCBACPU.Substring(0, 4) != "FAIL" && hub.PCBAETH0.Substring(0, 4) != "FAIL" && hub.PCBAWiFi.Substring(0, 4) != "FAIL" && hub.PCBABT.Substring(0, 4) != "FAIL" && hub.PCBAIMEI.Substring(0, 4) != "FAIL" && hub.PCBACCID.Substring(0, 4) != "FAIL" && hub.ADCDC.Substring(0, 4) != "FAIL" && hub.ADCBAT.Substring(0, 4) != "FAIL" && hub.ADCLTE.Substring(0, 4) != "FAIL" && hub.ETH0PING.Substring(0, 4) != "FAIL" && hub.LTEPWR.Substring(0, 4) != "FAIL" && hub.LTEWDIS.Substring(0, 4) != "FAIL" && hub.LTECOMM.Substring(0, 4) != "FAIL" && hub.ZWAVEPWR.Substring(0, 4) != "FAIL" && hub.ZWAVECOMM.Substring(0, 4) != "FAIL" && hub.ZWAVENVR.Substring(0, 4) != "FAIL" && hub.WiFiPING.Substring(0, 4) != "FAIL" && hub.BTSCAN.Substring(0, 4) != "FAIL")
                 {
-                    label37.Text = "PASS";
+                    label37.Text = "通过";
                     label37.ForeColor = Color.LimeGreen;
                 }
                 else
                 {
-                    label37.Text = "FAILED";
+                    label37.Text = "未通过";
                     label37.ForeColor = Color.Red;
                 }
             }

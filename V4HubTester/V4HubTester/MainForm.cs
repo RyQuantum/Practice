@@ -47,7 +47,7 @@ namespace V4HubTester
         {
             hubTable = new DataTable();
             DataColumn col0 = new DataColumn("id", typeof(int));
-            DataColumn col1 = new DataColumn("PCBA", typeof(string));
+            DataColumn col1 = new DataColumn("QRCode", typeof(string));
             DataColumn col2 = new DataColumn("PCBACPU", typeof(string));
             DataColumn col3 = new DataColumn("PCBAETH0", typeof(string));
             DataColumn col4 = new DataColumn("PCBAWiFi", typeof(string));
@@ -94,7 +94,7 @@ namespace V4HubTester
             {
                 DataRow dr = hubTable.NewRow();
                 dr["id"] = hub.id;
-                dr["PCBA"] = hub.PCBA;
+                dr["QRCode"] = hub.QRCode;
                 dr["PCBACPU"] = hub.PCBACPU;
                 dr["PCBAETH0"] = hub.PCBAETH0;
                 dr["PCBAWiFi"] = hub.PCBAWiFi;
@@ -130,8 +130,11 @@ namespace V4HubTester
         private void DisableDefaultSelection()
         {
             dataGridView1.ClearSelection();
-            dataGridView1.FirstDisplayedScrollingRowIndex = dataGridView1.Rows.Count - 1;
             dataGridView1.RowHeadersDefaultCellStyle.Padding = new Padding(dataGridView1.RowHeadersWidth);
+            if (dataGridView1.Rows.Count != 0)
+            {
+                dataGridView1.FirstDisplayedScrollingRowIndex = dataGridView1.Rows.Count - 1;
+            }
         }
 
         public static void SendEmail(string server, int port, string sender, string recipient, string subject,
@@ -198,7 +201,7 @@ namespace V4HubTester
         {
             if (e.CloseReason == CloseReason.UserClosing)
             {
-                if (MessageBox.Show("Are you sure to exit?", "Confirm Exit", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) != DialogResult.OK)
+                if (MessageBox.Show("确定要退出吗？", "退出确认", MessageBoxButtons.OKCancel, MessageBoxIcon.Question) != DialogResult.OK)
                 {
                     e.Cancel = true;
                     return;

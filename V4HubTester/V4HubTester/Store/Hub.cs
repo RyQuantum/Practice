@@ -7,7 +7,7 @@ namespace V4HubTester
     public class Hub
     {
         public int id { get; set; }
-        public string PCBA { get; set; }
+        public string QRCode { get; set; }
         public string PCBACPU { get; set; }
         public string PCBAETH0 { get; set; }
         public string PCBAWiFi { get; set; }

@@ -262,9 +262,9 @@
             this.label4.AutoSize = true;
             this.label4.Location = new System.Drawing.Point(13, 7);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(54, 25);
+            this.label4.Size = new System.Drawing.Size(60, 25);
             this.label4.TabIndex = 9;
-            this.label4.Text = "Port4";
+            this.label4.Text = "串口4";
             // 
             // panel20
             // 
@@ -307,7 +307,7 @@
             this.button17.Name = "button17";
             this.button17.Size = new System.Drawing.Size(101, 34);
             this.button17.TabIndex = 12;
-            this.button17.Text = "Start test";
+            this.button17.Text = "开始测试";
             this.button17.UseVisualStyleBackColor = true;
             this.button17.Click += new System.EventHandler(this.button17_Click);
             // 
@@ -449,7 +449,7 @@
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(73, 34);
             this.button12.TabIndex = 7;
-            this.button12.Text = "Scan";
+            this.button12.Text = "扫码";
             this.button12.UseVisualStyleBackColor = true;
             this.button12.Click += new System.EventHandler(this.button6_Click);
             // 
@@ -459,7 +459,7 @@
             this.button11.Name = "button11";
             this.button11.Size = new System.Drawing.Size(73, 34);
             this.button11.TabIndex = 6;
-            this.button11.Text = "Save";
+            this.button11.Text = "保存";
             this.button11.UseVisualStyleBackColor = true;
             this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
@@ -468,45 +468,45 @@
             this.label32.AutoSize = true;
             this.label32.Location = new System.Drawing.Point(3, 219);
             this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(122, 25);
+            this.label32.Size = new System.Drawing.Size(105, 25);
             this.label32.TabIndex = 5;
-            this.label32.Text = "Ammeter<20:";
+            this.label32.Text = "电流表<20:";
             // 
             // label33
             // 
             this.label33.AutoSize = true;
             this.label33.Location = new System.Drawing.Point(3, 178);
             this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(103, 25);
+            this.label33.Size = new System.Drawing.Size(105, 25);
             this.label33.TabIndex = 4;
-            this.label33.Text = "USB screen:";
+            this.label33.Text = "USB屏工作:";
             // 
             // label34
             // 
             this.label34.AutoSize = true;
             this.label34.Location = new System.Drawing.Point(3, 137);
             this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(89, 25);
+            this.label34.Size = new System.Drawing.Size(106, 25);
             this.label34.TabIndex = 3;
-            this.label34.Text = "RGB light:";
+            this.label34.Text = "RGB灯正常:";
             // 
             // label35
             // 
             this.label35.AutoSize = true;
             this.label35.Location = new System.Drawing.Point(3, 96);
             this.label35.Name = "label35";
-            this.label35.Size = new System.Drawing.Size(110, 25);
+            this.label35.Size = new System.Drawing.Size(102, 25);
             this.label35.TabIndex = 2;
-            this.label35.Text = "Green lights:";
+            this.label35.Text = "5绿灯正常:";
             // 
             // label49
             // 
             this.label49.AutoSize = true;
             this.label49.Location = new System.Drawing.Point(3, 54);
             this.label49.Name = "label49";
-            this.label49.Size = new System.Drawing.Size(64, 25);
+            this.label49.Size = new System.Drawing.Size(65, 25);
             this.label49.TabIndex = 1;
-            this.label49.Text = "PCBA: ";
+            this.label49.Text = "QR码: ";
             // 
             // label41
             // 
@@ -586,9 +586,9 @@
             this.label3.AutoSize = true;
             this.label3.Location = new System.Drawing.Point(13, 7);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(54, 25);
+            this.label3.Size = new System.Drawing.Size(60, 25);
             this.label3.TabIndex = 9;
-            this.label3.Text = "Port3";
+            this.label3.Text = "串口3";
             // 
             // panel15
             // 
@@ -631,7 +631,7 @@
             this.button16.Name = "button16";
             this.button16.Size = new System.Drawing.Size(101, 34);
             this.button16.TabIndex = 12;
-            this.button16.Text = "Start test";
+            this.button16.Text = "开始测试";
             this.button16.UseVisualStyleBackColor = true;
             this.button16.Click += new System.EventHandler(this.button16_Click);
             // 
@@ -773,7 +773,7 @@
             this.button10.Name = "button10";
             this.button10.Size = new System.Drawing.Size(73, 34);
             this.button10.TabIndex = 7;
-            this.button10.Text = "Scan";
+            this.button10.Text = "扫码";
             this.button10.UseVisualStyleBackColor = true;
             this.button10.Click += new System.EventHandler(this.button6_Click);
             // 
@@ -783,7 +783,7 @@
             this.button9.Name = "button9";
             this.button9.Size = new System.Drawing.Size(73, 34);
             this.button9.TabIndex = 6;
-            this.button9.Text = "Save";
+            this.button9.Text = "保存";
             this.button9.UseVisualStyleBackColor = true;
             this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
@@ -792,45 +792,45 @@
             this.label23.AutoSize = true;
             this.label23.Location = new System.Drawing.Point(3, 219);
             this.label23.Name = "label23";
-            this.label23.Size = new System.Drawing.Size(122, 25);
+            this.label23.Size = new System.Drawing.Size(105, 25);
             this.label23.TabIndex = 5;
-            this.label23.Text = "Ammeter<20:";
+            this.label23.Text = "电流表<20:";
             // 
             // label24
             // 
             this.label24.AutoSize = true;
             this.label24.Location = new System.Drawing.Point(3, 178);
             this.label24.Name = "label24";
-            this.label24.Size = new System.Drawing.Size(103, 25);
+            this.label24.Size = new System.Drawing.Size(105, 25);
             this.label24.TabIndex = 4;
-            this.label24.Text = "USB screen:";
+            this.label24.Text = "USB屏工作:";
             // 
             // label25
             // 
             this.label25.AutoSize = true;
             this.label25.Location = new System.Drawing.Point(3, 137);
             this.label25.Name = "label25";
-            this.label25.Size = new System.Drawing.Size(89, 25);
+            this.label25.Size = new System.Drawing.Size(106, 25);
             this.label25.TabIndex = 3;
-            this.label25.Text = "RGB light:";
+            this.label25.Text = "RGB灯正常:";
             // 
             // label26
             // 
             this.label26.AutoSize = true;
             this.label26.Location = new System.Drawing.Point(3, 96);
             this.label26.Name = "label26";
-            this.label26.Size = new System.Drawing.Size(110, 25);
+            this.label26.Size = new System.Drawing.Size(102, 25);
             this.label26.TabIndex = 2;
-            this.label26.Text = "Green lights:";
+            this.label26.Text = "5绿灯正常:";
             // 
             // label39
             // 
             this.label39.AutoSize = true;
             this.label39.Location = new System.Drawing.Point(3, 54);
             this.label39.Name = "label39";
-            this.label39.Size = new System.Drawing.Size(64, 25);
+            this.label39.Size = new System.Drawing.Size(65, 25);
             this.label39.TabIndex = 1;
-            this.label39.Text = "PCBA: ";
+            this.label39.Text = "QR码: ";
             // 
             // label31
             // 
@@ -909,9 +909,9 @@
             this.label1.AutoSize = true;
             this.label1.Location = new System.Drawing.Point(13, 7);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(54, 25);
+            this.label1.Size = new System.Drawing.Size(60, 25);
             this.label1.TabIndex = 3;
-            this.label1.Text = "Port1";
+            this.label1.Text = "串口1";
             // 
             // panel5
             // 
@@ -954,7 +954,7 @@
             this.button14.Name = "button14";
             this.button14.Size = new System.Drawing.Size(101, 34);
             this.button14.TabIndex = 11;
-            this.button14.Text = "Start test";
+            this.button14.Text = "开始测试";
             this.button14.UseVisualStyleBackColor = true;
             this.button14.Click += new System.EventHandler(this.button14_Click);
             // 
@@ -1096,7 +1096,7 @@
             this.button6.Name = "button6";
             this.button6.Size = new System.Drawing.Size(73, 34);
             this.button6.TabIndex = 7;
-            this.button6.Text = "Scan";
+            this.button6.Text = "扫码";
             this.button6.UseVisualStyleBackColor = true;
             this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
@@ -1106,7 +1106,7 @@
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(73, 34);
             this.button5.TabIndex = 6;
-            this.button5.Text = "Save";
+            this.button5.Text = "保存";
             this.button5.UseVisualStyleBackColor = true;
             this.button5.Click += new System.EventHandler(this.button5_Click);
             // 
@@ -1115,45 +1115,45 @@
             this.label12.AutoSize = true;
             this.label12.Location = new System.Drawing.Point(3, 219);
             this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(122, 25);
+            this.label12.Size = new System.Drawing.Size(105, 25);
             this.label12.TabIndex = 5;
-            this.label12.Text = "Ammeter<20:";
+            this.label12.Text = "电流表<20:";
             // 
             // label13
             // 
             this.label13.AutoSize = true;
             this.label13.Location = new System.Drawing.Point(3, 178);
             this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(103, 25);
+            this.label13.Size = new System.Drawing.Size(105, 25);
             this.label13.TabIndex = 4;
-            this.label13.Text = "USB screen:";
+            this.label13.Text = "USB屏工作:";
             // 
             // label14
             // 
             this.label14.AutoSize = true;
             this.label14.Location = new System.Drawing.Point(3, 137);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(89, 25);
+            this.label14.Size = new System.Drawing.Size(106, 25);
             this.label14.TabIndex = 3;
-            this.label14.Text = "RGB light:";
+            this.label14.Text = "RGB灯正常:";
             // 
             // label15
             // 
             this.label15.AutoSize = true;
             this.label15.Location = new System.Drawing.Point(3, 96);
             this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(110, 25);
+            this.label15.Size = new System.Drawing.Size(102, 25);
             this.label15.TabIndex = 2;
-            this.label15.Text = "Green lights:";
+            this.label15.Text = "5绿灯正常:";
             // 
             // label19
             // 
             this.label19.AutoSize = true;
             this.label19.Location = new System.Drawing.Point(3, 54);
             this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(64, 25);
+            this.label19.Size = new System.Drawing.Size(65, 25);
             this.label19.TabIndex = 1;
-            this.label19.Text = "PCBA: ";
+            this.label19.Text = "QR码: ";
             // 
             // label11
             // 
@@ -1232,9 +1232,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(13, 7);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(54, 25);
+            this.label2.Size = new System.Drawing.Size(60, 25);
             this.label2.TabIndex = 9;
-            this.label2.Text = "Port2";
+            this.label2.Text = "串口2";
             // 
             // panel10
             // 
@@ -1277,7 +1277,7 @@
             this.button15.Name = "button15";
             this.button15.Size = new System.Drawing.Size(101, 34);
             this.button15.TabIndex = 12;
-            this.button15.Text = "Start test";
+            this.button15.Text = "开始测试";
             this.button15.UseVisualStyleBackColor = true;
             this.button15.Click += new System.EventHandler(this.button15_Click);
             // 
@@ -1419,7 +1419,7 @@
             this.button8.Name = "button8";
             this.button8.Size = new System.Drawing.Size(73, 34);
             this.button8.TabIndex = 7;
-            this.button8.Text = "Scan";
+            this.button8.Text = "扫码";
             this.button8.UseVisualStyleBackColor = true;
             this.button8.Click += new System.EventHandler(this.button6_Click);
             // 
@@ -1429,7 +1429,7 @@
             this.button7.Name = "button7";
             this.button7.Size = new System.Drawing.Size(73, 34);
             this.button7.TabIndex = 6;
-            this.button7.Text = "Save";
+            this.button7.Text = "保存";
             this.button7.UseVisualStyleBackColor = true;
             this.button7.Click += new System.EventHandler(this.button7_Click);
             // 
@@ -1438,45 +1438,45 @@
             this.label16.AutoSize = true;
             this.label16.Location = new System.Drawing.Point(3, 219);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(122, 25);
+            this.label16.Size = new System.Drawing.Size(105, 25);
             this.label16.TabIndex = 5;
-            this.label16.Text = "Ammeter<20:";
+            this.label16.Text = "电流表<20:";
             // 
             // label17
             // 
             this.label17.AutoSize = true;
             this.label17.Location = new System.Drawing.Point(3, 178);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(103, 25);
+            this.label17.Size = new System.Drawing.Size(105, 25);
             this.label17.TabIndex = 4;
-            this.label17.Text = "USB screen:";
+            this.label17.Text = "USB屏工作:";
             // 
             // label18
             // 
             this.label18.AutoSize = true;
             this.label18.Location = new System.Drawing.Point(3, 137);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(89, 25);
+            this.label18.Size = new System.Drawing.Size(106, 25);
             this.label18.TabIndex = 3;
-            this.label18.Text = "RGB light:";
+            this.label18.Text = "RGB灯正常:";
             // 
             // label22
             // 
             this.label22.AutoSize = true;
             this.label22.Location = new System.Drawing.Point(3, 96);
             this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(110, 25);
+            this.label22.Size = new System.Drawing.Size(102, 25);
             this.label22.TabIndex = 2;
-            this.label22.Text = "Green lights:";
+            this.label22.Text = "5绿灯正常:";
             // 
             // label29
             // 
             this.label29.AutoSize = true;
             this.label29.Location = new System.Drawing.Point(3, 54);
             this.label29.Name = "label29";
-            this.label29.Size = new System.Drawing.Size(64, 25);
+            this.label29.Size = new System.Drawing.Size(65, 25);
             this.label29.TabIndex = 1;
-            this.label29.Text = "PCBA: ";
+            this.label29.Text = "QR码: ";
             // 
             // label21
             // 
@@ -1503,11 +1503,11 @@
             // 
             this.label9.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label9.Location = new System.Drawing.Point(381, 15);
+            this.label9.Location = new System.Drawing.Point(308, 15);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(424, 25);
+            this.label9.Size = new System.Drawing.Size(644, 25);
             this.label9.TabIndex = 2;
-            this.label9.Text = "Plug in the top left hub and click the connect button";
+            this.label9.Text = "依据测试架方向，插入左上角USB转串口适配器，点击\"连接\"";
             this.label9.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
             // button13
@@ -1517,7 +1517,7 @@
             this.button13.Name = "button13";
             this.button13.Size = new System.Drawing.Size(112, 34);
             this.button13.TabIndex = 3;
-            this.button13.Text = "Reconnect all";
+            this.button13.Text = "重新连接";
             this.button13.UseVisualStyleBackColor = true;
             this.button13.Click += new System.EventHandler(this.button13_Click);
             // 

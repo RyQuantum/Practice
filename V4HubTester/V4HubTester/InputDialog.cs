@@ -18,7 +18,7 @@ namespace V4HubTester
             // verify whether the QRcode is duplicated, and alert to the user
             using (var db = new HubDBContext())
             {
-                var hub = db.Hubs.OrderByDescending(h => h.id).FirstOrDefault(h => h.PCBA == textBox1.Text);
+                var hub = db.Hubs.OrderByDescending(h => h.id).FirstOrDefault(h => h.QRCode == textBox1.Text);
                 if (hub != null)
                 {
                     //MessageBox.Show("Duplicate barcode! Did you test it before?", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
