@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Makaretu.Dns;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -27,7 +28,7 @@ namespace PanelLabelPrinter
 
         private void loadDb()
         {
-            using (var db = new MyLockDB())
+            using (var db = new MyLockDB(@"Data Source=" + Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\Rently\\Label Printer (panel)\\sqlite.db"))
             {
                 db.Locks.FirstOrDefault(f => true);
             }

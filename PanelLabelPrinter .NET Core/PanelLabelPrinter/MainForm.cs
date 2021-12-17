@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Diagnostics;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
@@ -124,8 +125,11 @@ namespace PanelLabelPrinter
             }
             dataGridView1.AutoGenerateColumns = false;
 
+            String filePath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\Rently\\Label Printer (panel)\\template.lsdx";
+            File.WriteAllBytes(filePath, global::PanelLabelPrinter.Properties.Resources.template);
+
             TLXLabelPaintCLS.RET ret;
-            ret = TLXLabelPaintCLS.OpenDocument("template.lsdx", ref handle);
+            ret = TLXLabelPaintCLS.OpenDocument(filePath, ref handle);
             if (ret != TLXLabelPaintCLS.RET.TLXLP_OK)
             {
                 MessageBox.Show(ErrorMessage(ret), "警告", MessageBoxButtons.OK, MessageBoxIcon.Warning);

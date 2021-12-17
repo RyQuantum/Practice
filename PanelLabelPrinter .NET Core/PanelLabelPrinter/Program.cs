@@ -17,7 +17,7 @@ namespace PanelLabelPrinter
             startInfo.CreateNoWindow = true;
             startInfo.UseShellExecute = false;
             process.StartInfo = startInfo;
-            process.Start();
+            //process.Start();
 
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
