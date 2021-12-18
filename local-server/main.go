@@ -1,5 +1,6 @@
 package main
 
+import "C"
 import (
 	"fmt"
 	"github.com/gin-gonic/gin"
@@ -12,6 +13,22 @@ import (
 
 var db *gorm.DB
 
+//export PrintHello
+func PrintHello() {
+	var err error
+	db, err = gorm.Open(sqlite.Open("sqlite.db"), &gorm.Config{})
+	fmt.Println("err:", err)
+	fmt.Println("db:", db)
+
+	setupMdns()
+	router := gin.Default()
+	v1 := router.Group("/")
+	{
+		v1.GET("/", helloWorld)
+		v1.POST("/lock", createLock)
+	}
+	router.Run("0.0.0.0:25348")
+}
 func main() {
 	var err error
 	db, err = gorm.Open(sqlite.Open("sqlite.db"), &gorm.Config{})
@@ -22,10 +39,16 @@ func main() {
 	router := gin.Default()
 	v1 := router.Group("/")
 	{
+		v1.GET("/", helloWorld)
 		v1.POST("/lock", createLock)
 	}
 	router.Run("0.0.0.0:25348")
 }
+
+func helloWorld(c *gin.Context) {
+	c.JSON(200, gin.H{"message": "Connected", "success": true})
+}
+
 func GetOutboundIP() net.IP {
 	conn, err := net.Dial("udp", "8.8.8.8:80")
 	if err != nil {
