@@ -1,4 +1,4 @@
-﻿namespace PanelLabelPrinter
+﻿namespace BarcodePrinter
 {
     partial class InputDialog
     {

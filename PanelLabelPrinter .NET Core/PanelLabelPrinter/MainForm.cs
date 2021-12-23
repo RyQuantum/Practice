@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.VisualBasic;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -7,9 +8,10 @@ using System.Drawing;
 using System.IO;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PanelLabelPrinter
+namespace BarcodePrinter
 {
     public partial class MainForm : Form
     {
@@ -18,20 +20,16 @@ namespace PanelLabelPrinter
         private int handle = 0;     //  用于保存标签模板的句柄
         private int boxSize = 0;
         private string model = "";
-        private int qty = 0;
         private int weight = 0;
-        private string batchNo = "";
-        private string initialCaseNo = "";
+        private string po = "";
         private int historyIndex = -1;
         private Process process;
-        public MainForm(int num, string model, int weight, string batchNo, string initialCaseNo, Process process)
+        public MainForm(int num, string model, int weight, string po, Process process)
         {
             this.boxSize = num;
             this.model = model;
-            this.qty = boxSize;
             this.weight = weight;
-            this.batchNo = batchNo;
-            this.initialCaseNo = initialCaseNo;
+            this.po = po;
             this.process = process;
 
             for (int i = 1; i <= boxSize; i++)
@@ -42,13 +40,12 @@ namespace PanelLabelPrinter
             snTable.Columns.Add("qty");
             snTable.Columns.Add("weight");
             snTable.Columns.Add("date");
-            snTable.Columns.Add("batch_no");
+            snTable.Columns.Add("po");
             snTable.Columns.Add("case_no");
             snTable.Columns.Add("qr");
             snTable.Columns.Add("is_end");
 
             InitializeComponent();
-
             TLXLabelPaintCLS.RET ret;
             TLXLabelPaintCLS.LICENSETYPE license = 0;
 
@@ -97,42 +94,25 @@ namespace PanelLabelPrinter
                 comboBox1.Items.Add(sPrint);
         }
 
-        private float GetWinScaling()
+        private void Form1_Load(object sender, EventArgs e)
         {
-            int dpiX;
-            Graphics graphics = this.CreateGraphics();
-            dpiX = (Int32)graphics.DpiX;
-
-            if (dpiX == 96) { return 1; }
-            else if (dpiX == 120) { return 1.25f; }
-            else if (dpiX == 144) { return 1.5f; }
-            else if (dpiX == 168) { return 1.75f; }
-            else if (dpiX == 192) { return 2f; }
-            else if (dpiX == 216) { return 2.25f; }
-            else { return 1; }
-        }
-
-        private void MainForm_Load(object sender, EventArgs e)
-        {
+            //Size = new Size(900, 300);
             addHistoryRows();
             addNewRow();
             this.dataGridView1.Columns.Add(this.Print);
             for (int i = 0; i < boxSize; i++)
             {
-                float scale = GetWinScaling();
-                dataGridView1.Columns[i].Width = Convert.ToInt32(60 * scale) + ((scale == 1.5 || scale == 2.25) ? 5 : 0);
+                dataGridView1.Columns[i].Width = 100;
                 dataGridView1.Columns[i].SortMode = DataGridViewColumnSortMode.NotSortable;
             }
             dataGridView1.AutoGenerateColumns = false;
 
-            String filePath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\Rently\\Label Printer (panel)\\template.lsdx";
-            File.WriteAllBytes(filePath, global::PanelLabelPrinter.Properties.Resources.template);
-
-            TLXLabelPaintCLS.RET ret;
+            string filePath = Environment.GetFolderPath(Environment.SpecialFolder.ApplicationData) + "\\Rently\\Label Printer (panel)\\template.lsdx";
+            TLXLabelPaintCLS.RET ret; 
             ret = TLXLabelPaintCLS.OpenDocument(filePath, ref handle);
             if (ret != TLXLabelPaintCLS.RET.TLXLP_OK)
             {
-                MessageBox.Show(ErrorMessage(ret), "警告", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(ErrorMessage(ret), "出错", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
 
@@ -140,10 +120,10 @@ namespace PanelLabelPrinter
             //  在使用企业版授权模式打印时，需要使用授权的标签模板
             TLXLabelPaintCLS.DOCLEVEL level = TLXLabelPaintCLS.DOCLEVEL.TLXLP_DOCUMENT_BASIC;
             ret = TLXLabelPaintCLS.GetDocumentLevel(handle, ref level);
-
+            label2.Text = "模板: ";
             if (ret != TLXLabelPaintCLS.RET.TLXLP_OK)
             {
-                MessageBox.Show(ErrorMessage(ret), "警告", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show(ErrorMessage(ret), "出错", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
             else
             {
@@ -167,14 +147,14 @@ namespace PanelLabelPrinter
 
         private void addHistoryRows()
         {
-            using (var db = new MyLockDB())
+            using (var db = new MyDatabase())
             {
                 var list = db.Records.Where(r => true).ToList();
                 for (int i = 0; i < list.Count; i++)
                 {
                     var serialNumbers = list[i].serial_numbers.Split(',');
                     DataRow dr = snTable.NewRow();
-                    for (int j = 0; j < 12; j++)
+                    for (int j = 0; j < boxSize; j++)
                     {
                         if (j < serialNumbers.Length) dr[j] = serialNumbers[j];
                         else dr[j] = "";
@@ -183,7 +163,7 @@ namespace PanelLabelPrinter
                     dr["qty"] = list[i].qty;
                     dr["weight"] = list[i].weight;
                     dr["date"] = list[i].date;
-                    dr["batch_no"] = list[i].batch_no;
+                    dr["po"] = list[i].po;
                     dr["case_no"] = list[i].case_no;
                     dr["qr"] = list[i].qr;
                     dr["is_end"] = list[i].is_end;
@@ -196,7 +176,7 @@ namespace PanelLabelPrinter
             dataGridView1.Columns["qty"].Visible = false;
             dataGridView1.Columns["weight"].Visible = false;
             dataGridView1.Columns["date"].Visible = false;
-            dataGridView1.Columns["batch_no"].Visible = false;
+            dataGridView1.Columns["po"].Visible = false;
             dataGridView1.Columns["case_no"].Visible = false;
             dataGridView1.Columns["qr"].Visible = false;
             dataGridView1.Columns["is_end"].Visible = false;
@@ -219,74 +199,13 @@ namespace PanelLabelPrinter
             row.HeaderCell.Value = string.Format("{0}", row.Index + 1);
         }
 
-        private string ErrorMessage(TLXLabelPaintCLS.RET id)
-        {
-            string strMessage = "未知错误";
-            switch (id)
-            {
-                case TLXLabelPaintCLS.RET.TLXLP_OK:
-                    strMessage = "成功返回";
-                    break;
-                case TLXLabelPaintCLS.RET.TLXLP_ERROR:
-                    strMessage = "出错";
-                    break;
-                case TLXLabelPaintCLS.RET.TLXLP_INVALIDDOCUMENT:
-                    strMessage = "无效的文档";
-                    break;
-                case TLXLabelPaintCLS.RET.TLXLP_OPENDOCUMENT:
-                    strMessage = "打开文档失败";
-                    break;
-                case TLXLabelPaintCLS.RET.TLXLP_SAVEDOCUMENT:
-                    strMessage = "保存文档失败";
-                    break;
-                case TLXLabelPaintCLS.RET.TLXLP_NOTFOUNDRECORD:
-                    strMessage = "未查找到数据库记录";
-                    break;
-                case TLXLabelPaintCLS.RET.TLXLP_PRINTLABELS:
-                    strMessage = "打印标签失败";
-                    break;
-                case TLXLabelPaintCLS.RET.TLXLP_INVALIDVARIABLE:
-                    strMessage = "无效的变量";
-                    break;
-                case TLXLabelPaintCLS.RET.TLXLP_BUFFERTOOSMALL:
-                    strMessage = "缓冲区内存空间太小";
-                    break;
-                case TLXLabelPaintCLS.RET.TLXLP_INVALIDLICENSEKEY:
-                    strMessage = "无效的授权码";
-                    break;
-                case TLXLabelPaintCLS.RET.TLXLP_UNAUTHORIZED:
-                    strMessage = "未授权";
-                    break;
-                case TLXLabelPaintCLS.RET.TLXLP_NOTFOUNDPRINTER:
-                    strMessage = "未找到目标打印机";
-                    break;
-                case TLXLabelPaintCLS.RET.TLXLP_NOTFOUNDLABELSHOP:
-                    strMessage = "没有安装 LabelShop";
-                    break;
-                case TLXLabelPaintCLS.RET.TLXLP_VERSIONTOOLOW:
-                    strMessage = "LabelShop 版本太低，需要 LabelShop 5.21 或者更高的版本";
-                    break;
-                case TLXLabelPaintCLS.RET.TLXLP_NOTCHANGE:
-                    strMessage = "未发生改变";
-                    break;
-                case TLXLabelPaintCLS.RET.TLXLP_INVALIDROWNUMBER:
-                    strMessage = "无效的记录行号";
-                    break;
-                case TLXLabelPaintCLS.RET.TLXLP_NONSUPPORT:
-                    strMessage = "不支持的功能";
-                    break;
-            }
-
-            return strMessage;
-        }
-
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
             Console.WriteLine("row: " + e.RowIndex + " column: " + e.ColumnIndex);
             if (e.ColumnIndex < 0 || dataGridView1.Columns[e.ColumnIndex].Name != "Print") return;
             if (comboBox1.Text == "")
             {
-                MessageBox.Show("请选择打印机", "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("请选择打印机", "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 comboBox1.Focus();
                 return;
             }
@@ -297,7 +216,7 @@ namespace PanelLabelPrinter
                 {
                     if (dataGridView1.Rows[e.RowIndex].Cells[i].Value.ToString() != "")
                     {
-                        MessageBox.Show($"请勿留空。", "警告", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        MessageBox.Show($"请勿留空。", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         return;
                     }
                 }
@@ -308,7 +227,7 @@ namespace PanelLabelPrinter
             }
             if (dataGridView1.Rows[e.RowIndex].Cells[0].Value.ToString() == "")
             {
-                MessageBox.Show($"请输入SN号", "警告", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                MessageBox.Show($"请输入SN号", "Warning", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                 return;
             }
             if (!isAuthorized && emptyOnce && e.RowIndex > historyIndex)
@@ -316,17 +235,17 @@ namespace PanelLabelPrinter
                 //InputDialog inputDialog = new InputDialog();
                 //inputDialog.ShowDialog();
                 //if (!inputDialog.isValid) return;
-                var dialogResult = MessageBox.Show($"确定准备打印尾箱吗？", "警告", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
+                var dialogResult = MessageBox.Show($"确定准备打印尾箱吗？", "Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
                 if (dialogResult == DialogResult.Cancel) return;
                 isAuthorized = true;
             }
 
-            using (var db = new MyLockDB())
+            using (var db = new MyDatabase())
             {
                 var row = snTable.Rows[e.RowIndex];
                 if (e.RowIndex < dataGridView1.RowCount - 1)
                 {
-                    showPreview(row, e.RowIndex, emptyOnce);
+                    showPreivew(row, e.RowIndex, emptyOnce);
                     return;
                 }
                 var list = new List<int>();
@@ -399,11 +318,11 @@ namespace PanelLabelPrinter
                 if (duplicated != "" || nonexistent != "")
                 {
                     var output = String.Join("\n", new List<string>(new string[] { duplicated, nonexistent }));
-                    MessageBox.Show(output, "错误", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show(output, "error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
 
-                var (res, strArr) = showPreview(row, e.RowIndex, emptyOnce);
+                var (res, strArr) = showPreivew(row, e.RowIndex, emptyOnce);
                 if (res == DialogResult.OK)
                 {
                     var serialNumbers = "";
@@ -421,7 +340,7 @@ namespace PanelLabelPrinter
                     snTable.Rows[e.RowIndex]["qty"] = strArr[1];
                     snTable.Rows[e.RowIndex]["weight"] = strArr[2];
                     snTable.Rows[e.RowIndex]["date"] = strArr[3];
-                    snTable.Rows[e.RowIndex]["batch_no"] = strArr[4];
+                    snTable.Rows[e.RowIndex]["po"] = strArr[4];
                     snTable.Rows[e.RowIndex]["case_no"] = strArr[5];
                     snTable.Rows[e.RowIndex]["qr"] = strArr[6];
                     snTable.Rows[e.RowIndex]["is_end"] = strArr[7];
@@ -433,7 +352,7 @@ namespace PanelLabelPrinter
                         qty = strArr[1],
                         weight = strArr[2],
                         date = strArr[3],
-                        batch_no = strArr[4],
+                        po = strArr[4],
                         case_no = strArr[5],
                         qr = strArr[6],
                         is_end = strArr[7],
@@ -443,18 +362,28 @@ namespace PanelLabelPrinter
             }
         }
 
-        private (DialogResult, string[]) showPreview(DataRow row, int index, bool emptyOnce)
+        private (DialogResult, string[]) showPreivew(DataRow row, int index, bool emptyOnce)
         {
             TLXLabelPaintCLS.RET ret;
-            string modelStr, qtyStr, weightStr, dateStr, batchNoStr, caseNoStr, qrStr, isEndStr;
+            string modelStr, qtyStr, weightStr, dateStr, poStr, caseNoStr, qrStr, isEndStr;
             if (index > historyIndex)
             {
                 modelStr = model;
-                //weightStr = weight.ToString() + "KG";
+                var caseIndex = "000001";
+                for (int i = index - 1; i >= 0; i--)
+                {
+                    var previousRow = snTable.Rows[i];
+                    var previousPo = previousRow["po"].ToString();
+                    if (previousPo == "PO" + po)
+                    {
+                        var preCaseIndex = previousRow["case_no"].ToString().Split('F')[1];
+                        caseIndex = (Int32.Parse(preCaseIndex) + 1).ToString("D6");
+                        break;
+                    }
+                }
                 dateStr = DateTime.Now.ToString("d");
-                batchNoStr = batchNo;
-                var arr = initialCaseNo.Split('F');
-                caseNoStr = arr[0] + "F" + (Int32.Parse(arr[1]) + (index - historyIndex - 1)).ToString("D6");
+                var dateArr = DateTime.Now.ToString("s").Split('T')[0].Split('-');
+                caseNoStr = String.Join("", dateArr) + "F" + caseIndex;
                 qrStr = "";
                 foreach (var i in EnumerableUtilities.RangePython(0, boxSize))
                 {
@@ -469,21 +398,22 @@ namespace PanelLabelPrinter
                     qrStr = qrStr + (i == 0 ? "" : ",") + row[i].ToString();
                     Console.WriteLine((i + 1) + " " + row[i].ToString() + " ret: " + ret);
                 }
-                int tmp = qty == boxSize ? qty : (int)Math.Ceiling((double)weight / boxSize * qty);
+                int tmp = qty == boxSize ? weight : (int)Math.Ceiling((double)weight / boxSize * qty);
                 weightStr = tmp.ToString() + "KG";
+                poStr = "PO" + po;
                 qtyStr = qty.ToString();
                 isEndStr = emptyOnce ? "It's the ENDING BOX." : "";
             }
             else
             {
-                using (var db = new MyLockDB())
+                using (var db = new MyDatabase())
                 {
                     var record = db.Records.FirstOrDefault(r => r.rowIndex == index);
                     modelStr = record.model;
                     qtyStr = record.qty;
                     weightStr = record.weight;
                     dateStr = record.date;
-                    batchNoStr = record.batch_no;
+                    poStr = record.po;
                     caseNoStr = record.case_no;
                     qrStr = record.qr;
                     isEndStr = record.is_end;
@@ -499,14 +429,14 @@ namespace PanelLabelPrinter
             ret = TLXLabelPaintCLS.SetNamedVariable(handle, "qty", qtyStr);
             ret = TLXLabelPaintCLS.SetNamedVariable(handle, "weight", weightStr);
             ret = TLXLabelPaintCLS.SetNamedVariable(handle, "date", dateStr);
-            ret = TLXLabelPaintCLS.SetNamedVariable(handle, "batchNo", batchNoStr);
+            ret = TLXLabelPaintCLS.SetNamedVariable(handle, "po", poStr);
             ret = TLXLabelPaintCLS.SetNamedVariable(handle, "caseNo", caseNoStr);
             ret = TLXLabelPaintCLS.SetNamedVariable(handle, "qr", qrStr);
             ret = TLXLabelPaintCLS.SetNamedVariable(handle, "isEnd", isEndStr);
 
             PreviewForm preview = new PreviewForm(handle);
             var res = preview.ShowDialog();
-            return (res, new string[] { modelStr, qtyStr, weightStr, dateStr, batchNoStr, caseNoStr, qrStr, isEndStr });
+            return (res, new string[] { modelStr, qtyStr, weightStr, dateStr, poStr, caseNoStr, qrStr, isEndStr });
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -515,14 +445,85 @@ namespace PanelLabelPrinter
             TLXLabelPaintCLS.PrinterProperties(handle, IntPtr.Zero);
         }
 
-        private void MainForm_FormClosing(object sender, FormClosingEventArgs e)
+        private string ErrorMessage(TLXLabelPaintCLS.RET id)
         {
-            var dialogResult = MessageBox.Show($"确定退出吗？", "警告", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
+            string strMessage = "未知错误";
+            switch (id)
+            {
+                case TLXLabelPaintCLS.RET.TLXLP_OK:
+                    strMessage = "成功返回";
+                    break;
+                case TLXLabelPaintCLS.RET.TLXLP_ERROR:
+                    strMessage = "出错";
+                    break;
+                case TLXLabelPaintCLS.RET.TLXLP_INVALIDDOCUMENT:
+                    strMessage = "无效的文档";
+                    break;
+                case TLXLabelPaintCLS.RET.TLXLP_OPENDOCUMENT:
+                    strMessage = "打开文档失败";
+                    break;
+                case TLXLabelPaintCLS.RET.TLXLP_SAVEDOCUMENT:
+                    strMessage = "保存文档失败";
+                    break;
+                case TLXLabelPaintCLS.RET.TLXLP_NOTFOUNDRECORD:
+                    strMessage = "未查找到数据库记录";
+                    break;
+                case TLXLabelPaintCLS.RET.TLXLP_PRINTLABELS:
+                    strMessage = "打印标签失败";
+                    break;
+                case TLXLabelPaintCLS.RET.TLXLP_INVALIDVARIABLE:
+                    strMessage = "无效的变量";
+                    break;
+                case TLXLabelPaintCLS.RET.TLXLP_BUFFERTOOSMALL:
+                    strMessage = "缓冲区内存空间太小";
+                    break;
+                case TLXLabelPaintCLS.RET.TLXLP_INVALIDLICENSEKEY:
+                    strMessage = "无效的授权码";
+                    break;
+                case TLXLabelPaintCLS.RET.TLXLP_UNAUTHORIZED:
+                    strMessage = "未授权";
+                    break;
+                case TLXLabelPaintCLS.RET.TLXLP_NOTFOUNDPRINTER:
+                    strMessage = "未找到目标打印机";
+                    break;
+                case TLXLabelPaintCLS.RET.TLXLP_NOTFOUNDLABELSHOP:
+                    strMessage = "没有安装 LabelShop";
+                    break;
+                case TLXLabelPaintCLS.RET.TLXLP_VERSIONTOOLOW:
+                    strMessage = "LabelShop 版本太低，需要 LabelShop 5.21 或者更高的版本";
+                    break;
+                case TLXLabelPaintCLS.RET.TLXLP_NOTCHANGE:
+                    strMessage = "未发生改变";
+                    break;
+                case TLXLabelPaintCLS.RET.TLXLP_INVALIDROWNUMBER:
+                    strMessage = "无效的记录行号";
+                    break;
+                case TLXLabelPaintCLS.RET.TLXLP_NONSUPPORT:
+                    strMessage = "不支持的功能";
+                    break;
+            }
+
+            return strMessage;
+        }
+
+        private void Form1_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            var dialogResult = MessageBox.Show($"确定退出吗？", "Warning", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
             e.Cancel = (dialogResult == DialogResult.Cancel);
             if (e.Cancel == false)
             {
-                process.Kill();
+                process.Close();
                 System.Environment.Exit(0);
+            }
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            using (var db = new MyDatabase())
+            {
+                var config = db.Configs.FirstOrDefault(f => true);
+                ConfigurationForm configForm = new ConfigurationForm(process, config);
+                configForm.ShowDialog();
             }
         }
     }

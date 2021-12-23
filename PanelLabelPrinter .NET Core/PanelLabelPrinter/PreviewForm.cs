@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PanelLabelPrinter
+namespace BarcodePrinter
 {
     public partial class PreviewForm : Form
     {

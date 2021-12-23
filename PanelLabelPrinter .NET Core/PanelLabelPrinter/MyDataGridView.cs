@@ -1,10 +1,13 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace PanelLabelPrinter
+namespace BarcodePrinter
 {
+
     class MyDataGridView : DataGridView
     {
         protected override bool ProcessCmdKey(ref Message msg, Keys keyData)
