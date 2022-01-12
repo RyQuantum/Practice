@@ -13,8 +13,8 @@ import (
 
 var db *gorm.DB
 
-//export PrintHello
-func PrintHello() {
+//export Start
+func Start() {
 	var err error
 	db, err = gorm.Open(sqlite.Open("sqlite.db"), &gorm.Config{})
 	fmt.Println("err:", err)
@@ -30,12 +30,12 @@ func PrintHello() {
 	router.Run("0.0.0.0:25348")
 }
 func main() {
-	var err error
-	db, err = gorm.Open(sqlite.Open("sqlite.db"), &gorm.Config{})
-	fmt.Println("err:", err)
-	fmt.Println("db:", db)
-
-	setupMdns()
+	//var err error
+	//db, err = gorm.Open(sqlite.Open("sqlite.db"), &gorm.Config{})
+	//fmt.Println("err:", err)
+	//fmt.Println("db:", db)
+	//
+	//setupMdns()
 	router := gin.Default()
 	v1 := router.Group("/")
 	{
