@@ -60,8 +60,16 @@ https://jingyan.baidu.com/article/6c67b1d6be538c2787bb1e06.html
 # generate client key
 .\openssl\openssl.exe ecparam -genkey -name secp256r1 | .\openssl\openssl.exe ec -out .\ecc\client.key
 
+# generate public key
+openssl ec -in ecprikey.pem -pubout -out ecpubkey.pem
+
 # generate client csr file
 .\openssl\openssl.exe req -new -key .\ecc\client.key -out .\ecc\client.csr -config .\openssl\openssl.cnf -subj "/C=CN/ST=BJ/L=BJ/O=HD/OU=ops/CN=PCTool/emailAddress=ryan@rently.com"
 
 # private key sign client csr => crt 
 .\openssl\openssl.exe x509 -req -in .\ecc\client.csr -out .\ecc\client.crt -signkey .\ecc\server.key -days 365
+
+# sign by private key
+openssl dgst -sha256 -sign server.key -out test.sig test
+# verify
+openssl dgst -sha256 -verify server.pem -signature test.sig test
