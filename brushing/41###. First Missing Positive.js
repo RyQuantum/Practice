@@ -8,15 +8,18 @@
 //     return A.length + 1
 // }
 
-var firstMissingPositive = function(A) {
+var firstMissingPositive = function(list) {
     const map = {}
-    for (let i = 0; i < A.length; i++) {
-        map[A[i]] = i
+    for (let i = 0; i < list.length; i++) {
+        map[list[i]] = i
     }
-    for (let i = 0; i < A.length; i++) {
+    for (let i = 0; i < list.length; i++) {
         if (map[i + 1] === undefined) return i + 1
     }
-    return A.length + 1
+    return list.length + 1
 };
-A = []
-console.log(firstMissingPositive(A))
+const A = [1,2,0] //3
+const B = [3,4,-1,1] //2
+const C = [7,8,9,11,12] //1
+const test = []
+console.log(firstMissingPositive(test))
