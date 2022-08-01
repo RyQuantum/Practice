@@ -97,7 +97,7 @@ class BlePlugin extends BluetoothPluginInterface {
 
             let record = this._activeDevices.get(lockMac);
 
-            if (record===undefined && peripheral.id && peripheral.advertisement && peripheral.advertisement.localName) {
+            if (peripheral.id && peripheral.advertisement && peripheral.advertisement.localName) {
                 // no record of the lock yet so make one and send the foundDevice message
 
                 let leDevice = {

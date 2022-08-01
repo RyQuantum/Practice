@@ -14,6 +14,7 @@ import { autoUpdater } from 'electron-updater';
 import log from 'electron-log';
 import MenuBuilder from './menu';
 import { resolveHtmlPath } from './util';
+import runner from "./BleLibrary/LibraryRunner";
 
 class AppUpdater {
   constructor() {
@@ -84,10 +85,19 @@ const createWindow = async () => {
   mainWindow.loadURL(resolveHtmlPath('index.html'));
 
   mainWindow.on('ready-to-show', () => {
-    require('./BleLibrary/LibraryRunner')
     if (!mainWindow) {
       throw new Error('"mainWindow" is not defined');
     }
+    const runner = require('./BleLibrary/LibraryRunner');
+    runner.on('foundDevice', lockData => mainWindow.webContents.send('foundDevice', lockData));
+    ipcMain.on('refresh', () => runner.startScan());
+    ipcMain.on('selectDevice', (event, lockMac) => runner.selectDevice(lockMac));
+    ipcMain.on('readLockTime', runner.readLockTime);
+    runner.on('readLockTimeRes', res => mainWindow.webContents.send('readLockTimeRes', res));
+    ipcMain.on('unlock', runner.unlock);
+    runner.on('unlockRes', res => mainWindow.webContents.send('unlockRes', res));
+    ipcMain.on('lock', runner.lock);
+    runner.on('lockRes', res => mainWindow.webContents.send('lockRes', res));
     if (process.env.START_MINIMIZED) {
       mainWindow.minimize();
     } else {

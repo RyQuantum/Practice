@@ -16,6 +16,7 @@ const TIMEZONE_STR = 'Pacific Time (US & Canada)';
 
 const OaksBleLockLibrary = require("blelocklibrary");
 const axios = require('axios');
+const EventEmitter = require('events');
 const BlePlugin = require('./BlePlugin');
 const PersistencePlugin = require('./PersistencePlugin');
 const blueURL = "https://api.rentlyopensesame.com/oakslock/";
@@ -130,10 +131,10 @@ const getFobList = (lockMac,deviceToken) => {
  *
  * The implementation of using the library should be done in a different class by the assigned engineer.
  */
-class LibraryRunner {
+class LibraryRunner extends EventEmitter{
 
     constructor() {
-
+        super();
         this._blePlugin = new BlePlugin();
         this._persistencePlugin = new PersistencePlugin();
 
@@ -145,7 +146,7 @@ class LibraryRunner {
         //TODO: add your commands here, DONT USE () after the name!
         let commandList = [this.packetLossCheck];
         //let commandList = [this.unlock];
-
+        this.devices = [];
         let tests = new Map();
 
         // if (args.length===0) {
@@ -185,13 +186,14 @@ class LibraryRunner {
             };
 
             // if you have a hardcoded mac then ignore all other macs for found devices
-            if (hardcodedMac && hardcodedMac!==lockMac) return;
+            if (this.createdDevice) return;
+            this.devices.push(this.library.createDevice(lockData));
+            this.emit('foundDevice', lockData);
 
             // console.log("=== Getting device token for "+lockMac);
             // const {accessToken="",expiresAt} = await this.getToken(lockMac);
 
-            this.createdDevice = this.library.createDevice(lockData);
-
+            // this.createdDevice = this.library.createDevice(lockData);
             //console.log("-- Created Device for mac: " + this.createdDevice.lockMac + "\n");
 
             setTimeout(async () => {
@@ -278,6 +280,8 @@ class LibraryRunner {
     }
 
     startScan() {
+        this.devices = [];
+        this.createdDevice = null;
         this.library.startScan();
     }
 
@@ -285,7 +289,11 @@ class LibraryRunner {
         this.library.stopScan();
     }
 
-    async unlock() {
+    selectDevice(lockMac) {
+        this.createdDevice = this.devices.find(device => device.lockMac === lockMac);
+    }
+
+    unlock = async () => {
         console.log("\n--- trying to unlock device ----\n");
         if (this.createdDevice) {
 
@@ -297,7 +305,7 @@ class LibraryRunner {
         }
     };
 
-    async lock() {
+    lock = async () => {
         console.log("\n--- trying to lock device ----\n");
         if (this.createdDevice) {
 
@@ -345,13 +353,13 @@ class LibraryRunner {
         }
     }
 
-    async readLockTime() {
+    readLockTime = async () => {
         console.log("\n--- trying to read time on the device ----\n");
         if (this.createdDevice) {
 
             let response = await this.createdDevice.getLockTime();
             console.log(response);
-
+            this.emit('readLockTimeRes', response);
         } else {
             console.log("No device created");
         }
@@ -620,7 +628,7 @@ let run = async ()=> {
     }
 
     runner.initLibrary(/*user id here*/);
-    runner.startScan();
+    // runner.startScan();
 
 }
 
@@ -629,3 +637,5 @@ axios.defaults.baseURL = blueURL;
 console.log("=== Logging in to server to get integration partner access token");
 
 run();
+
+module.exports = runner;

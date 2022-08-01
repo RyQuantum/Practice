@@ -108,6 +108,7 @@
     }
   },
   "dependencies": {
+    "antd": "^4.22.2",
     "axios": "^0.27.2",
     "blelocklibrary": "git+https://github.com/rently-com/OaksBleLockLibrary#develop_nb_newDesign",
     "electron-debug": "^3.2.0",
