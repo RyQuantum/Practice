@@ -35,8 +35,8 @@ const Main = () => {
   const lockData = {
     lockMac: '',
     modelNum: '',
-    firmwareVer: '',
     hardwareVer: '',
+    firmwareVer: '',
     settingMode: '',
     battery: '',
     rssi: '',
@@ -64,8 +64,8 @@ const Main = () => {
       data: {
         lockMac,
         modelNum,
-        firmwareVer,
         hardwareVer,
+        firmwareVer,
         settingMode,
         battery,
         rssi,
@@ -75,8 +75,8 @@ const Main = () => {
     setLockDataState({
       lockMac,
       modelNum,
-      firmwareVer,
       hardwareVer,
+      firmwareVer,
       settingMode,
       battery,
       rssi,
@@ -104,8 +104,8 @@ const Main = () => {
               setLockDataState({
                 lockMac: '',
                 modelNum: '',
-                firmwareVer: '',
                 hardwareVer: '',
+                firmwareVer: '',
                 settingMode: '',
                 battery: '',
                 rssi: '',
@@ -119,7 +119,6 @@ const Main = () => {
         <Menu
           theme="dark"
           mode="inline"
-          defaultSelectedKeys={['1']}
           items={state}
           onClick={onClick}
         />
@@ -144,22 +143,22 @@ const Main = () => {
         >
           <Descriptions size="small" column={3}>
             <Descriptions.Item label="ModelNum">
-              {lockDataState.modelNum.toString()}
-            </Descriptions.Item>
-            <Descriptions.Item label="firmwareVer">
-              {lockDataState.firmwareVer.toString()}
+              {lockDataState.modelNum}
             </Descriptions.Item>
             <Descriptions.Item label="hardwareVer">
-              {lockDataState.hardwareVer.toString()}
+              {lockDataState.hardwareVer}
+            </Descriptions.Item>
+            <Descriptions.Item label="firmwareVer">
+              {lockDataState.firmwareVer}
             </Descriptions.Item>
             <Descriptions.Item label="battery">
-              {lockDataState.battery.toString()}
+              {lockDataState.battery}
             </Descriptions.Item>
             <Descriptions.Item label="rssi">
-              {lockDataState.rssi.toString()}
+              {lockDataState.rssi}
             </Descriptions.Item>
             <Descriptions.Item label="settingMode">
-              {lockDataState.settingMode.toString()}
+              {lockDataState.settingMode?.toString()}
             </Descriptions.Item>
           </Descriptions>
         </PageHeader>
@@ -185,7 +184,7 @@ const Operations = () => {
         </Col>
         <Col span={8}>
           <Button type="primary" block>
-            Add Period Passcode
+            Add Period Code
           </Button>
         </Col>
       </Row>
